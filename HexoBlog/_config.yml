@@ -133,7 +133,7 @@ ignore:
 
 # 主题配置
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: 3-hexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
