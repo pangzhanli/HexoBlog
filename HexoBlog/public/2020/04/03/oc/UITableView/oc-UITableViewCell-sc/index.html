@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>使用代码创建UITableViewCell | Hexo</title>
+  <meta name="keywords" content=" UITableViewCell ">
+  <meta name="description" content="使用代码创建UITableViewCell | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="pangzhanli.top">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://pangzhanli.top/CNAME.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="pangzhanli.top">
+<meta property="article:published_time" content="2020-04-07T03:41:21.255Z">
+<meta property="article:modified_time" content="2020-04-02T11:28:34.122Z">
+<meta property="article:author" content="庞占立">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>庞占立</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(26)</small></div></li>
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Hexo">Hexo<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="OC">OC<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="26">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">C</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">OC动画</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Foundation</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">登录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">OC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">UITableViewCell</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">上传</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="C语言 "
+           href="/2020/04/03/c/c-enum-desc/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中枚举的简单介绍">C语言中枚举的简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:26:49">2020/04/03</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/03/c/c-maopaopaixu/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中的冒泡排序简单介绍">C语言中的冒泡排序简单介绍</span>
+            <span class="post-date" title="2020-04-03 10:55:10">2020/04/03</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/03/c/c-pointer-desc/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中指针的简单介绍">C语言中指针的简单介绍</span>
+            <span class="post-date" title="2020-04-03 10:58:59">2020/04/03</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E8%BE%93%E5%87%BA/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中的字符串的定义及初始化和输出">C语言中的字符串的定义及初始化和输出</span>
+            <span class="post-date" title="2020-04-02 19:44:45">2020/04/02</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言基本数据类型简单介绍">C语言基本数据类型简单介绍</span>
+            <span class="post-date" title="2020-04-02 19:39:11">2020/04/02</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E4%B8%AD%E7%9A%84%E8%87%AA%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言基本运算中的自增运算符和自减运算符以及三目运算符">C语言基本运算中的自增运算符和自减运算符以及三目运算符</span>
+            <span class="post-date" title="2020-04-02 19:42:20">2020/04/02</span>
+        </a>
+        
+        <a  class="Hexo "
+           href="/2020/04/02/hexo/hello-hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo简单介绍">Hexo简单介绍</span>
+            <span class="post-date" title="2020-04-02 16:52:27">2020/04/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/04/02/hexo/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-04-02 19:28:34">2020/04/02</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Ani/oc-Ani-TableViewHeader/"
+           data-tag="OC动画"
+           data-author="" >
+            <span class="post-title" title="UITableViewHeader头部拉伸变化">UITableViewHeader头部拉伸变化</span>
+            <span class="post-date" title="2020-04-03 18:29:50">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/"
+           data-tag="OC动画"
+           data-author="" >
+            <span class="post-title" title="IOS旋转菜单">IOS旋转菜单</span>
+            <span class="post-date" title="2020-04-03 17:27:18">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Ani/oc-Ani-customProgressCircle/"
+           data-tag="OC动画"
+           data-author="" >
+            <span class="post-title" title="IOS-自制进度圈">IOS-自制进度圈</span>
+            <span class="post-date" title="2020-04-03 17:36:16">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-strFile/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation中将字符串写入到磁盘文件上">Foundation中将字符串写入到磁盘文件上</span>
+            <span class="post-date" title="2020-04-03 14:43:18">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-mulString/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation中的NSMutableString的创建">Foundation中的NSMutableString的创建</span>
+            <span class="post-date" title="2020-04-03 14:41:37">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-string/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation框架中字符串的创建">Foundation框架中字符串的创建</span>
+            <span class="post-date" title="2020-04-03 14:40:07">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-struct/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation中结构体的简单介绍">Foundation中结构体的简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:30:33">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Login/oc-Login-AppleLogin/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS苹果登录(sign in with apple)">IOS苹果登录(sign in with apple)</span>
+            <span class="post-date" title="2020-04-03 18:47:31">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Other/oc_block_desc/"
+           data-tag="OC"
+           data-author="" >
+            <span class="post-title" title="OC中的Block简单介绍">OC中的Block简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:07:19">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Other/oc_category_desc/"
+           data-tag="OC"
+           data-author="" >
+            <span class="post-title" title="OC中的Category简单介绍">OC中的Category简单介绍</span>
+            <span class="post-date" title="2020-04-03 11:01:01">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Other/oc_class_init/"
+           data-tag="OC"
+           data-author="" >
+            <span class="post-title" title="OC中类的创建简单介绍">OC中类的创建简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:13:32">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/"
+           data-tag="UITableViewCell"
+           data-author="" >
+            <span class="post-title" title="使用代码创建UITableViewCell">使用代码创建UITableViewCell</span>
+            <span class="post-date" title="2020-04-03 14:49:35">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/UITableView/oc-UITableViewCell-xib/"
+           data-tag="UITableViewCell"
+           data-author="" >
+            <span class="post-title" title="使用xib文件创建UITableViewCell">使用xib文件创建UITableViewCell</span>
+            <span class="post-date" title="2020-04-03 17:15:58">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Upload/oc-Upload-putAndPost/"
+           data-tag="上传"
+           data-author="" >
+            <span class="post-title" title="IOS文件上传PUT和POST">IOS文件上传PUT和POST</span>
+            <span class="post-date" title="2020-04-03 18:55:42">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Upload/oc-Upload-nativeUpload/"
+           data-tag="上传"
+           data-author="" >
+            <span class="post-title" title="ios原生API文件上传(NSURLSession)">ios原生API文件上传(NSURLSession)</span>
+            <span class="post-date" title="2020-04-03 19:06:04">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/07/oc/Login/oc-Login-TouchID/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS指纹登录">IOS指纹登录</span>
+            <span class="post-date" title="2020-04-07 16:22:33">2020/04/07</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/07/oc/Login/oc-Login-AKeyLogin/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS一键登录">IOS一键登录</span>
+            <span class="post-date" title="2020-04-07 18:26:28">2020/04/07</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/08/oc/Login/oc-Login-QRCode/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS扫码登录">IOS扫码登录</span>
+            <span class="post-date" title="2020-04-08 18:07:19">2020/04/08</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-oc/UITableView/oc-UITableViewCell-sc" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">使用代码创建UITableViewCell</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="OC">OC</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color1">UITableViewCell</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-04-03 15:16:11'>2020-04-03 14:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先看一下，我们将要做出的效果：</p>
+<p><img src="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/oc-UITableViewCell-sc-1.jpeg" alt></p>
+<p>如上图中，现在分析：</p>
+<ul>
+<li>1，这像是一个表格，而表格的每一个cell高度不定。</li>
+<li>2，头像不一样 </li>
+<li>3，昵称不一样，昵称的字数也不一样 </li>
+<li>4，有的有会员图标（昵称显示红色），有的没有（昵称显示黑色) </li>
+<li>5，内容不一样，内容的高度不定 </li>
+<li>6，有的有配图，有的没有配图</li>
+</ul>
+<p>如果使用xib创建，那么cell的高度无法确定，控件的位置无法确定，所以，我们采用，整个表格使用一个UITableViewController, 里边的cell采用代码创建。数据使用加载plist文件的方式。</p>
+<p>先看一下我们的plist文件：</p>
+<p><img src="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/oc-UITableViewCell-sc-2.jpeg" alt></p>
+<p>一：文件分类及作用：</p>
+<p><img src="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/oc-UITableViewCell-sc-3.jpeg" alt></p>
+<ul>
+<li>1，视图文件：StatusCell，  对应的是表格中的cell  。 也就是表格在加载UITableViewCell的时候，我们要用代码创建出来。 </li>
+<li>2，模型文件：有两个Status 和 StatusFrame，第一个是Status,  用于提供数据，例如，昵称，图片的名称，内容，等等。 第二个是StatusFrame, 用于提供cell中的各个控件的frame, 比如，图片大小及位置，内容的大小及位置，等等。</li>
+<li>3，控制器：ViewController  这个ViewController继承自UITableViewController, 这样就拥有了UITableView的各个属性。</li>
+<li>4, 还有一点，我们的storyboard文件中，我们直接拖一个UITableView即可，同时，在属性设置框中将它的Custom Class  设置为ViewController 。</li>
+</ul>
+<p>二：各个文件的代码：</p>
+<p>1，ViewController.m文件中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;MJViewController.h&quot;</span><br><span class="line"></span><br><span class="line">#import &quot;MJStatus.h&quot;</span><br><span class="line">#import &quot;MJStatusCell.h&quot;</span><br><span class="line">#import &quot;MJStatusFrame.h&quot;</span><br><span class="line"> </span><br><span class="line">@interface MJViewController ()</span><br><span class="line"> </span><br><span class="line">@property(nonatomic,strong)NSArray *statusFrames;</span><br><span class="line"> </span><br><span class="line">@end</span><br><span class="line"> </span><br><span class="line">@implementation MJViewController</span><br><span class="line"> </span><br><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">&#x2F;** 懒加载（只加载一次） *&#x2F;</span><br><span class="line">-(NSArray *)statusFrames&#123;</span><br><span class="line">    </span><br><span class="line">    if(_statusFrames &#x3D;&#x3D; nil)&#123;</span><br><span class="line">        NSString *path &#x3D; [[NSBundle mainBundle] pathForResource:@&quot;statuses.plist&quot; ofType:nil];</span><br><span class="line">        NSArray *dictArray &#x3D; [NSArray arrayWithContentsOfFile:path];</span><br><span class="line">        NSMutableArray *statusFrameArray &#x3D; [NSMutableArray array];</span><br><span class="line">        for (NSDictionary *dict in dictArray) &#123;</span><br><span class="line">            MJStatus *status &#x3D; [MJStatus statusWithDict:dict];</span><br><span class="line">            MJStatusFrame *statusFrame &#x3D; [[MJStatusFrame alloc] init];</span><br><span class="line">            statusFrame.status &#x3D; status;</span><br><span class="line">            </span><br><span class="line">            [statusFrameArray addObject:statusFrame];</span><br><span class="line">        &#125;</span><br><span class="line">        _statusFrames &#x3D; statusFrameArray;</span><br><span class="line">    &#125;</span><br><span class="line">    return _statusFrames;</span><br><span class="line">&#125;</span><br><span class="line">#pragma mark - UITableView的数据源方法</span><br><span class="line">&#x2F;** 返回本组数据有多少行 *&#x2F;</span><br><span class="line">-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section&#123;</span><br><span class="line">    return self.statusFrames.count;</span><br><span class="line">&#125;</span><br><span class="line">#pragma mark 返回每一组的UITableViewcell</span><br><span class="line">-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath&#123;</span><br><span class="line">    &#x2F;&#x2F; 1,创建cell</span><br><span class="line">    MJStatusCell *cell &#x3D; [MJStatusCell cellWithTableView:tableView];</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 2,设置cell的数据和控件的frame</span><br><span class="line">    cell.statusFrame &#x3D; self.statusFrames[indexPath.row];</span><br><span class="line">    </span><br><span class="line">    return cell;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;** 每一行的高度 *&#x2F;</span><br><span class="line">-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&#123;</span><br><span class="line">    MJStatusFrame *statusFrame &#x3D; self.statusFrames[indexPath.row];</span><br><span class="line">    </span><br><span class="line">    return statusFrame.cellHeight;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>2，StatusCell.h中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line">@class MJStatusFrame;</span><br><span class="line">@interface MJStatusCell : UITableViewCell</span><br><span class="line">@property(nonatomic,strong) MJStatusFrame *statusFrame;</span><br><span class="line"> </span><br><span class="line">+(id)cellWithTableView:(UITableView *)tableView;</span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>StatusCell.m中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;MJStatusCell.h&quot;</span><br><span class="line">#import &quot;MJStatus.h&quot;</span><br><span class="line">#import &quot;MJStatusFrame.h&quot;</span><br><span class="line"> </span><br><span class="line">#define MJNameFont [UIFont systemFontOfSize:13]</span><br><span class="line">#define MJTextFont [UIFont systemFontOfSize:12]</span><br><span class="line">@interface MJStatusCell ()</span><br><span class="line">&#x2F;** </span><br><span class="line"> 头像 </span><br><span class="line">*&#x2F;</span><br><span class="line">@property(nonatomic,weak) UIImageView *iconImgView;</span><br><span class="line">&#x2F;** 昵称 *&#x2F;</span><br><span class="line">@property(nonatomic,weak) UILabel *nameLbl;</span><br><span class="line">&#x2F;** 会员图标 *&#x2F;</span><br><span class="line">@property(nonatomic,weak) UIImageView *vipImgView;</span><br><span class="line">&#x2F;** 正文 *&#x2F;</span><br><span class="line">@property(nonatomic,weak) UILabel *textLbl;</span><br><span class="line">&#x2F;** 配图 *&#x2F;</span><br><span class="line">@property(nonatomic,weak) UIImageView *pictureImgView;</span><br><span class="line"> </span><br><span class="line">@end</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">@implementation MJStatusCell</span><br><span class="line"> </span><br><span class="line">+(id)cellWithTableView:(UITableView *)tableView&#123;</span><br><span class="line">    static NSString *flag &#x3D; @&quot;status&quot;;</span><br><span class="line">    </span><br><span class="line">    MJStatusCell *cell &#x3D; [tableView dequeueReusableCellWithIdentifier:flag];</span><br><span class="line">    </span><br><span class="line">    if(cell &#x3D;&#x3D; nil)&#123;</span><br><span class="line">        cell &#x3D; [[MJStatusCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];</span><br><span class="line">    &#125;</span><br><span class="line">    return cell;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier</span><br><span class="line">&#123;</span><br><span class="line">    self &#x3D; [super initWithStyle:style reuseIdentifier:reuseIdentifier];</span><br><span class="line">    if (self) &#123;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;头像</span><br><span class="line">        UIImageView *iconImgView &#x3D; [[UIImageView alloc] init];</span><br><span class="line">        [self.contentView addSubview:iconImgView];</span><br><span class="line">        self.iconImgView &#x3D; iconImgView;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;昵称</span><br><span class="line">        UILabel *nameLbl &#x3D; [[UILabel alloc] init];</span><br><span class="line">        nameLbl.font &#x3D; MJNameFont;</span><br><span class="line">        [self.contentView addSubview:nameLbl];</span><br><span class="line">        self.nameLbl &#x3D; nameLbl;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;会员头像</span><br><span class="line">        UIImageView *vipImgView &#x3D; [[UIImageView alloc] init];</span><br><span class="line">        vipImgView.image &#x3D; [UIImage imageNamed:@&quot;vip&quot;];</span><br><span class="line">        [self.contentView addSubview:vipImgView];</span><br><span class="line">        self.vipImgView &#x3D; vipImgView;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;正文</span><br><span class="line">        UILabel *textLbl &#x3D; [[UILabel alloc] init];</span><br><span class="line">        textLbl.numberOfLines &#x3D; 0;</span><br><span class="line">        textLbl.font &#x3D; MJTextFont;</span><br><span class="line">        [self.contentView addSubview:textLbl];</span><br><span class="line">        self.textLbl &#x3D; textLbl;</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;配图</span><br><span class="line">        UIImageView *pictureImgView &#x3D; [[UIImageView alloc] init];</span><br><span class="line">        [self.contentView addSubview:pictureImgView];</span><br><span class="line">        self.pictureImgView &#x3D; pictureImgView;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">-(void)setStatusFrame:(MJStatusFrame *)statusFrame&#123;</span><br><span class="line">    _statusFrame &#x3D; statusFrame;</span><br><span class="line">    &#x2F;&#x2F;1,设置数据</span><br><span class="line">    [self settingData];</span><br><span class="line">    &#x2F;&#x2F;2，设置frame</span><br><span class="line">    [self settingFrame];</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;**</span><br><span class="line"> 设置数据</span><br><span class="line"> *&#x2F;</span><br><span class="line">-(void)settingData&#123;</span><br><span class="line">    &#x2F;** 头像 *&#x2F;</span><br><span class="line">    self.iconImgView.image &#x3D; [UIImage imageNamed:self.statusFrame.status.icon];</span><br><span class="line">    &#x2F;** 昵称 *&#x2F;</span><br><span class="line">    self.nameLbl.text &#x3D; self.statusFrame.status.name;</span><br><span class="line">    &#x2F;** 会员头像 *&#x2F;</span><br><span class="line">    if(self.statusFrame.status.vip)&#123;</span><br><span class="line">        self.vipImgView.hidden &#x3D; NO;</span><br><span class="line">        self.nameLbl.textColor &#x3D; [UIColor redColor];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.vipImgView.hidden &#x3D; YES;</span><br><span class="line">        self.nameLbl.textColor &#x3D; [UIColor blackColor];</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;** 正文 *&#x2F;</span><br><span class="line">    self.textLbl.text &#x3D; self.statusFrame.status.text;</span><br><span class="line">    &#x2F;** 配图 *&#x2F;</span><br><span class="line">    if(self.statusFrame.status.picture)&#123;</span><br><span class="line">        self.pictureImgView.hidden &#x3D; NO;</span><br><span class="line">        self.pictureImgView.image &#x3D; [UIImage imageNamed:self.statusFrame.status.picture];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.pictureImgView.hidden &#x3D; YES;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">&#x2F;**</span><br><span class="line"> 设置frame</span><br><span class="line"> *&#x2F;</span><br><span class="line">-(void)settingFrame&#123;</span><br><span class="line">    &#x2F;** 头像 *&#x2F;</span><br><span class="line">    </span><br><span class="line">    self.iconImgView.frame &#x3D; self.statusFrame.iconFrame;</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 昵称 *&#x2F;</span><br><span class="line">    self.nameLbl.frame &#x3D;self.statusFrame.nameFrame;</span><br><span class="line">  </span><br><span class="line">    &#x2F;** 会员头像 *&#x2F;</span><br><span class="line">    self.vipImgView.frame &#x3D; self.statusFrame.vipFrame;</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 正文 *&#x2F;</span><br><span class="line">    self.textLbl.frame &#x3D; self.statusFrame.textFrame;</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 配图 *&#x2F;</span><br><span class="line">    if(self.statusFrame.status.picture)&#123;</span><br><span class="line">         self.pictureImgView.frame &#x3D; self.statusFrame.pictureFrame;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>3, status.h中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation&#x2F;Foundation.h&gt;</span><br><span class="line"> </span><br><span class="line">@interface MJStatus : NSObject</span><br><span class="line">&#x2F;** 正文 *&#x2F;</span><br><span class="line">@property(nonatomic,copy) NSString *text;</span><br><span class="line">&#x2F;** 头像 *&#x2F;</span><br><span class="line">@property(nonatomic,copy) NSString *icon;</span><br><span class="line">&#x2F;** 昵称 *&#x2F;</span><br><span class="line">@property(nonatomic,copy) NSString *name;</span><br><span class="line">&#x2F;** 配图 *&#x2F;</span><br><span class="line">@property(nonatomic,copy) NSString *picture;</span><br><span class="line">&#x2F;** 会员 *&#x2F;</span><br><span class="line">@property(nonatomic,assign) BOOL vip;</span><br><span class="line"> </span><br><span class="line">+(id)statusWithDict:(NSDictionary *)dict;</span><br><span class="line">-(id)initWithDict:(NSDictionary *)dict;</span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>Status.m中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;MJStatus.h&quot;</span><br><span class="line"> </span><br><span class="line">@implementation MJStatus</span><br><span class="line"> </span><br><span class="line">+(id)statusWithDict:(NSDictionary *)dict&#123;</span><br><span class="line">    return [[self alloc] initWithDict:dict];</span><br><span class="line">&#125;</span><br><span class="line">-(id)initWithDict:(NSDictionary *)dict&#123;</span><br><span class="line">    if(self &#x3D; [super init])&#123;</span><br><span class="line">        [self setValuesForKeysWithDictionary:dict];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>4，StatusFrame.h文件中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation&#x2F;Foundation.h&gt;</span><br><span class="line">@class MJStatus;</span><br><span class="line"> </span><br><span class="line">@interface MJStatusFrame : NSObject</span><br><span class="line"> </span><br><span class="line">@property(nonatomic,assign,readonly) CGRect iconFrame;</span><br><span class="line">@property(nonatomic,assign,readonly) CGRect nameFrame;</span><br><span class="line">@property(nonatomic,assign,readonly) CGRect vipFrame;</span><br><span class="line">@property(nonatomic,assign,readonly) CGRect textFrame;</span><br><span class="line">@property(nonatomic,assign,readonly) CGRect pictureFrame;</span><br><span class="line"> </span><br><span class="line">@property(nonatomic,assign,readonly) CGFloat cellHeight;</span><br><span class="line"> </span><br><span class="line">@property(nonatomic,strong) MJStatus *status;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>StatusFrame.m中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#import &quot;MJStatusFrame.h&quot;</span><br><span class="line">#import &quot;MJStatus.h&quot;</span><br><span class="line"> </span><br><span class="line">#define MJNameFont [UIFont systemFontOfSize:13]</span><br><span class="line">#define MJTextFont [UIFont systemFontOfSize:12]</span><br><span class="line"> </span><br><span class="line">@implementation MJStatusFrame</span><br><span class="line"> </span><br><span class="line">-(void)setStatus:(MJStatus *)status&#123;</span><br><span class="line">    _status &#x3D; status;</span><br><span class="line">    CGFloat padding &#x3D; 10;</span><br><span class="line">    </span><br><span class="line">    CGFloat iconX &#x3D; padding;</span><br><span class="line">    CGFloat iconY &#x3D; padding;</span><br><span class="line">    CGFloat iconW &#x3D; 30;</span><br><span class="line">    CGFloat iconH &#x3D; 30;</span><br><span class="line">    </span><br><span class="line">    _iconFrame &#x3D; CGRectMake(iconX, iconY, iconW, iconH);</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 昵称 *&#x2F;</span><br><span class="line">    CGFloat nameX &#x3D; CGRectGetMaxX(_iconFrame) + padding;</span><br><span class="line">    CGSize nameMaxSize &#x3D; [self.status.name sizeWithFont:MJNameFont];</span><br><span class="line">    CGFloat nameW &#x3D; nameMaxSize.width;</span><br><span class="line">    CGFloat nameH &#x3D; nameMaxSize.height;</span><br><span class="line">    CGFloat nameY &#x3D; padding + (iconH - nameH) * 0.5;</span><br><span class="line">    _nameFrame &#x3D; CGRectMake(nameX, nameY, nameW, nameH);</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 会员头像 *&#x2F;</span><br><span class="line">    </span><br><span class="line">    CGFloat vipX &#x3D; CGRectGetMaxX(_nameFrame) + padding;</span><br><span class="line">    CGFloat vipY &#x3D; nameY;</span><br><span class="line">    CGFloat vipW &#x3D; 14;</span><br><span class="line">    CGFloat vipH &#x3D; 14;</span><br><span class="line">    </span><br><span class="line">    _vipFrame &#x3D; CGRectMake(vipX, vipY, vipW, vipH);</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 正文 *&#x2F;</span><br><span class="line">    CGFloat textX &#x3D; iconX;</span><br><span class="line">    CGFloat textY &#x3D; CGRectGetMaxY(_iconFrame) + padding;</span><br><span class="line">    CGFloat textW &#x3D; 300;</span><br><span class="line">    CGSize textMaxSize &#x3D; [self.status.text sizeWithFont:MJTextFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];</span><br><span class="line">    CGFloat textH &#x3D; textMaxSize.height;</span><br><span class="line">    _textFrame &#x3D; CGRectMake(textX, textY, textW, textH);</span><br><span class="line">    </span><br><span class="line">    &#x2F;** 配图 *&#x2F;</span><br><span class="line">    CGFloat pictureX &#x3D; iconX;</span><br><span class="line">    CGFloat pictureY &#x3D; CGRectGetMaxY(_textFrame) + padding;</span><br><span class="line">    CGFloat pictureW &#x3D; 100;</span><br><span class="line">    CGFloat pictureH &#x3D; 100;</span><br><span class="line">    _pictureFrame &#x3D; CGRectMake(pictureX, pictureY, pictureW, pictureH);</span><br><span class="line">    </span><br><span class="line">    if(self.status.picture)&#123;</span><br><span class="line">        _cellHeight &#x3D; CGRectGetMaxY(_pictureFrame) + padding;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        _cellHeight &#x3D; CGRectGetMaxY(_textFrame) + padding;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>虽然贴上了代码，还是要说一下这个过程：</p>
+<ul>
+<li><p>1，在控制器初始化的时候，从plist文件中将数据提取出来，然后放到Status这个模型中，在创建一个StatusFrame模型，这个StatusFrame模型中有一个属性是Status, 而数组中放入的就是StatusFrame这个模型对象。 在赋值的时候，就把各个控件的frame 以 cell的高度计算了出来。</p>
+</li>
+<li><p>2，控制器初始化完以后，会先加载一共有多少组这个方法，-(NSInteger)numberOfSectionsInTableView:  ,</p>
+</li>
+<li><p>3，继续加载每组有多少行这个方法：-(NSInteger)tableView:numberOfRowsInSection:</p>
+</li>
+<li><p>4，继续加载 -(CGFloat)tableView:heightForRowAtIndexPath: 这个方法，这个方法主要是返回表格中，每一行的高度，这时候，我们就可以从已经加载完的数组将cell的高度提取出来了。</p>
+</li>
+<li><p>5，加载完每一组高度这个方法之后，会继续加载 -(UITableViewCell *)tableView:cellForRowAtIndexPath: 这个方法是返回每一行的cell.  这段代码被调用的频率非常高，不用在这段代码中频繁创建cell,这样效率会有点低。现在粘上此段代码：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1,创建cell</span><br><span class="line">MJStatusCell *cell &#x3D; [MJStatusCell cellWithTableView:tableView];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2,设置cell的数据和控件的frame	</span><br><span class="line">cell.statusFrame &#x3D; self.statusFrames[indexPath.row];</span><br><span class="line"></span><br><span class="line">return cell;</span><br></pre></td></tr></table></figure>
+
+
+<p>第一行代码，就是创建一个cell,创建cell代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+(id)cellWithTableView:(UITableView *)tableView&#123;</span><br><span class="line"></span><br><span class="line">    static NSString *flag &#x3D; @&quot;status&quot;;</span><br><span class="line">    MJStatusCell *cell &#x3D; [tableView dequeueReusableCellWithIdentifier:flag];</span><br><span class="line">    if(cell &#x3D;&#x3D; nil)&#123;</span><br><span class="line">        cell &#x3D; [[MJStatusCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:flag];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return cell;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码是采用，先从缓存池中去查找，是否有被先前不用的cell ,如果没有，就去创建一个cell,如果有cell,直接返回cell,如果没有cell，就直接创建一个cell。当然，在创建cell的时候，我们会创建这个cell中的子控件。</p>
+<p>再看  cell.statusFrame = self.statusFrames[indexPath.row]; 这行代码，这行代码是将存在数组中的模型对象数据提取出来，赋值给cell的frame对象，在赋值的时候，我们会设置cell控件中的数据和空间的frame.<br>现在贴上赋值的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">-(void)setStatusFrame:(MJStatusFrame *)statusFrame&#123;</span><br><span class="line"></span><br><span class="line">    _statusFrame &#x3D; statusFrame;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;1,设置数据</span><br><span class="line">    [self settingData];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;2，设置frame</span><br><span class="line">    [self settingFrame];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> 设置数据</span><br><span class="line"> *&#x2F;</span><br><span class="line">-(void)settingData&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 头像 *&#x2F;</span><br><span class="line">    self.iconImgView.image &#x3D; [UIImage imageNamed:self.statusFrame.status.icon];</span><br><span class="line"></span><br><span class="line">    &#x2F;** 昵称 *&#x2F;</span><br><span class="line">    self.nameLbl.text &#x3D; self.statusFrame.status.name;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 会员头像 *&#x2F;</span><br><span class="line">    if(self.statusFrame.status.vip)&#123;</span><br><span class="line">        self.vipImgView.hidden &#x3D; NO;</span><br><span class="line">        self.nameLbl.textColor &#x3D; [UIColor redColor];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.vipImgView.hidden &#x3D; YES;</span><br><span class="line">        self.nameLbl.textColor &#x3D; [UIColor blackColor];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 正文 *&#x2F;</span><br><span class="line">    self.textLbl.text &#x3D; self.statusFrame.status.text;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 配图 *&#x2F;</span><br><span class="line">    if(self.statusFrame.status.picture)&#123;</span><br><span class="line">        self.pictureImgView.hidden &#x3D; NO;</span><br><span class="line">        self.pictureImgView.image &#x3D; [UIImage imageNamed:self.statusFrame.status.picture];</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        self.pictureImgView.hidden &#x3D; YES;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> 设置frame</span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">-(void)settingFrame&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 头像 *&#x2F;</span><br><span class="line">    self.iconImgView.frame &#x3D; self.statusFrame.iconFrame;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 昵称 *&#x2F;</span><br><span class="line">    self.nameLbl.frame &#x3D;self.statusFrame.nameFrame;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 会员头像 *&#x2F;</span><br><span class="line">    self.vipImgView.frame &#x3D; self.statusFrame.vipFrame;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 正文 *&#x2F;</span><br><span class="line">    self.textLbl.frame &#x3D; self.statusFrame.textFrame;</span><br><span class="line"></span><br><span class="line">    &#x2F;** 配图 *&#x2F;</span><br><span class="line">    if(self.statusFrame.status.picture)&#123;</span><br><span class="line">         self.pictureImgView.frame &#x3D; self.statusFrame.pictureFrame;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过代码自定义cell(cell的高度不一致)</p>
+<p>总结：</p>
+<ul>
+<li><p>1，新建一个继承自UITableViewCell类。</p>
+</li>
+<li><p>2，重新这个类的initWithStyle:reuseIdentifier:方法</p>
+<pre><code>a,添加所有需要显示的子控件（不需要设置子控件的数据和frame,子控件要添加到contentView中）
+
+b,进行子控件的一次性的属性设置(有些属性只需要设置一次，比如，字体，固定的图片等)</code></pre></li>
+<li><p>3，提供2个模型</p>
+<pre><code>a,数据模型：存放文字数据\图片数据
+
+b,frame模型：存放数据模型，以及所有子控件的frame,以及cell的高度</code></pre></li>
+<li><p>4，cell拥有一个frame模型（不要直接拥有数据模型）</p>
+</li>
+<li><p>5，重写frame模型属性的setter方法：在这个方法中设置子控件的显示数据和frame</p>
+</li>
+<li><p>6, frame模型数据的初始化采用懒加载的方式（每一个cell对应的frame模型数据只加载一次）</p>
+</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>使用代码创建UITableViewCell</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="庞占立">庞占立</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-04-03, 14:49:35</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-03, 15:16:11</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/" title="使用代码创建UITableViewCell">http://pangzhanli.top/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#C','#OC动画','#Foundation','#登录','#OC','#UITableViewCell','#上传',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

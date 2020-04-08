@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>IOS旋转菜单 | Hexo</title>
+  <meta name="keywords" content=" OC动画 ">
+  <meta name="description" content="IOS旋转菜单 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="pangzhanli.top">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://pangzhanli.top/CNAME.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="pangzhanli.top">
+<meta property="article:published_time" content="2020-04-07T03:41:21.255Z">
+<meta property="article:modified_time" content="2020-04-02T11:28:34.122Z">
+<meta property="article:author" content="庞占立">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>庞占立</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(26)</small></div></li>
+    
+        
+            
+            <li><div data-rel="C语言">C语言<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Hexo">Hexo<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="OC">OC<small>(18)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="26">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">C</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">OC动画</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Foundation</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">登录</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">OC</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">UITableViewCell</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">上传</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="C语言 "
+           href="/2020/04/03/c/c-enum-desc/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中枚举的简单介绍">C语言中枚举的简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:26:49">2020/04/03</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/03/c/c-maopaopaixu/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中的冒泡排序简单介绍">C语言中的冒泡排序简单介绍</span>
+            <span class="post-date" title="2020-04-03 10:55:10">2020/04/03</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/03/c/c-pointer-desc/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中指针的简单介绍">C语言中指针的简单介绍</span>
+            <span class="post-date" title="2020-04-03 10:58:59">2020/04/03</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E8%BE%93%E5%87%BA/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言中的字符串的定义及初始化和输出">C语言中的字符串的定义及初始化和输出</span>
+            <span class="post-date" title="2020-04-02 19:44:45">2020/04/02</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言基本数据类型简单介绍">C语言基本数据类型简单介绍</span>
+            <span class="post-date" title="2020-04-02 19:39:11">2020/04/02</span>
+        </a>
+        
+        <a  class="C语言 "
+           href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E4%B8%AD%E7%9A%84%E8%87%AA%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/"
+           data-tag="C"
+           data-author="" >
+            <span class="post-title" title="C语言基本运算中的自增运算符和自减运算符以及三目运算符">C语言基本运算中的自增运算符和自减运算符以及三目运算符</span>
+            <span class="post-date" title="2020-04-02 19:42:20">2020/04/02</span>
+        </a>
+        
+        <a  class="Hexo "
+           href="/2020/04/02/hexo/hello-hexo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo简单介绍">Hexo简单介绍</span>
+            <span class="post-date" title="2020-04-02 16:52:27">2020/04/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/04/02/hexo/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-04-02 19:28:34">2020/04/02</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Ani/oc-Ani-TableViewHeader/"
+           data-tag="OC动画"
+           data-author="" >
+            <span class="post-title" title="UITableViewHeader头部拉伸变化">UITableViewHeader头部拉伸变化</span>
+            <span class="post-date" title="2020-04-03 18:29:50">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/"
+           data-tag="OC动画"
+           data-author="" >
+            <span class="post-title" title="IOS旋转菜单">IOS旋转菜单</span>
+            <span class="post-date" title="2020-04-03 17:27:18">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Ani/oc-Ani-customProgressCircle/"
+           data-tag="OC动画"
+           data-author="" >
+            <span class="post-title" title="IOS-自制进度圈">IOS-自制进度圈</span>
+            <span class="post-date" title="2020-04-03 17:36:16">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-strFile/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation中将字符串写入到磁盘文件上">Foundation中将字符串写入到磁盘文件上</span>
+            <span class="post-date" title="2020-04-03 14:43:18">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-mulString/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation中的NSMutableString的创建">Foundation中的NSMutableString的创建</span>
+            <span class="post-date" title="2020-04-03 14:41:37">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-string/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation框架中字符串的创建">Foundation框架中字符串的创建</span>
+            <span class="post-date" title="2020-04-03 14:40:07">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Foundation/oc-foundation-struct/"
+           data-tag="Foundation"
+           data-author="" >
+            <span class="post-title" title="Foundation中结构体的简单介绍">Foundation中结构体的简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:30:33">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Login/oc-Login-AppleLogin/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS苹果登录(sign in with apple)">IOS苹果登录(sign in with apple)</span>
+            <span class="post-date" title="2020-04-03 18:47:31">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Other/oc_block_desc/"
+           data-tag="OC"
+           data-author="" >
+            <span class="post-title" title="OC中的Block简单介绍">OC中的Block简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:07:19">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Other/oc_category_desc/"
+           data-tag="OC"
+           data-author="" >
+            <span class="post-title" title="OC中的Category简单介绍">OC中的Category简单介绍</span>
+            <span class="post-date" title="2020-04-03 11:01:01">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Other/oc_class_init/"
+           data-tag="OC"
+           data-author="" >
+            <span class="post-title" title="OC中类的创建简单介绍">OC中类的创建简单介绍</span>
+            <span class="post-date" title="2020-04-03 14:13:32">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/"
+           data-tag="UITableViewCell"
+           data-author="" >
+            <span class="post-title" title="使用代码创建UITableViewCell">使用代码创建UITableViewCell</span>
+            <span class="post-date" title="2020-04-03 14:49:35">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/UITableView/oc-UITableViewCell-xib/"
+           data-tag="UITableViewCell"
+           data-author="" >
+            <span class="post-title" title="使用xib文件创建UITableViewCell">使用xib文件创建UITableViewCell</span>
+            <span class="post-date" title="2020-04-03 17:15:58">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Upload/oc-Upload-putAndPost/"
+           data-tag="上传"
+           data-author="" >
+            <span class="post-title" title="IOS文件上传PUT和POST">IOS文件上传PUT和POST</span>
+            <span class="post-date" title="2020-04-03 18:55:42">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/03/oc/Upload/oc-Upload-nativeUpload/"
+           data-tag="上传"
+           data-author="" >
+            <span class="post-title" title="ios原生API文件上传(NSURLSession)">ios原生API文件上传(NSURLSession)</span>
+            <span class="post-date" title="2020-04-03 19:06:04">2020/04/03</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/07/oc/Login/oc-Login-TouchID/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS指纹登录">IOS指纹登录</span>
+            <span class="post-date" title="2020-04-07 16:22:33">2020/04/07</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/07/oc/Login/oc-Login-AKeyLogin/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS一键登录">IOS一键登录</span>
+            <span class="post-date" title="2020-04-07 18:26:28">2020/04/07</span>
+        </a>
+        
+        <a  class="OC "
+           href="/2020/04/08/oc/Login/oc-Login-QRCode/"
+           data-tag="登录"
+           data-author="" >
+            <span class="post-title" title="IOS扫码登录">IOS扫码登录</span>
+            <span class="post-date" title="2020-04-08 18:07:19">2020/04/08</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-oc/Ani/oc-Ani-rotatingMenu" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">IOS旋转菜单</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="OC">OC</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">OC动画</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-04-03 17:35:21'>2020-04-03 17:27</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们先看一下，最终要实现的情况：如图：</p>
+<p><img src="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/oc-Ani-rotatingMenu-1.jpeg" alt></p>
+<p>再看一下，项目代码的结构图：</p>
+<p><img src="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/oc-Ani-rotatingMenu-2.jpeg" alt></p>
+<p>实现思路：</p>
+<ul>
+<li><p>1，自定义view类和xib文件，将view类和xib文件关联上。</p>
+</li>
+<li><p>2，在view的初始化方法中，添加自定义按钮。在添加按钮的时候，将按钮的图片,tag,bounds,以及监听添加上。并且将按钮添加到按钮集合中，下面要用到集合做循环遍历用。</p>
+</li>
+<li><p>3，在layoutSubviews方法中，设置按钮的位置，如果按钮不在零点，那么就在当前的位置。并且把菜单按钮放到最上边。</p>
+</li>
+<li><p>4，当菜单按钮别点击时，先判断是需要打开菜单，还是关闭菜单。(通过判断按钮是否旋转过就可以判断)</p>
+</li>
+<li><p>5，通过组合动画，一个是平移，一个是旋转。平移的时候，总共分为三阶段，每一阶段都有不同的平移位置，旋转角度。</p>
+</li>
+<li><p>6，在动画执行之后，一定不要让动画再回到原先的位置。因为平移和旋转都是在图层上做的操作，不是真实的，按钮的真实位置还在动画之前的位置呢，所以，要设置一下按钮的真实位置，这样，按钮就可以在点击的时候，就会有反应了。</p>
+</li>
+<li><p>7，点击按钮的时候，通知代理，按钮被人点击了。</p>
+</li>
+</ul>
+<p><img src="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/oc-Ani-rotatingMenu-3.jpeg" alt></p>
+<p>第一部分：视图控制器的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;CZViewController.h&quot;</span><br><span class="line"></span><br><span class="line">#import &quot;CZBottomView.h&quot;</span><br><span class="line"></span><br><span class="line">@interface CZViewController () &lt;CZBottomViewDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property (weak, nonatomic) IBOutletUIView *bottomView;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation CZViewController</span><br><span class="line"></span><br><span class="line">- (void)viewDidLoad</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    [superviewDidLoad];</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    CZBottomView *btmView &#x3D; [CZBottomViewbottomView];</span><br><span class="line"></span><br><span class="line">    btmView.delegate &#x3D;self;</span><br><span class="line"></span><br><span class="line">    [self.bottomViewaddSubview:btmView];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> *  CZBottomView的代理方法</span><br><span class="line"></span><br><span class="line"> *  @param bottomButton 当前被点击的按钮</span><br><span class="line"></span><br><span class="line"> *  @param index        被点击按钮的索引</span><br><span class="line"></span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(void)bottomView:(CZBottomView *)bottomView didBtnClick:(CZBottomButton *)bottomButton index:(NSInteger)index&#123;</span><br><span class="line"></span><br><span class="line">   NSLog(@&quot;点击了第%d个按钮&quot;,index);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二部分：</p>
+<p>1，CZBottomView的头文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@class CZBottomButton,CZBottomView;</span><br><span class="line"></span><br><span class="line">@protocol CZBottomViewDelegate &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">@optional</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;按钮的点击事件</span><br><span class="line"></span><br><span class="line">-(void)bottomView:(CZBottomView *)bottomView didBtnClick:(CZBottomButton *)bottomButton index:(NSInteger)index;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface CZBottomView :UIView</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;代理</span><br><span class="line"></span><br><span class="line">@property(nonatomic,weak)id&lt;CZBottomViewDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;快速创建</span><br><span class="line"></span><br><span class="line">+(instancetype)bottomView;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>2，CZBottomView的实现文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;CZBottomView.h&quot;</span><br><span class="line"></span><br><span class="line">#import &quot;CZBottomButton.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;动画持续时间</span><br><span class="line"></span><br><span class="line">#define AniDuration 3.0</span><br><span class="line"></span><br><span class="line">@interface CZBottomView ()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;最左边的菜单按钮</span><br><span class="line"></span><br><span class="line">@property (weak, nonatomic) IBOutletUIButton *menuBtn;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;所有按钮的集合</span><br><span class="line"></span><br><span class="line">@property(nonatomic,strong)NSMutableArray *btns;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;最左边菜单按钮的点击事件</span><br><span class="line"></span><br><span class="line">- (IBAction)menuBtnClick;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@implementation CZBottomView</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(NSMutableArray *)btns&#123;</span><br><span class="line"></span><br><span class="line">   if(!_btns)&#123;</span><br><span class="line"></span><br><span class="line">       _btns &#x3D; [NSMutableArrayarray];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   return _btns;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> *  快速创建</span><br><span class="line"></span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">+(instancetype)bottomView&#123;</span><br><span class="line"></span><br><span class="line">   return [[[NSBundlemainBundle] loadNibNamed:@&quot;CZBottomView&quot;owner:niloptions:nil]lastObject];</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (id)initWithFrame:(CGRect)frame</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">   self &#x3D; [superinitWithFrame:frame];</span><br><span class="line"></span><br><span class="line">   if (self) &#123;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F; 初始化数据</span><br><span class="line"></span><br><span class="line">        [selfsetUp];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return self;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(id)initWithCoder:(NSCoder *)aDecoder&#123;</span><br><span class="line"></span><br><span class="line">   if(self &#x3D; [superinitWithCoder:aDecoder])&#123;</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F; 初始化数据</span><br><span class="line"></span><br><span class="line">        [selfsetUp];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return self;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> *  初始化数据</span><br><span class="line"></span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">-(void)setUp&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;添加3个按钮</span><br><span class="line"></span><br><span class="line">    [selfaddBtnWithImgName:@&quot;menu_btn_call&quot;andTag:0];</span><br><span class="line"></span><br><span class="line">    [selfaddBtnWithImgName:@&quot;menu_btn_cheyou&quot;andTag:1];</span><br><span class="line"></span><br><span class="line">    [selfaddBtnWithImgName:@&quot;menu_btn_tixing&quot;andTag:2];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> *  添加按钮</span><br><span class="line"></span><br><span class="line"> *</span><br><span class="line"></span><br><span class="line"> *  @param imgName 按钮图片的名称</span><br><span class="line"></span><br><span class="line"> *  @param tag     tag</span><br><span class="line"></span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">-(void)addBtnWithImgName:(NSString *)imgName andTag:(NSInteger)tag&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;初始化按钮</span><br><span class="line"></span><br><span class="line">    CZBottomButton *btn &#x3D; [CZBottomButtonbuttonWithType:UIButtonTypeCustom];</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;设置按钮的图片</span><br><span class="line"></span><br><span class="line">    [btn setBackgroundImage:[UIImageimageNamed:imgName] forState:UIControlStateNormal];</span><br><span class="line"></span><br><span class="line">    btn.tag &#x3D; tag;</span><br><span class="line"></span><br><span class="line">    btn.bounds &#x3D;CGRectMake(0,0, 44, 44);</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;添加监听</span><br><span class="line"></span><br><span class="line">    [btn addTarget:selfaction:@selector(btnClick:)forControlEvents:UIControlEventTouchUpInside];</span><br><span class="line"></span><br><span class="line">    [selfaddSubview:btn];</span><br><span class="line"></span><br><span class="line">    [self.btnsaddObject:btn];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> *  按钮的点击事件</span><br><span class="line"></span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">-(void)btnClick:(CZBottomButton *)btn&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;先判断代理是否实现了此方法</span><br><span class="line"></span><br><span class="line">   if([self.delegaterespondsToSelector:@selector(bottomView:didBtnClick:index:)])&#123;</span><br><span class="line"></span><br><span class="line">        [self.delegatebottomView:selfdidBtnClick:btn index:btn.tag];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(void)layoutSubviews&#123;</span><br><span class="line"></span><br><span class="line">    [superlayoutSubviews];</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;设置按钮的frame</span><br><span class="line"></span><br><span class="line">    for (CZBottomButton *btnin self.btns) &#123;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;如果按钮的位置不是0，那么将按钮置于它当前的位置，如果是0，那么放置在菜单按钮的位置</span><br><span class="line"></span><br><span class="line">       if(!CGPointEqualToPoint(btn.currentPoint,CGPointZero))&#123;</span><br><span class="line"></span><br><span class="line">            btn.center &#x3D; btn.currentPoint;</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line"></span><br><span class="line">            btn.center &#x3D;self.menuBtn.center;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;将菜单按钮放到最上边</span><br><span class="line"></span><br><span class="line">    [selfbringSubviewToFront:self.menuBtn];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- (IBAction)menuBtnClick &#123;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;主菜单按钮也要旋转</span><br><span class="line"></span><br><span class="line">    BOOL isOpen &#x3D;CGAffineTransformIsIdentity(self.menuBtn.transform);</span><br><span class="line"></span><br><span class="line">    [UIViewanimateWithDuration:AniDurationanimations:^&#123;</span><br><span class="line"></span><br><span class="line">       if(isOpen)&#123;</span><br><span class="line"></span><br><span class="line">           &#x2F;&#x2F;打开</span><br><span class="line"></span><br><span class="line">            self.menuBtn.transform &#x3D; CGAffineTransformMakeRotation(M_PI_4);</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line"></span><br><span class="line">           &#x2F;&#x2F;关闭</span><br><span class="line"></span><br><span class="line">            self.menuBtn.transform &#x3D;CGAffineTransformIdentity;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    [selfopenBtn:isOpen];</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"></span><br><span class="line"> *  是否打开按钮</span><br><span class="line"></span><br><span class="line"> *&#x2F;</span><br><span class="line"></span><br><span class="line">-(void)openBtn:(BOOL)isOpen&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;按钮间隔的位置</span><br><span class="line"></span><br><span class="line">   CGFloat padding &#x3D; 80;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;菜单按钮的位置</span><br><span class="line"></span><br><span class="line">   CGPoint menuCenter &#x3D; self.menuBtn.center;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;平移，旋转</span><br><span class="line"></span><br><span class="line">   for (int i&#x3D;0; i&lt;self.btns.count; i++) &#123;</span><br><span class="line"></span><br><span class="line">       CZBottomButton *btn &#x3D; self.btns[i];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;x轴需要移动的距离</span><br><span class="line"></span><br><span class="line">       CGFloat move &#x3D; (i+1) * padding;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;按钮中心点</span><br><span class="line"></span><br><span class="line">       CGPoint btnCenter &#x3D; btn.center;</span><br><span class="line"></span><br><span class="line">        btnCenter.x +&#x3D; move;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;平移动画</span><br><span class="line"></span><br><span class="line">        CAKeyframeAnimation *keyTranslationAni &#x3D; [CAKeyframeAnimationanimation];</span><br><span class="line"></span><br><span class="line">        keyTranslationAni.keyPath &#x3D;@&quot;position&quot;;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;最开始的位置</span><br><span class="line"></span><br><span class="line">       NSValue *value1 &#x3D; [NSValuevalueWithCGPoint:self.menuBtn.center];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;第一阶段末尾位置</span><br><span class="line"></span><br><span class="line">       NSValue *value2 &#x3D; [NSValuevalueWithCGPoint:CGPointMake(menuCenter.x + move *0.3, menuCenter.y)];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;第二阶段末尾位置</span><br><span class="line"></span><br><span class="line">       NSValue *value3 &#x3D; [NSValuevalueWithCGPoint:CGPointMake(menuCenter.x + move *1.1, menuCenter.y)];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;第三阶段末尾位置</span><br><span class="line"></span><br><span class="line">       NSValue *value4 &#x3D; [NSValuevalueWithCGPoint:CGPointMake(menuCenter.x + move, menuCenter.y)];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;如果是打开，那么顺序是1,2,3,4,如果是要关闭菜单，那么顺序是4，3，2，1</span><br><span class="line"></span><br><span class="line">       if(isOpen)&#123;</span><br><span class="line"></span><br><span class="line">            keyTranslationAni.values &#x3D;@[value1,value2,value3,value4];</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line"></span><br><span class="line">            keyTranslationAni.values &#x3D;@[value4,value3,value2,value1];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;旋转动画</span><br><span class="line"></span><br><span class="line">        CAKeyframeAnimation *rotationAni &#x3D; [CAKeyframeAnimationanimation];</span><br><span class="line"></span><br><span class="line">        rotationAni.keyPath &#x3D;@&quot;transform.rotation&quot;;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;如果是打开，显示0,2PI,4PI,2PI  ,如果是要关闭菜单，那么顺序是0,2PI,0,-2PI</span><br><span class="line"></span><br><span class="line">       if(isOpen)&#123;</span><br><span class="line"></span><br><span class="line">            rotationAni.values &#x3D;@[@(0),@(M_PI *2),@(M_PI *4),@(M_PI *2)];</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line"></span><br><span class="line">            rotationAni.values &#x3D;@[@(0),@(M_PI *2),@(0),@(-M_PI *2)];</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;组动画</span><br><span class="line"></span><br><span class="line">        CAAnimationGroup *group &#x3D; [CAAnimationGroupanimation];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;动画持续时间</span><br><span class="line"></span><br><span class="line">        group.duration &#x3D;AniDuration;</span><br><span class="line"></span><br><span class="line">        group.animations &#x3D;@[keyTranslationAni,rotationAni];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;动画结束之后，不要回到原先的位置</span><br><span class="line"></span><br><span class="line">        group.removedOnCompletion &#x3D;NO;</span><br><span class="line"></span><br><span class="line">        group.fillMode &#x3D;kCAFillModeForwards;</span><br><span class="line"></span><br><span class="line">        [btn.layeraddAnimation:group forKey:nil];</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;设置按钮的当前位置</span><br><span class="line"></span><br><span class="line">       if(isOpen)&#123;</span><br><span class="line"></span><br><span class="line">            btn.currentPoint &#x3D; btnCenter;</span><br><span class="line"></span><br><span class="line">        &#125;else&#123;</span><br><span class="line"></span><br><span class="line">            btn.currentPoint &#x3D;self.menuBtn.center;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">                </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>第三部分：</p>
+<p>1，CZBottomButton的头文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line"></span><br><span class="line">@interface CZBottomButton :UIButton</span><br><span class="line"></span><br><span class="line">@property(nonatomic,assign)CGPoint currentPoint;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>2，CZBottomButton的实现文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;CZBottomButton.h&quot;</span><br><span class="line">@implementation CZBottomButton</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>IOS旋转菜单</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="庞占立">庞占立</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-04-03, 17:27:18</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-03, 17:35:21</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/" title="IOS旋转菜单">http://pangzhanli.top/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#C','#OC动画','#Foundation','#登录','#OC','#UITableViewCell','#上传',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
