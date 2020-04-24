@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Foundation中结构体的简单介绍 | Hexo</title>
-  <meta name="keywords" content=" Foundation ">
-  <meta name="description" content="Foundation中结构体的简单介绍 | Hexo">
+  <title>iphone屏幕尺寸，分辨率， PPI详细数据对比 | Hexo</title>
+  <meta name="keywords" content=" 屏幕 ">
+  <meta name="description" content="iphone屏幕尺寸，分辨率， PPI详细数据对比 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="做自己爱做的事，爱自己在做的事！">
 <meta property="og:type" content="website">
@@ -566,9 +566,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-oc/Foundation/oc-foundation-struct" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-oc/Screen/oc-screenSize-detail" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Foundation中结构体的简单介绍</h1>
+        <h1 class="article-title">iphone屏幕尺寸，分辨率， PPI详细数据对比</h1>
     
     <div class="article-meta">
         
@@ -583,14 +583,14 @@
         
         <span class="tag">
             
-            <a class="color1">Foundation</a>
+            <a class="color3">屏幕</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-03 14:39:06'>2020-04-03 14:30</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-24 16:00:44'>2020-04-24 15:56</time>
         
     </div>
     <div class="article-meta">
@@ -628,115 +628,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一：先看一下，在c语言中定义的结构体：</p>
-<pre><code>//定义了Date这种结构体类型
-
-struct Date{
-
-    int year;
-
-    int month;
-
-    int day;
-
-};
-
-//定义结构体变量
-
-struct Date d={2014,7,4};</code></pre><p>   NSLog(@”year is %i,month is %i,day is %i”,d.year,d.month,d.day);</p>
-<p>   d.day=6;</p>
-<p>   NSLog(@”day is %i”,d.day);</p>
-<p>如上事例中的</p>
-<p>struct Date{</p>
-<pre><code>    int year;
-
-    int month;
-
-    int day;
-
-};</code></pre><p>定义了一个结构体类型。</p>
-<p>定义变量时：</p>
-<p>struct Date d={2014,7,4};</p>
-<p>使用：d.year,d.month,d.day</p>
-<p>我们也可以使用typedef来定义一个结构体类型：如：</p>
-<pre><code>typedef struct {
-
-    int year;
-
-    int month;
-
-    int day;
-
-
-
-} MyDate;
-
-MyDate d={2014,7,4};
-
-NSLog(@&quot;year is %i,month is %i, day is %i&quot;,d.year,d.month,d.day);</code></pre><p>二：Foundation中的结构体<br>Foundation常用的结构体有：NSRange,NSPoint,NSSize,NSRect</p>
-<p>1,NSRange的介绍：<br>我们先看一下，在NSRange.h中，NSRange的定义：<br>typedef struct _NSRange {</p>
-<pre><code>NSUInteger location;
-
-NSUInteger length;</code></pre><p>} NSRange;</p>
-<p>这个结构体用来表示事物的一个范围，通常是字符串里的字符范围或者集合里地元素范围。其中，location表示该范围的起始位置，length表示该范围内所含的元素个数。<br>比如，在 “I Love You” 中，Love可以用location为2，length为4的范围来表示。<br>NSRange创建方式有3种：<br>a,  第一种，直接给成员变量赋值</p>
-<pre><code>NSRange range;
-
-range.location=10;
-
-range.length=4;</code></pre><p>b, 第二种，应用c语言的聚合结构赋值机制</p>
-<pre><code>NSRangerange={8,3};</code></pre><p>c, 第三种，应用Foundation框架提供的一个快捷函数NSMakeRange</p>
-<pre><code>NSRange range=NSMakeRange(12,3);</code></pre><p>使用，可以直接通过调用变量名引用，也可以将变量转换成字符串输出，比如：</p>
-<p>通过变量名称引用：</p>
-<p>NSLog(@”location is %zi”,range.location);//其中z代表无符号</p>
-<p>将变量转换成字符串输出，调用了NSString中的一个函数 NSStringFromRange</p>
-<p>NSString *str=NSStringFromRange(range);</p>
-<p>2,NSPoint的介绍：</p>
-<p>先看一下NSPoint的定义：<br>   struct CGPoint {</p>
-<pre><code>CGFloat x;
-
-CGFloat y;</code></pre><p>   };</p>
-<p>   typedef structCGPoint CGPoint;</p>
-<p>其中CGPoint和NSPoint是相等的</p>
-<p>这个结构体代表的时平面中的一个点（x,y）</p>
-<p>创建方式有3种：<br>a,直接赋值<br>    NSPoint p;</p>
-<pre><code>p.x=8;
-
-p.y=10;</code></pre><p>b,调用NSMakePoint函数创建</p>
-<p>NSPoint p=NSMakePoint(3, 5);</p>
-<p>c,调用CGPointMake函数创建</p>
-<p>NSPoint p=CGPointMake(6,8);<br>使用：<br>NSString *str=NSStringFromPoint(p);</p>
-<p>3,NSSize的介绍：</p>
-<p>先看一下NSSize的定义：<br>   struct CGSize {</p>
-<pre><code>CGFloat width;
-
-CGFloat height;</code></pre><p>   };</p>
-<p>   typedef structCGSize CGSize;</p>
-<p>其中CGSize和NSSize是相等的<br>这个可以用来代表布局，或者是一个按钮的宽度和高度。</p>
-<p>创建方式有3种：<br>a,直接赋值</p>
-<pre><code>NSSize size;
-
-size.width=100;
-
-size.height=80;</code></pre><p>b,调用NSMakeSize函数来创建<br>NSSizesize=NSMakeSize(50,60);</p>
-<p>c,调用CGSizeMake函数来创建</p>
-<p>NSSizesize=CGSizeMake(40,50);</p>
-<p>使用:<br>NSString *str=NSStringFromSize(size);</p>
-<p>4,NSRect的介绍：<br>先看一下NSRect的定义：<br>struct CGRect {</p>
-<p>  CGPoint origin;</p>
-<p>  CGSize size;</p>
-<p>};</p>
-<p>typedef structCGRect CGRect;</p>
-<p>其中CGRect和NSRect是一样的<br>这个结构体用来存储宽度和高度以及横坐标和纵坐标</p>
-<p>a,直接赋值<br>    NSRect rect;</p>
-<pre><code>rect.size.height=8;
-
-rect.size.width=10;
-
-rect.origin.x=40;
-
-rect.origin.y=50;</code></pre><p>b,调用NSMakeRect函数创建<br>    NSRect rect=NSMakeRect(100,80,10,8);</p>
-<p>c,调用CGRectMake函数创建</p>
-<pre><code>NSRect rect=CGRectMake(100,80,10,8);</code></pre><p>使用：<br>    NSString *str=NSStringFromRect(rect);</p>
+        <p><img src="/2020/04/24/oc/Screen/oc-screenSize-detail/oc-screenSize-detail-1.png" alt></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -750,12 +642,12 @@ rect.origin.y=50;</code></pre><p>b,调用NSMakeRect函数创建<br>    NSRect re
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Foundation中结构体的简单介绍</p>
+    <p><span class="copy-title">文章标题:</span>iphone屏幕尺寸，分辨率， PPI详细数据对比</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="庞占立">庞占立</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-04-03, 14:30:33</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-03, 14:39:06</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/03/oc/Foundation/oc-foundation-struct/" title="Foundation中结构体的简单介绍">http://pangzhanli.top/2020/04/03/oc/Foundation/oc-foundation-struct/</a>
+    <p><span class="copy-title">发布时间:</span>2020-04-24, 15:56:37</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-24, 16:00:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/24/oc/Screen/oc-screenSize-detail/" title="iphone屏幕尺寸，分辨率， PPI详细数据对比">http://pangzhanli.top/2020/04/24/oc/Screen/oc-screenSize-detail/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
