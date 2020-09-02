@@ -1,7 +1,9 @@
 ---
 title: Foundation框架中字符串的创建
 date: 2020-04-03 14:40:07
-categories: OC
+categories:
+- OC
+- Foundation
 tags: Foundation
 ---
 

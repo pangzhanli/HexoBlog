@@ -1,7 +1,9 @@
 ---
 title: 使用代码创建UITableViewCell
 date: 2020-04-03 14:49:35
-categories: OC
+categories:
+- OC
+- UITableView
 tags: UITableViewCell
 ---
 

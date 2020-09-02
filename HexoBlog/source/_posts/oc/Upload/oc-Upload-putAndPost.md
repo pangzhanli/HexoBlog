@@ -1,7 +1,9 @@
 ---
 title: IOS文件上传PUT和POST
 date: 2020-04-03 18:55:42
-categories: OC
+categories:
+- OC
+- 上传
 tags: 上传
 ---
 

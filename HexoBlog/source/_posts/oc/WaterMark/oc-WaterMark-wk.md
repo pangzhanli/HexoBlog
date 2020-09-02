@@ -1,7 +1,9 @@
 ---
 title: 水印
 date: 2020-04-15 17:38:27
-categories: OC
+categories:
+- OC
+- 水印
 tags: [动画,水印]
 ---
 

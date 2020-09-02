@@ -1,7 +1,9 @@
 ---
 title: Foundation中的NSMutableString的创建
 date: 2020-04-03 14:41:37
-categories: OC
+categories:
+- OC
+- Foundation
 tags: Foundation
 ---
 

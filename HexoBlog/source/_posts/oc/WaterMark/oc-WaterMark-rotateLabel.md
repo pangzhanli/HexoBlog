@@ -1,7 +1,9 @@
 ---
 title: 旋转UILabel
 date: 2020-04-15 17:16:51
-categories: OC
+categories:
+- OC
+- 水印
 tags: [动画,水印]
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: ios原生API文件上传(NSURLSession)
 date: 2020-04-03 19:06:04
-categories: OC
+categories:
+- OC
+- 上传
 tags: 上传
 ---
 

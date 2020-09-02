@@ -133,7 +133,8 @@ ignore:
 
 # 主题配置
 ## Themes: https://hexo.io/themes/
-theme: 3-hexo
+#theme: 3-hexo
+theme: Wikitten
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

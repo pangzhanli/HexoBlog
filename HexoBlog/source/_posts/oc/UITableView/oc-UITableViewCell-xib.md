@@ -1,7 +1,9 @@
 ---
 title: 使用xib文件创建UITableViewCell
 date: 2020-04-03 17:15:58
-categories: OC
+categories:
+- OC
+- UITableView
 tags: UITableViewCell
 ---
 

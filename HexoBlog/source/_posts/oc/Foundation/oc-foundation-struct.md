@@ -1,7 +1,9 @@
 ---
 title: Foundation中结构体的简单介绍
 date: 2020-04-03 14:30:33
-categories: OC
+categories:
+- OC
+- Foundation
 tags: Foundation
 ---
 

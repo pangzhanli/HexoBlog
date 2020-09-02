@@ -1,7 +1,9 @@
 ---
 title: Foundation中将字符串写入到磁盘文件上
 date: 2020-04-03 14:43:18
-categories: OC
+categories:
+- OC
+- Foundation
 tags: Foundation
 ---
 

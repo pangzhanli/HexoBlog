@@ -1,7 +1,9 @@
 ---
 title: IOS扫码登录
 date: 2020-04-08 18:07:19
-categories: OC
+categories: 
+- OC
+- 登录
 tags: 登录
 ---
 

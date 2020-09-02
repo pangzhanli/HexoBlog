@@ -1,7 +1,9 @@
 ---
 title: IOS指纹登录
 date: 2020-04-07 16:22:33
-categories: OC
+categories: 
+- OC
+- 登录
 tags: 登录
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: IOS旋转菜单
 date: 2020-04-03 17:27:18
-categories: OC
+categories: 
+- OC
+- OC动画
 tags: OC动画
 ---
 

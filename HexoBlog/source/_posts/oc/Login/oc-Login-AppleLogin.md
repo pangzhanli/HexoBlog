@@ -1,7 +1,9 @@
 ---
 title: IOS苹果登录(sign in with apple)
 date: 2020-04-03 18:47:31
-categories: OC
+categories: 
+- OC
+- 登录
 tags: 登录
 ---
 
