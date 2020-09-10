@@ -9,16 +9,32 @@
         <meta name="keywords" content="02-flutter之环境搭建" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="参考资料">
+    <meta name="description" content="Hello Flutter 这个章节我们学习如何安装Flutter，并且写第一个Flutter程序。 之后在iOS模拟器和Android模拟器上分别跑起来我们的应用程序（之后我会讲解如何跑在真机上）。 当然，这个程序中的很多代码你可能并不是特别理解，里面涉及到一些dart知识，也涉及到一些flutter的东西。这些都没有关系，我们的目的是把这个工程跑起来，就表示你的环境是OK的。 一. 环境搭建环">
 <meta property="og:type" content="article">
 <meta property="og:title" content="02-flutter之环境搭建">
 <meta property="og:url" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="参考资料">
+<meta property="og:description" content="Hello Flutter 这个章节我们学习如何安装Flutter，并且写第一个Flutter程序。 之后在iOS模拟器和Android模拟器上分别跑起来我们的应用程序（之后我会讲解如何跑在真机上）。 当然，这个程序中的很多代码你可能并不是特别理解，里面涉及到一些dart知识，也涉及到一些flutter的东西。这些都没有关系，我们的目的是把这个工程跑起来，就表示你的环境是OK的。 一. 环境搭建环">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_001.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_002.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_003.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_004.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_005.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_006.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_007.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_008.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_009.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_010.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_011.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_012.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_013.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_014.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_015.png">
 <meta property="article:published_time" content="2020-09-02T12:36:34.000Z">
-<meta property="article:modified_time" content="2020-09-02T12:38:57.452Z">
+<meta property="article:modified_time" content="2020-09-09T11:37:48.570Z">
 <meta property="article:author" content="庞占立">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_001.png">
     
 
     
@@ -95,7 +111,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -114,10 +130,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -150,7 +166,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -167,7 +183,7 @@
         
     <div class="widget-wrap" id='categories'>
         <h3 class="widget-title">
-            <span>Categorias</span>
+            <span>categories</span>
             &nbsp;
             <a id='allExpand' href="#">
                 <i class="fa fa-angle-double-down fa-2x"></i>
@@ -419,13 +435,147 @@
         
             
                 <div id="toc" class="toc-article">
-                <strong class="toc-title">Catálogo</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-环境搭建"><span class="toc-number">1.</span> <span class="toc-text">一. 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-操作系统选择"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1. 操作系统选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-安装Flutter-SDK"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2. 安装Flutter SDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-配置iOS环境"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.3. 配置iOS环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-配置Android环境"><span class="toc-number">1.0.4.</span> <span class="toc-text">1.4. 配置Android环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-开发工具的选择"><span class="toc-number">1.0.5.</span> <span class="toc-text">1.5. 开发工具的选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
                 </div>
             
         
         
-            <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+            <p>Hello Flutter</p>
+<p>这个章节我们学习如何安装Flutter，并且写第一个Flutter程序。</p>
+<p>之后在iOS模拟器和Android模拟器上分别跑起来我们的应用程序（之后我会讲解如何跑在真机上）。</p>
+<p>当然，这个程序中的很多代码你可能并不是特别理解，里面涉及到一些dart知识，也涉及到一些flutter的东西。这些都没有关系，我们的目的是把这个工程跑起来，就表示你的环境是OK的。</p>
+<h1 id="一-环境搭建"><a href="#一-环境搭建" class="headerlink" title="一. 环境搭建"></a>一. 环境搭建</h1><p>环境搭建有点麻烦，特别是Android环境的安装，大家耐心安装，有任何问题可以添加我的微信 372623326</p>
+<h3 id="1-1-操作系统选择"><a href="#1-1-操作系统选择" class="headerlink" title="1.1. 操作系统选择"></a>1.1. 操作系统选择</h3><p>很多同学会问，学习Flutter到底使用什么操作系统呢？</p>
+<p>学习阶段： Windows或者macOS（苹果操作系统）都是可以的</p>
+<p>开发阶段： 一般需要使用macOS，因为我们需要针对iOS进行调试，通常方便起见还是选择macOS</p>
+<p>疑问： 如果以后做Flutter开发没有macOS怎么办？</p>
+<p>这个可以完全放心，使用Flutter开发的公司必然会给你配备macOS的<br>Flutter可以在Windows上学习，也可以在macOS上，因为我之后的课程要进行Android和iOS的调试，所以我当前使用的环境是macOS的。</p>
+<p>这里我再次强调，学习阶段使用Windows是没有任何问题，我之前也在Windows上写过很多Flutter的东西！</p>
+<p>在安装的过程中，我也会说到很多Windows安装的注意事项，大家按照步骤一步步完成即可。</p>
+<h3 id="1-2-安装Flutter-SDK"><a href="#1-2-安装Flutter-SDK" class="headerlink" title="1.2. 安装Flutter SDK"></a>1.2. 安装Flutter SDK</h3><p>使用Flutter开发，首先我们需要安装一个Flutter的SDK。</p>
+<p>下载Flutter的SDK</p>
+<p>来到Flutter的官网网站，选择最新稳定的Flutter SDK的版本</p>
+<p>网站地址：flutter.dev/docs/develo…</p>
+<p>选择自己的操作系统和最新稳定的版本（Stable版本）（我当前最新稳定的版本是1.7.8）</p>
+<p>安装Flutter</p>
+<ul>
+<li><p>1.解压下载好的Flutter SDK</p>
+<p>  这个在Windows和macOS都是一样的（选择一个自己想要安装的目录）<br>  但是在macOS中，我通常会讲flutter目录拖入到应用程序中，将其当作我的一个应用（个人习惯而已）</p>
+</li>
+</ul>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_001.png" alt="图1"></p>
+<ul>
+<li>2.配置Flutter的环境变量</li>
+</ul>
+<p>因为我们之后需要在命令行执行Flutter的命令，所以需要配置环境变量<br>macOS或者Linux系统，需要编辑~/.bash_profile文件<br>export PATH=$PATH:/Applications/flutter/bin</p>
+<p>Windows用户将所在路径添加到环境变量的Path下</p>
+<p>Windows环境变量修改：点击计算机图标 - 属性 - 高级系统设置 - 高级 - 环境变量</p>
+<p>找到Path，在其中添加Flutter SDK目录下bin目录</p>
+<p>在终端中执行flutter –version，出现如下内容，说明安装flutter成功</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_002.png" alt="图1"></p>
+<p>配置镜像</p>
+<p>flutter项目会依赖一些东西，在国内下载这些依赖会有一些慢，所以我们可以将它们的安装源换成国内的（也就是设置国内的镜像）</p>
+<p>macOS或者Linux操作系统，依然是编辑~/.bash_profile文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export PUB_HOSTED_URL&#x3D;https:&#x2F;&#x2F;pub.flutter-io.cn</span><br><span class="line"></span><br><span class="line">export FLUTTER_STORAGE_BASE_URL&#x3D;https:&#x2F;&#x2F;storage.flutter</span><br></pre></td></tr></table></figure>
+
+<p>Windows用户还是需要修改环境变量</p>
+<p>Windows环境变量修改：点击计算机图标 - 属性 - 高级系统设置 - 高级 - 环境变量</p>
+<p>新建 变量 PUB_HOSTED_URL，其值为<a href="https://pub.flutter-io.cn" target="_blank" rel="noopener">https://pub.flutter-io.cn</a></p>
+<p>新建 变量 FLUTTER_STORAGE_BASE_URL， 其值为<a href="https://storage.flutter-io.cn" target="_blank" rel="noopener">https://storage.flutter-io.cn</a></p>
+<p>注意： 此镜像为临时镜像，并不能保证一直可用，大家可以参考详情请参考 Using Flutter in China 以获得有关镜像服务器的最新动态。</p>
+<h3 id="1-3-配置iOS环境"><a href="#1-3-配置iOS环境" class="headerlink" title="1.3. 配置iOS环境"></a>1.3. 配置iOS环境</h3><p>如果想为Flutter配置iOS开发环境，需要在我们的电脑上安装一个Xcode（此部分Windows电脑忽略）<br>Xcode是苹果公司的iOS和macOS的IDE，进行过iOS开发的童鞋应该都非常熟悉</p>
+<p>如何安装Xcode呢？ 常见的是两种</p>
+<ul>
+<li><p>1.直接在App Store上搜索Xcode，找到安装即可<br>这种安装方式有一个缺点，安装的一定是最新版本的（当然是用最新版本的最好）<br>但是最新版本的Xcode会对macOS系统有一定的要求，所以可能还要设计到系统升级<br>如果不希望系统升级，可以选择第二种方式</p>
+</li>
+<li><p>2.第二种方式是安装自己想要的Xcode的版本，需要手动去下载</p>
+</li>
+</ul>
+<p>进入developer.apple.com/download/mo…页面</p>
+<p>登录自己的Apple ID</p>
+<p>在搜索框输入Xcode，回车搜索，找到各种版本Xcode下载即可</p>
+<p>打开安装好的Xcode，可能打开速度有点慢：不着急，慢慢来</p>
+<p>选择自己想用的iOS模拟器</p>
+<p>打开Xcode，右上角点击Xcode - Open Developer Tools - Simulator</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_003.png" alt="图1"></p>
+<p>这个时候会打开一个默认的iOS模拟器，也可以在Hardware - Device - 系统版本中选择自己想要测试的模拟器</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_004.png" alt="图1"></p>
+<p>这个时候，我们就能看到如下模拟器了</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_005.png" alt="图1"></p>
+<p>这个时候我们执行一下如下终端命令：</p>
+<p>flutter doctor</p>
+<p>看到如下有一个</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_006.png" alt="图1"></p>
+<h3 id="1-4-配置Android环境"><a href="#1-4-配置Android环境" class="headerlink" title="1.4. 配置Android环境"></a>1.4. 配置Android环境</h3><p>如果想为Flutter配置Android开发环境，需要在我们的电脑上安装一个Android Studio</p>
+<ul>
+<li>Android Studio是基于IntelliJ IDEA的、Google 官方的 Android 应用集成开发环境 (IDE)。<br>Android Studio的下载</li>
+<li>官网地址：developer.android.com/studio/?utm…</li>
+<li>直接在官方下载即可</li>
+<li>安装直接双击安装即可<br>Android的环境配置</li>
+</ul>
+<p>打开Android Studio，会问我们是否要设置代理，这是因为下载Android SDK等在国内不好下载</p>
+<ul>
+<li>至于如何设置代理，这里就不再讲解了<del>~</del></li>
+<li>最好要设置代理哦，不然估计会被气死<del>~</del></li>
+</ul>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_007.png" alt="图1"></p>
+<p>之后各种下一步，就会帮我们安装SDK等相关需要使用的内容</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_008.png" alt="图1"></p>
+<p>安装好后，点击Finish即可。</p>
+<p>创建Android模拟器<br>安装好后，我们就可以去创建模拟器：选择Configure - AVD Manger</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_009.png" alt="图1"></p>
+<p>选择create virtual device</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_010.png" alt="图1"></p>
+<p>选择一个你想用的设备</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_011.png" alt="图1"></p>
+<p>选择Android的版本（这里我没有选择Q版本，它目前还是一个bata版本），点击download</p>
+<p>下一个界面，点击accept - next就可以了</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_012.png" alt="图1"></p>
+<p>接着下一步，给自己的模拟器起个名字</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_013.png" alt="图1"></p>
+<p>启动Android模拟器</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_014.png" alt="图1"></p>
+<p>这个时候我们执行一下如下终端命令：</p>
+<p>flutter doctor</p>
+<p>看到如下有两个可用的设备</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/02_015.png" alt="图1"></p>
+<h3 id="1-5-开发工具的选择"><a href="#1-5-开发工具的选择" class="headerlink" title="1.5. 开发工具的选择"></a>1.5. 开发工具的选择</h3><p>官方推荐两个工具来开发Flutter：Android Studio 和 VSCode，我们选择哪一个呢？</p>
+<p>对于有选择恐惧症的人，还真不是特别好选择，所以下面我会分别说出它们的优缺点，选择权在你</p>
+<p>最后我也会给出我的选择</p>
+<p><strong>VSCode优缺点</strong></p>
+<p>VSCode是最近非常非常流行的开发工具，并且非常好用！（我之前在微博感慨微软的东西最近两年越来越好用，其中之一就是VSCode）</p>
+<p>而且VSCode最近已经有取代WebStorm作为前端首选开发工具的趋势了</p>
+<p>VSCode的优点：</p>
+<ul>
+<li>VSCode其实并不能称之为是一个IDE，它只是一个编辑器而已。</li>
+<li>所以它非常的轻量级，不会占用你非常大的内存消耗，而且启动速度等都非常快，对于电脑配置不是特别高的同学，肯定是一个非常好的选择。</li>
+<li>并且你可以在VSCode上安装各种各样的插件来满足自己的开发需求。</li>
+</ul>
+<p>VSCode的缺点：</p>
+<ul>
+<li>很多Android Studio包括的方便操作没有，比如点击启动、热更新点击等；</li>
+<li>而且在某些情况下会出现一些问题；</li>
+<li>比如之前我在使用的过程中，有时候热更新不及时常常看不到效果，必须重启；</li>
+<li>比如某些情况下，没有代码提示不够灵敏；</li>
+</ul>
+<p>使用须知：</p>
+<p>使用VSCode开发Flutter我们需要安装两个插件：Flutter和Dart</p>
+<p><strong>Android Studio优缺点</strong></p>
+<p>对于进行过Android开发或者使用过Webstorm、IDEA、PHPStorm等的同学，使用Android Studio肯定是没有任何问题的<br>Android Studio的优点：</p>
+<ul>
+<li>集成开发环境（IDE）不用多说，你需要的功能基本都有</li>
+<li>而且上面说的VSCode存在的问题，在Android Studio中基本不会出现</li>
+</ul>
+<p>Android Studio的缺点：</p>
+<ul>
+<li>一个字：重</li>
+<li>无论是IDE本身，还是使用Android Studio启动项目，都会相对慢一些</li>
+<li>占据的计算机资源也很多，所以电脑配置较低是会出现卡顿</li>
+</ul>
+<p>使用须知：</p>
+<p>使用Android Studio开发Flutter我们需要安装两个插件：Flutter和Dart</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href></a></li>
 <li><a href></a></li>
@@ -444,7 +594,7 @@
 <nav id="article-nav">
     
         <a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/03-Hello-Flutter/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más nuevo</strong>
+            <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
                     03-Hello Flutter
@@ -454,7 +604,7 @@
     
     
         <a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/01-flutter%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%A7%8B/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más viejo</strong>
+            <strong class="article-nav-caption">Older</strong>
             <div class="article-nav-title">01-flutter学习开始</div>
         </a>
     
