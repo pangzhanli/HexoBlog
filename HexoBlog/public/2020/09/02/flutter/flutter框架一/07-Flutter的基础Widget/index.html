@@ -9,16 +9,39 @@
         <meta name="keywords" content="07-Flutter的基础Widget" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="参考资料">
+    <meta name="description" content="一. 文本Widget在Android中，我们使用TextView，iOS中我们使用UILabel来显示文本； Flutter中，我们使用Text组件控制文本如何展示； 1.1. 普通文本展示在Flutter中，我们可以将文本的控制显示分成两类：  控制文本布局的参数： 如文本对齐方式 textAlign、文本排版方向 textDirection，文本显示最大行数 maxLines、文本截断规则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="07-Flutter的基础Widget">
 <meta property="og:url" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="参考资料">
+<meta property="og:description" content="一. 文本Widget在Android中，我们使用TextView，iOS中我们使用UILabel来显示文本； Flutter中，我们使用Text组件控制文本如何展示； 1.1. 普通文本展示在Flutter中，我们可以将文本的控制显示分成两类：  控制文本布局的参数： 如文本对齐方式 textAlign、文本排版方向 textDirection，文本显示最大行数 maxLines、文本截断规则">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_001.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_002.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_003.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_004.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_005.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_006.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_007.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_008.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_009.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_010.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_011.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_012.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_013.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_014.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_015.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_016.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_017.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_018.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_019.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_020.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_021.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_022.png">
 <meta property="article:published_time" content="2020-09-02T12:38:01.000Z">
-<meta property="article:modified_time" content="2020-09-02T12:39:11.353Z">
+<meta property="article:modified_time" content="2020-09-18T13:59:14.288Z">
 <meta property="article:author" content="庞占立">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pangzhanli.top/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_001.png">
     
 
     
@@ -289,7 +312,7 @@
                             &nbsp;
                             flutter框架一
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/01-flutter%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%A7%8B/">01-flutter学习开始</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">02-flutter之环境搭建</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/03-Hello-Flutter/">03-Hello Flutter</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/04-Android-Studio-%E4%B8%AD%E4%B8%8B%E8%BD%BDAndroid-SDK%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">04-Android Studio 中下载Android SDK的两种方式</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/06-Dart-%E4%B8%80/">06-Dart(一)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/06-Dart-%E4%BA%8C/">06-Dart(二)</a></li>  <li class="file active"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/">07-Flutter的基础Widget</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/08-%E6%8C%89%E9%92%AE%E5%8F%98%E5%B0%8F%E8%AE%BE%E7%BD%AE/">08-按钮变小设置</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/09-StatefulWidget%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">09-StatefulWidget生命周期</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/10-%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%EF%BC%8C%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9B%BE%E7%89%87/">10-图文混排，按钮，图片</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/01-flutter%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%A7%8B/">01-flutter学习开始</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">02-flutter之环境搭建</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/03-Hello-Flutter/">03-Hello Flutter</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/04-Android-Studio-%E4%B8%AD%E4%B8%8B%E8%BD%BDAndroid-SDK%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">04-Android Studio 中下载Android SDK的两种方式</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/05-Dart-%E4%B8%80/">05-Dart(一)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/06-Dart-%E4%BA%8C/">06-Dart(二)</a></li>  <li class="file active"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/">07-Flutter的基础Widget</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/08-%E6%8C%89%E9%92%AE%E5%8F%98%E5%B0%8F%E8%AE%BE%E7%BD%AE/">08-按钮变小设置</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/09-StatefulWidget%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">09-StatefulWidget生命周期</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/10-%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%EF%BC%8C%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9B%BE%E7%89%87/">10-图文混排，按钮，图片</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/11-%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">11-基础组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/12-%E6%BB%9A%E5%8A%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">12-滚动组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/13-Dart%E4%B8%AD%E7%9A%84%E5%BC%82%E6%AD%A5/">13-Dart中的异步</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/14-%E8%99%9A%E7%BA%BF%E5%92%8C%E6%98%9F%E6%98%9F%E8%AF%84%E5%88%86/">14-虚线和星星评分</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/15-%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%E7%9A%84%E5%AE%9E%E7%8E%B0/">15-豆瓣首页的实现</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -420,12 +443,112 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-文本Widget"><span class="toc-number">1.</span> <span class="toc-text">一. 文本Widget</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-普通文本展示"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1. 普通文本展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-富文本展示"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2. 富文本展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-按钮Widget"><span class="toc-number">2.</span> <span class="toc-text">二. 按钮Widget</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-按钮的基础"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1. 按钮的基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-自定义样式"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2. 自定义样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-图文混排"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.3. 图文混排</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-图片Widget"><span class="toc-number">2.0.4.</span> <span class="toc-text">三. 图片Widget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-加载网络图片"><span class="toc-number">2.0.5.</span> <span class="toc-text">3.1. 加载网络图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-加载本地图片"><span class="toc-number">2.0.6.</span> <span class="toc-text">3.2. 加载本地图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-实现圆角图像"><span class="toc-number">2.0.7.</span> <span class="toc-text">3.3. 实现圆角图像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-实现圆角头像"><span class="toc-number">2.0.7.1.</span> <span class="toc-text">3.3.1. 实现圆角头像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-实现圆角图片"><span class="toc-number">2.0.7.2.</span> <span class="toc-text">3.3.2. 实现圆角图片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">2.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
                 </div>
             
         
         
-            <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+            <h1 id="一-文本Widget"><a href="#一-文本Widget" class="headerlink" title="一. 文本Widget"></a>一. 文本Widget</h1><p>在Android中，我们使用TextView，iOS中我们使用UILabel来显示文本；</p>
+<p>Flutter中，我们使用Text组件控制文本如何展示；</p>
+<h3 id="1-1-普通文本展示"><a href="#1-1-普通文本展示" class="headerlink" title="1.1. 普通文本展示"></a>1.1. 普通文本展示</h3><p>在Flutter中，我们可以将文本的控制显示分成两类：</p>
+<ul>
+<li>控制文本布局的参数： 如文本对齐方式 textAlign、文本排版方向 textDirection，文本显示最大行数 maxLines、文本截断规则 overflow 等等，这些都是构造函数中的参数；</li>
+<li>控制文本样式的参数： 如字体名称 fontFamily、字体大小 fontSize、文本颜色 color、文本阴影 shadows 等等，这些参数被统一封装到了构造函数中的参数 style 中；</li>
+</ul>
+<p>下面我们来看一下其中一些属性的使用：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_001.png" alt="图1"></p>
+<p>展示效果如下：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_002.png" alt="图1"></p>
+<p>我们可以通过一些属性来改变Text的布局：</p>
+<ul>
+<li>textAlign：文本对齐方式，比如TextAlign.center</li>
+<li>maxLines：最大显示行数，比如1</li>
+<li>overflow：超出部分显示方式，比如TextOverflow.ellipsis</li>
+<li>textScaleFactor：控制文本缩放，比如1.24</li>
+</ul>
+<p>代码如下：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_003.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_004.png" alt="图1"></p>
+<h3 id="1-2-富文本展示"><a href="#1-2-富文本展示" class="headerlink" title="1.2. 富文本展示"></a>1.2. 富文本展示</h3><p>前面展示的文本，我们都应用了相同的样式，如果我们希望给他们不同的样式呢？</p>
+<ul>
+<li>比如《定风波》我希望字体更大一点，并且是黑色字体，并且有加粗效果；</li>
+<li>比如 苏轼 我希望是红色字体；</li>
+</ul>
+<p>如果希望展示这种混合样式，那么我们可以利用分片来进行操作（在Android中，我们可以使用SpannableString，在iOS中，我们可以使用NSAttributedString完成，了解即可）</p>
+<p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class MyHomeBody extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Text.rich(</span><br><span class="line">      TextSpan(</span><br><span class="line">        children: [</span><br><span class="line">          TextSpan(text: &quot;《定风波》&quot;, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black)),</span><br><span class="line">          TextSpan(text: &quot;苏轼&quot;, style: TextStyle(fontSize: 18, color: Colors.redAccent)),</span><br><span class="line">          TextSpan(text: &quot;\n莫听穿林打叶声，何妨吟啸且徐行。\n竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。&quot;)</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">      style: TextStyle(fontSize: 20, color: Colors.purple),</span><br><span class="line">      textAlign: TextAlign.center,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="二-按钮Widget"><a href="#二-按钮Widget" class="headerlink" title="二. 按钮Widget"></a>二. 按钮Widget</h1><h3 id="2-1-按钮的基础"><a href="#2-1-按钮的基础" class="headerlink" title="2.1. 按钮的基础"></a>2.1. 按钮的基础</h3><p>Material widget库中提供了多种按钮Widget如FloatingActionButton、RaisedButton、FlatButton、OutlineButton等</p>
+<p>我们直接来对他们进行一个展示：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_005.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_006.png" alt="图1"></p>
+<h3 id="2-2-自定义样式"><a href="#2-2-自定义样式" class="headerlink" title="2.2. 自定义样式"></a>2.2. 自定义样式</h3><p>前面的按钮我们使用的都是默认样式，我们可以通过一些属性来改变按钮的样式</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_007.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_008.png" alt="图1"></p>
+<p>事实上这里还有一个比较常见的属性：elevation，用于控制阴影的大小，很多地方都会有这个属性，大家可以自行演示一下</p>
+<h3 id="2-3-图文混排"><a href="#2-3-图文混排" class="headerlink" title="2.3. 图文混排"></a>2.3. 图文混排</h3><p>实现代码：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_009.png" alt="图1"></p>
+<p>效果：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_010.png" alt="图1"></p>
+<h3 id="三-图片Widget"><a href="#三-图片Widget" class="headerlink" title="三. 图片Widget"></a>三. 图片Widget</h3><p>图片可以让我们的应用更加丰富多彩，Flutter中使用Image组件</p>
+<p>Image组件有很多的构造函数，我们这里主要学习两个：</p>
+<ul>
+<li>Image.assets：加载本地资源图片；</li>
+<li>Image.network：加载网络中的图片；</li>
+</ul>
+<h3 id="3-1-加载网络图片"><a href="#3-1-加载网络图片" class="headerlink" title="3.1. 加载网络图片"></a>3.1. 加载网络图片</h3><p>相对来讲，Flutter中加载网络图片会更加简单，直接传入URL并不需要什么配置，所以我们先来看一下Flutter中如何加载网络图片。</p>
+<p>我们先来看看Image有哪些属性可以设置：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_011.png" alt="图1"></p>
+<ul>
+<li>width、height：用于设置图片的宽、高，当不指定宽高时，图片会根据当前父容器的限制，尽可能的显示其原始大小，如果只设置width、height的其中一个，那么另一个属性默认会按比例缩放，但可以通过下面介绍的fit属性来指定适应规则。</li>
+<li>fit：该属性用于在图片的显示空间和图片本身大小不同时指定图片的适应模式。适应模式是在BoxFit中定义，它是一个枚举类型，有如下值：<ul>
+<li>fill：会拉伸填充满显示空间，图片本身长宽比会发生变化，图片会变形。</li>
+<li>cover：会按图片的长宽比放大后居中填满显示空间，图片不会变形，超出显示空间部分会被剪裁。</li>
+<li>contain：这是图片的默认适应规则，图片会在保证图片本身长宽比不变的情况下缩放以适应当前显示空间，图片不会变形。</li>
+<li>fitWidth：图片的宽度会缩放到显示空间的宽度，高度会按比例缩放，然后居中显示，图片不会变形，超出显示空间部分会被剪裁。</li>
+<li>fitHeight：图片的高度会缩放到显示空间的高度，宽度会按比例缩放，然后居中显示，图片不会变形，超出显示空间部分会被剪裁。</li>
+<li>none：图片没有适应策略，会在显示空间内显示图片，如果图片比显示空间大，则显示空间只会显示图片中间部分。</li>
+</ul>
+</li>
+<li>color和 colorBlendMode：在图片绘制时可以对每一个像素进行颜色混合处理，color指定混合色，而colorBlendMode指定混合模式；</li>
+<li>repeat：当图片本身大小小于显示空间时，指定图片的重复规则。</li>
+</ul>
+<p>我们对其中某些属性做一个演练：</p>
+<ul>
+<li>注意，这里我用了一个Container，大家可以把它理解成一个UIView或者View，就是一个容器；</li>
+<li>后面我会专门讲到这个组件的使用；</li>
+</ul>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_012.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_013.png" alt="图1"></p>
+<h3 id="3-2-加载本地图片"><a href="#3-2-加载本地图片" class="headerlink" title="3.2. 加载本地图片"></a>3.2. 加载本地图片</h3><p>加载本地图片稍微麻烦一点，需要将图片引入，并且进行配置</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_014.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_015.png" alt="图1"></p>
+<h3 id="3-3-实现圆角图像"><a href="#3-3-实现圆角图像" class="headerlink" title="3.3. 实现圆角图像"></a>3.3. 实现圆角图像</h3><p>在Flutter中实现圆角效果也是使用一些Widget来实现的。</p>
+<h4 id="3-3-1-实现圆角头像"><a href="#3-3-1-实现圆角头像" class="headerlink" title="3.3.1. 实现圆角头像"></a>3.3.1. 实现圆角头像</h4><p><strong>方式一：CircleAvatar</strong></p>
+<p>CircleAvatar可以实现圆角头像，也可以添加一个子Widget：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_016.png" alt="图1"></p>
+<p>我们来实现一个圆形头像：</p>
+<ul>
+<li>注意一：这里我们使用的是NetworkImage，因为backgroundImage要求我们传入一个ImageProvider；<ul>
+<li>ImageProvider是一个抽象类，事实上所有我们前面创建的Image对象都有包含image属性，该属性就是一个ImageProvider</li>
+</ul>
+</li>
+<li>注意二：这里我还在里面添加了一个文字，但是我在文字外层包裹了一个Container；<ul>
+<li>这里Container的作用是为了可以控制文字在其中的位置调整；</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_017.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_018.png" alt="图1"></p>
+<p><strong>方式二：ClipOval</strong></p>
+<p>ClipOval也可以实现圆角头像，而且通常是在只有头像时使用</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_019.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_020.png" alt="图1"></p>
+<h4 id="3-3-2-实现圆角图片"><a href="#3-3-2-实现圆角图片" class="headerlink" title="3.3.2. 实现圆角图片"></a>3.3.2. 实现圆角图片</h4><p><strong>方式一：ClipRRect</strong><br>ClipRRect用于实现圆角效果，可以设置圆角的大小。</p>
+<p>实现代码如下，非常简单：</p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_021.png" alt="图1"></p>
+<p><img src="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/07_022.png" alt="图1"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href></a></li>
 <li><a href></a></li>
