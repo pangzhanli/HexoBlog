@@ -14,6 +14,8 @@ tags:
 
 ``` 
 Hexo是基于node.js的, 所以我们在安装它之前需要用到npm安装工具, 这个工具是 node.js 安装包的工具, 所以, 我们先要安装 node.js.
+
+可以使用 node -v 命令查询当前系统是否安装过nodejs
 ``` 
 
 使用apt-get安装 nodejs.
@@ -24,7 +26,11 @@ $ sudo apt-get install -y nodejs
 
 #### 3, 安装npm
 
-已经安装好了nodejs, 现在安装npm.
+``` 
+可以使用 npm -v 命令查询当前系统是否安装过npm
+``` 
+
+安装npm 命令
 
 ``` 
 $ sudo apt-get install npm
