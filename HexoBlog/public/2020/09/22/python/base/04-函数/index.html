@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>04-函数 | Hexo</title>
+    
+    
+        <meta name="keywords" content="04-函数" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一.01_函数的定义和调用123456789101112131415161718&quot;&quot;&quot;函数的定义：    def 函数名([参数1,参数2,...,参数n]):        函数体        [return 值]&quot;&quot;&quot;def talk():    print(&quot;你好，兄弟&quot;)talk()talk()print(t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="04-函数">
+<meta property="og:url" content="http://pangzhanli.top/2020/09/22/python/base/04-%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一.01_函数的定义和调用123456789101112131415161718&quot;&quot;&quot;函数的定义：    def 函数名([参数1,参数2,...,参数n]):        函数体        [return 值]&quot;&quot;&quot;def talk():    print(&quot;你好，兄弟&quot;)talk()talk()print(t">
+<meta property="article:published_time" content="2020-09-22T09:33:08.000Z">
+<meta property="article:modified_time" content="2020-09-23T02:20:54.723Z">
+<meta property="article:author" content="庞占立">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Hexo</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            C语言
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/">C语言基本数据类型简单介绍</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E4%B8%AD%E7%9A%84%E8%87%AA%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">C语言基本运算中的自增运算符和自减运算符以及三目运算符</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E8%BE%93%E5%87%BA/">C语言中的字符串的定义及初始化和输出</a></li>  <li class="file"><a href="/2020/04/03/c/c-maopaopaixu/">C语言中的冒泡排序简单介绍</a></li>  <li class="file"><a href="/2020/04/03/c/c-pointer-desc/">C语言中指针的简单介绍</a></li>  <li class="file"><a href="/2020/04/03/c/c-enum-desc/">C语言中枚举的简单介绍</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hexo
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/02/hexo/hello-hexo/">Hexo简单介绍</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            OC
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Foundation
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_category_desc/">OC中的Category简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_block_desc/">OC中的Block简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_class_init/">OC中类的创建简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-struct/">Foundation中结构体的简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-string/">Foundation框架中字符串的创建</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-mulString/">Foundation中的NSMutableString的创建</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-strFile/">Foundation中将字符串写入到磁盘文件上</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            OC动画
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/">IOS旋转菜单</a></li>  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-customProgressCircle/">IOS-自制进度圈</a></li>  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-TableViewHeader/">UITableViewHeader头部拉伸变化</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Screen
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/24/oc/Screen/oc-screenSize-detail/">iphone屏幕尺寸，分辨率， PPI详细数据对比</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UITableView
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/">使用代码创建UITableViewCell</a></li>  <li class="file"><a href="/2020/04/03/oc/UITableView/oc-UITableViewCell-xib/">使用xib文件创建UITableViewCell</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            上传
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Upload/oc-Upload-putAndPost/">IOS文件上传PUT和POST</a></li>  <li class="file"><a href="/2020/04/03/oc/Upload/oc-Upload-nativeUpload/">ios原生API文件上传(NSURLSession)</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            水印
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/15/oc/WaterMark/oc-WaterMark-rotateLabel/">旋转UILabel</a></li>  <li class="file"><a href="/2020/04/15/oc/WaterMark/oc-WaterMark-wk/">水印</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            登录
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Login/oc-Login-AppleLogin/">IOS苹果登录(sign in with apple)</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-TouchID/">IOS指纹登录</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-AKeyLogin/">IOS一键登录</a></li>  <li class="file"><a href="/2020/04/08/oc/Login/oc-Login-QRCode/">IOS扫码登录</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            flutter
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Dart语法
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/01/flutter/Dart/01-Dart%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">01-Dart环境搭建</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/02-%E5%85%A5%E5%8F%A3%EF%BC%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B8%B8%E9%87%8F%EF%BC%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">02-入口，注释，变量，常量，命名规则</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-数据类型</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/04-Dart%E8%BF%90%E7%AE%97%E7%AC%A6/">04-Dart运算符</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/05-%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6%EF%BC%8C%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%EF%BC%8C%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA/">05-图片组件，网络图片以及本地图片，图片裁剪</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/06-Dart%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%8C-List-Set-Map/">06-Dart集合类型， List, Set, Map</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/07-%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0/">07-方法参数</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/08-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%EF%BC%8C%E8%87%AA%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AD%E5%8C%85/">08-箭头函数，匿名方法，自执行方法，闭包</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">09-面向对象</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/10-%E7%B1%BB%E4%B8%AD%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%EF%BC%8C%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BB%A7%E6%89%BF/">10-类中静态成员，静态方法，操作符，以及继承</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/11-Dart%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB/">11-Dart中抽象类</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/12-Dart%E4%B8%AD%E7%9A%84mixins/">12-Dart中的mixins</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/13-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E6%B3%9B%E5%9E%8B%E7%B1%BB%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3/">13-泛型方法，泛型类，泛型接口</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/14-Dart%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%93%EF%BC%8C%E7%B3%BB%E7%BB%9F%E5%BA%93%EF%BC%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">14-Dart中自定义库，系统库，第三方库</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            flutter框架一
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/01-flutter%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%A7%8B/">01-flutter学习开始</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">02-flutter之环境搭建</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/03-Hello-Flutter/">03-Hello Flutter</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/04-Android-Studio-%E4%B8%AD%E4%B8%8B%E8%BD%BDAndroid-SDK%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">04-Android Studio 中下载Android SDK的两种方式</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/05-Dart-%E4%B8%80/">05-Dart(一)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/06-Dart-%E4%BA%8C/">06-Dart(二)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/">07-Flutter的基础Widget</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/08-%E6%8C%89%E9%92%AE%E5%8F%98%E5%B0%8F%E8%AE%BE%E7%BD%AE/">08-按钮变小设置</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/09-StatefulWidget%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">09-StatefulWidget生命周期</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/10-%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%EF%BC%8C%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9B%BE%E7%89%87/">10-图文混排，按钮，图片</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/11-%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">11-基础组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/12-%E6%BB%9A%E5%8A%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">12-滚动组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/13-Dart%E4%B8%AD%E7%9A%84%E5%BC%82%E6%AD%A5/">13-Dart中的异步</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/14-%E8%99%9A%E7%BA%BF%E5%92%8C%E6%98%9F%E6%98%9F%E8%AF%84%E5%88%86/">14-虚线和星星评分</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/15-%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%E7%9A%84%E5%AE%9E%E7%8E%B0/">15-豆瓣首页的实现</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python基础
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/22/python/base/01-python%E5%9F%BA%E7%A1%80/">01-python基础</a></li>  <li class="file"><a href="/2020/09/22/python/base/02-python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">02-python流程控制</a></li>  <li class="file"><a href="/2020/09/22/python/base/03-%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-高级数据类型</a></li>  <li class="file active"><a href="/2020/09/22/python/base/04-%E5%87%BD%E6%95%B0/">04-函数</a></li>  <li class="file"><a href="/2020/09/22/python/base/05-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">05-面向对象</a></li>  <li class="file"><a href="/2020/09/22/python/base/06-%E6%A8%A1%E5%9D%97/">06-模块</a></li>  <li class="file"><a href="/2020/09/22/python/base/07-%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">07-植物大战僵尸</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/2020/09/01/hexo/hello-world/">Hello World</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-python/base/04-函数" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/python/">python</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/python%E5%9F%BA%E7%A1%80/">python基础</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2020/09/22/python/base/04-%E5%87%BD%E6%95%B0/">
+            <time datetime="2020-09-22T09:33:08.000Z" itemprop="datePublished">2020-09-22</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/python/base/04-函数.md' target="_blank" rel="noopener"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/python/base/04-函数.md' target="_blank" rel="noopener"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/python/base/04-函数.md' target="_blank" rel="noopener"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            04-函数
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-01-函数的定义和调用"><span class="toc-number">1.</span> <span class="toc-text">一.01_函数的定义和调用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-02-函数的形参和实参"><span class="toc-number">2.</span> <span class="toc-text">二.02_函数的形参和实参</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-03-函数的形参和实参-补充"><span class="toc-number">3.</span> <span class="toc-text">三.03_函数的形参和实参_补充</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-04-函数的返回值"><span class="toc-number">4.</span> <span class="toc-text">四.04_函数的返回值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-05-函数的类型"><span class="toc-number">5.</span> <span class="toc-text">五.05_函数的类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六-06-函数的嵌套"><span class="toc-number">6.</span> <span class="toc-text">六.06_函数的嵌套</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七-07-函数的参数"><span class="toc-number">7.</span> <span class="toc-text">七.07_函数的参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八-08-函数的参数2"><span class="toc-number">8.</span> <span class="toc-text">八.08_函数的参数2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九-09-关键字参数3"><span class="toc-number">9.</span> <span class="toc-text">九.09_关键字参数3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十-10-函数的参数4"><span class="toc-number">10.</span> <span class="toc-text">十.10_函数的参数4</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一-11-票务管理系统"><span class="toc-number">11.</span> <span class="toc-text">十一.11_票务管理系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一-12-函数文档"><span class="toc-number">12.</span> <span class="toc-text">十一.12_函数文档</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三-13-票务管理系统-函数版"><span class="toc-number">13.</span> <span class="toc-text">十三.13_票务管理系统_函数版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十四-14-回调函数"><span class="toc-number">14.</span> <span class="toc-text">十四.14_回调函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十五-15-lambda表达式"><span class="toc-number">15.</span> <span class="toc-text">十五.15_lambda表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十六-16-函数递归"><span class="toc-number">16.</span> <span class="toc-text">十六.16_函数递归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十七-17-高阶函数"><span class="toc-number">17.</span> <span class="toc-text">十七.17_高阶函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十八-18-高阶函数2"><span class="toc-number">18.</span> <span class="toc-text">十八.18_高阶函数2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十九-19-闭包"><span class="toc-number">19.</span> <span class="toc-text">十九.19_闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">19.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <h1 id="一-01-函数的定义和调用"><a href="#一-01-函数的定义和调用" class="headerlink" title="一.01_函数的定义和调用"></a>一.01_函数的定义和调用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">函数的定义：</span><br><span class="line">    def 函数名([参数1,参数2,...,参数n]):</span><br><span class="line">        函数体</span><br><span class="line">        [return 值]</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">def talk():</span><br><span class="line">    print(&quot;你好，兄弟&quot;)</span><br><span class="line"></span><br><span class="line">talk()</span><br><span class="line">talk()</span><br><span class="line">print(type(talk))</span><br><span class="line"></span><br><span class="line">#内置模块</span><br><span class="line">import builtins</span><br><span class="line">#dir 查看模块中有哪些方法和函数</span><br><span class="line">print(dir(builtins))</span><br></pre></td></tr></table></figure>
+
+<h1 id="二-02-函数的形参和实参"><a href="#二-02-函数的形参和实参" class="headerlink" title="二.02_函数的形参和实参"></a>二.02_函数的形参和实参</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">形参(变量): 在定义函数的时候的参数列表，在小括号中</span><br><span class="line">实参(对象)：在函数调用的时候传入的一个实际的对象，会赋值给形参</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#这里的name,就是形参</span><br><span class="line">def talk(name,age):</span><br><span class="line">    print(&quot;&#123;&#125;,你好，兄弟，是不是&#123;&#125;岁了&quot;.format(name,age))</span><br><span class="line"></span><br><span class="line">talk(&quot;jack&quot;,21)</span><br><span class="line">talk(&quot;lucy&quot;,18)</span><br></pre></td></tr></table></figure>
+
+<h1 id="三-03-函数的形参和实参-补充"><a href="#三-03-函数的形参和实参-补充" class="headerlink" title="三.03_函数的形参和实参_补充"></a>三.03_函数的形参和实参_补充</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">def fn(x,y):</span><br><span class="line">    x[0] &#x3D; 1</span><br><span class="line">    y[0] &#x3D; 5</span><br><span class="line">    print(&quot;x:&#123;&#125;, y:&#123;&#125;&quot;.format(x,y))</span><br><span class="line"></span><br><span class="line">a &#x3D; [100]</span><br><span class="line">b &#x3D; [200]</span><br><span class="line"></span><br><span class="line">#如果传递的是可变类型的数据，可能会对外面的数据值发生改变</span><br><span class="line">fn(a,b)</span><br><span class="line"></span><br><span class="line">print(&quot;a:&#123;&#125;, b:&#123;&#125;&quot;.format(a,b))</span><br></pre></td></tr></table></figure>
+
+<h1 id="四-04-函数的返回值"><a href="#四-04-函数的返回值" class="headerlink" title="四.04_函数的返回值"></a>四.04_函数的返回值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">def fn():</span><br><span class="line">    print(&quot;执行函数&quot;)</span><br><span class="line">    #元组的装包功能</span><br><span class="line">    return 100,200,300</span><br><span class="line"></span><br><span class="line">#定义一个ret变量接收fn函数的返回值</span><br><span class="line">#没有return,则返回None, 如果有return，直接返回后面的值</span><br><span class="line">#如果返回多个值，则会包装成一个元组返回</span><br><span class="line"></span><br><span class="line">#ret &#x3D; fn()</span><br><span class="line">#print(&quot;函数返回结果：&quot;,ret)</span><br><span class="line"></span><br><span class="line">x,y,z &#x3D; fn()</span><br><span class="line">print(&quot;函数返回结果:&quot;,x,y,z)</span><br></pre></td></tr></table></figure>
+
+<h1 id="五-05-函数的类型"><a href="#五-05-函数的类型" class="headerlink" title="五.05_函数的类型"></a>五.05_函数的类型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">函数类型：</span><br><span class="line">1，无参数无返回值</span><br><span class="line">2，无参数有返回值</span><br><span class="line">3，有参数无返回值</span><br><span class="line">4，有参数有返回值</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#无参数无返回值</span><br><span class="line">def talk():</span><br><span class="line">    print(&quot;talk&quot;)</span><br><span class="line"></span><br><span class="line">talk()</span><br><span class="line"></span><br><span class="line">#无参数有返回值</span><br><span class="line">def get_time():</span><br><span class="line">    return &quot;20200806&quot;</span><br><span class="line">    </span><br><span class="line">ret &#x3D; get_time()</span><br><span class="line">print(&quot;时间:&quot;,ret)</span><br><span class="line"></span><br><span class="line">#有参数无返回值</span><br><span class="line">def insert(record):</span><br><span class="line">    print(&quot;插入数据&#123;&#125;成功&quot;.format(record))</span><br><span class="line"></span><br><span class="line">insert(123)</span><br><span class="line"></span><br><span class="line">#有参数有返回值</span><br><span class="line">def get_sum(x,y):</span><br><span class="line">    print(x,y)</span><br><span class="line">    return x+y</span><br><span class="line">ret &#x3D; get_sum(10,11)</span><br><span class="line">print(&quot;结果:&quot;,ret)</span><br></pre></td></tr></table></figure>
+
+<h1 id="六-06-函数的嵌套"><a href="#六-06-函数的嵌套" class="headerlink" title="六.06_函数的嵌套"></a>六.06_函数的嵌套</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">#函数的嵌套调用</span><br><span class="line">def fun_a():</span><br><span class="line">    print(&quot;执行函数a&quot;)</span><br><span class="line"></span><br><span class="line">def fun_b():</span><br><span class="line">    print(&quot;执行函数b&quot;)</span><br><span class="line">    fun_a()</span><br><span class="line">    print(&quot;函数b执行完毕&quot;)</span><br><span class="line"></span><br><span class="line">fun_b()</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#函数的嵌套定义</span><br><span class="line">def fun_a():</span><br><span class="line">    print(&quot;开始执行函数a&quot;)</span><br><span class="line">    </span><br><span class="line">    def fun_b():</span><br><span class="line">        print(&quot;执行函数b&quot;)</span><br><span class="line">    </span><br><span class="line">    fun_b()</span><br><span class="line">    print(&quot;函数a执行完毕&quot;)</span><br><span class="line"></span><br><span class="line">fun_a()</span><br></pre></td></tr></table></figure>
+
+<h1 id="七-07-函数的参数"><a href="#七-07-函数的参数" class="headerlink" title="七.07_函数的参数"></a>七.07_函数的参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">def fun_a(x,y):</span><br><span class="line">    print(&quot;fun_a:&quot;,x,y)</span><br><span class="line"></span><br><span class="line">#关键字参数，在函数调用的时候，使用name&#x3D;value</span><br><span class="line">fun_a(y&#x3D;1,x&#x3D;2)</span><br><span class="line"></span><br><span class="line">def fun_b(x,y,z):</span><br><span class="line">    print(&quot;fun_b:&quot;,x,y,z)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">fun_b(1,2,3)</span><br><span class="line">#对于关键字参数和位置可以结合使用</span><br><span class="line">#位置参数必须在关键字参数前面</span><br><span class="line">fun_b(1,z&#x3D;100,y&#x3D;300)    #显示位置参数，再是关键字参数</span><br><span class="line"></span><br><span class="line">#这是错误的，位置参数必须在关键字参数前面</span><br><span class="line">#fun_b(z&#x3D;3,2,x&#x3D;1)</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br><span class="line">def fun_c(x,y&#x3D;10,z&#x3D;20):</span><br><span class="line">    print(&quot;fun_c:&quot;,x,y,z)</span><br><span class="line"></span><br><span class="line">fun_c(1)</span><br><span class="line">fun_c(1,2)</span><br><span class="line">fun_c(1,2,3)</span><br><span class="line">#需要： 如果y使用默认值，其他餐宿x&#x3D;4, z&#x3D;6</span><br><span class="line">fun_c(4,z&#x3D;6)</span><br><span class="line"></span><br><span class="line">print(123,end&#x3D;&quot;\t&quot;)</span><br><span class="line">print(456,end&#x3D;&quot;\t&quot;)</span><br><span class="line">print(help(print))</span><br></pre></td></tr></table></figure>
+
+<h1 id="八-08-函数的参数2"><a href="#八-08-函数的参数2" class="headerlink" title="八.08_函数的参数2"></a>八.08_函数的参数2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#不定长参数</span><br><span class="line"># *args代表可以接受多个非关键字参数</span><br><span class="line"># 如果在 *args 前面的参数，可以通过位置参数来赋值，</span><br><span class="line"># 在 *args后面的参数，可以通过关键字参数赋值</span><br><span class="line">def sum(x,*args,y):</span><br><span class="line">    print(&quot;args:&quot;,args)</span><br><span class="line">    print(&quot;x:&quot;,x)</span><br><span class="line">    print(&quot;y:&quot;,y)</span><br><span class="line"></span><br><span class="line">sum(1,2,4,y&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">#必须使用关键字参数传递</span><br><span class="line">def fun_b(*args, x,y,z):</span><br><span class="line">    print(&quot;x:&#123;&#125;,y:&#123;&#125;,z:&#123;&#125;&quot;.format(x,y,z))</span><br><span class="line"></span><br><span class="line">fun_b(x &#x3D; 1, y &#x3D; 2,z &#x3D; 3)</span><br><span class="line"></span><br><span class="line">#必须使用关键字参数传递，而且只能是3个参数</span><br><span class="line"># 当只使用*符号，代表后面的必须是关键字参数，而且参数个数必须相等</span><br><span class="line">def fun_c(*,x,y,z):</span><br><span class="line">    print(&quot;x:&#123;&#125;,y:&#123;&#125;,z:&#123;&#125;&quot;.format(x,y,z))</span><br><span class="line">fun_c(x &#x3D; 1,y&#x3D;2,z&#x3D;3)</span><br></pre></td></tr></table></figure>
+
+<h1 id="九-09-关键字参数3"><a href="#九-09-关键字参数3" class="headerlink" title="九.09_关键字参数3"></a>九.09_关键字参数3</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#不定长参数</span><br><span class="line">def fun_a(*args,x,y,z):</span><br><span class="line">    print(&quot;args:&quot;,args)</span><br><span class="line">    print(&quot;x:&#123;&#125;,y:&#123;&#125;,z:&#123;&#125;&quot;.format(x,y,z))</span><br><span class="line"></span><br><span class="line">fun_a(88,x &#x3D; 1,y&#x3D;2,z&#x3D;3)</span><br><span class="line"></span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">#不定长关键参数</span><br><span class="line">#如果需要接收多个关键字参数，需要使用**keywords, 必须放到最后一个参数</span><br><span class="line">def fun_b(*args,x,y,z,**keywords):</span><br><span class="line">    print(&quot;args:&quot;,args)</span><br><span class="line">    print(&quot;keywords:&quot;,keywords)</span><br><span class="line">    print(&quot;x:&#123;&#125;,y:&#123;&#125;,z:&#123;&#125;&quot;.format(x,y,z))</span><br><span class="line"></span><br><span class="line">fun_b(88, x &#x3D; 1,y &#x3D; 2,z &#x3D; 3, key&#x3D;99,num&#x3D;1000)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十-10-函数的参数4"><a href="#十-10-函数的参数4" class="headerlink" title="十.10_函数的参数4"></a>十.10_函数的参数4</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">def fun_a(x,y,z):</span><br><span class="line">    print(&quot;x:&#123;&#125;,y:&#123;&#125;,z:&#123;&#125;&quot;.format(x,y,z))</span><br><span class="line"></span><br><span class="line">fun_a(1,2,3)</span><br><span class="line">#a 是一个元组</span><br><span class="line">a &#x3D; (8,9,10)</span><br><span class="line">#在调用的时候，通过*对元组进行解包操作</span><br><span class="line">fun_a(*a)</span><br><span class="line"></span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">#必须是关键字参数</span><br><span class="line">def fun_b(*,x,y,z):</span><br><span class="line">    print(&quot;x:&#123;&#125;,y:&#123;&#125;,z:&#123;&#125;&quot;.format(x,y,z))</span><br><span class="line">    </span><br><span class="line">fun_b(x &#x3D; 1,y &#x3D; 2, z&#x3D; 3)</span><br><span class="line"></span><br><span class="line">d &#x3D; &#123;&quot;x&quot;:40,&quot;y&quot;:50,&quot;z&quot;:60&#125;</span><br><span class="line">#对字典进行拆包为关键字参数</span><br><span class="line">fun_b(**d)</span><br><span class="line"></span><br><span class="line">#总结：</span><br><span class="line"># *args 在函数定义的时候，不定长的非关键字参数</span><br><span class="line"># **keywords 在函数定义的时候，不定长的关键字参数</span><br><span class="line"># *a  在函数调用的时候，把元组拆包为对应的参数</span><br><span class="line"># **d 在函数调用的时候，把字典拆包为对应的参数</span><br></pre></td></tr></table></figure>
+
+<h1 id="十一-11-票务管理系统"><a href="#十一-11-票务管理系统" class="headerlink" title="十一.11_票务管理系统"></a>十一.11_票务管理系统</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;*&quot;*50)</span><br><span class="line">print(&quot;1 查询所有车票&quot;)</span><br><span class="line">print(&quot;2 根据开始站点,目的站点,时间来查询&quot;)</span><br><span class="line">print(&quot;3 购买车票&quot;)</span><br><span class="line">print(&quot;4 退票&quot;)</span><br><span class="line">print(&quot;5 退出系统&quot;)</span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">tickets &#x3D; [</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;广州&quot;,&quot;目的站点&quot;:&quot;北京&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:500,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;广州&quot;,&quot;目的站点&quot;:&quot;武汉&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:300,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;北京&quot;,&quot;目的站点&quot;:&quot;青岛&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:300,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;郑州&quot;,&quot;目的站点&quot;:&quot;北京&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:300,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;北京&quot;,&quot;目的站点&quot;:&quot;丽江&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:600,&quot;数量&quot;:100&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    model &#x3D; input(&quot;请输入你选择的操作序号:&quot;)</span><br><span class="line">    if model &#x3D;&#x3D; &quot;1&quot;:</span><br><span class="line">        for ticket in tickets:</span><br><span class="line">            print(ticket)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;2&quot;:</span><br><span class="line">        start &#x3D; input(&quot;请输入开始站点:&quot;)</span><br><span class="line">        end &#x3D; input(&quot;请输入目的站点:&quot;)</span><br><span class="line">        date &#x3D; input(&quot;请输入日期:&quot;)</span><br><span class="line">        for ticket in tickets:</span><br><span class="line">            if ticket[&quot;开始站点&quot;] &#x3D;&#x3D; start and ticket[&quot;目的站点&quot;] &#x3D;&#x3D; end and ticket[&quot;日期&quot;] &#x3D;&#x3D; date :</span><br><span class="line">                print(&quot;票务信息:&quot;,ticket)</span><br><span class="line">                break</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;没有找到你需要的车票信息&quot;)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;3&quot;:</span><br><span class="line">        start &#x3D; input(&quot;请输入开始站点:&quot;)</span><br><span class="line">        end &#x3D; input(&quot;请输入目的站点:&quot;)</span><br><span class="line">        date &#x3D; input(&quot;请输入日期:&quot;)</span><br><span class="line">        for ticket in tickets :</span><br><span class="line">            if ticket[&quot;开始站点&quot;] &#x3D;&#x3D; start and ticket[&quot;目的站点&quot;] &#x3D;&#x3D; end  and ticket[&quot;日期&quot;] &#x3D;&#x3D; date :</span><br><span class="line">                if ticket[&quot;数量&quot;] &gt; 0 :</span><br><span class="line">                    ticket[&quot;数量&quot;] -&#x3D; 1</span><br><span class="line">                    print(&quot;购票成功&quot;)</span><br><span class="line">                else:</span><br><span class="line">                    print(&quot;余票不足&quot;)</span><br><span class="line">                break</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;没有找到对应的票务信息&quot;)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;4&quot;:</span><br><span class="line">        start &#x3D; input(&quot;请输入开始站点:&quot;)</span><br><span class="line">        end &#x3D; input(&quot;请输入目的站点:&quot;)</span><br><span class="line">        date &#x3D; input(&quot;请输入日期:&quot;)</span><br><span class="line">        price &#x3D; input(&quot;请输入票价:&quot;)</span><br><span class="line">        for ticket in tickets:</span><br><span class="line">            if ticket[&quot;开始站点&quot;] &#x3D;&#x3D; start and ticket[&quot;目的站点&quot;] &#x3D;&#x3D; end and ticket[&quot;日期&quot;] &#x3D;&#x3D; date :</span><br><span class="line">                ticket[&quot;数量&quot;] +&#x3D; 1</span><br><span class="line">                break</span><br><span class="line">        else:</span><br><span class="line">            tickets.append(&#123;&quot;开始站点&quot;:start,&quot;目的站点&quot;:end,&quot;日期&quot;:date,&quot;票价&quot;:price,&quot;数量&quot;:1&#125;)</span><br><span class="line">            </span><br><span class="line">        print(&quot;退票成功&quot;)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;5&quot;:</span><br><span class="line">        break</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;输入序号有误，请重新输入&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十一-12-函数文档"><a href="#十一-12-函数文档" class="headerlink" title="十一.12_函数文档"></a>十一.12_函数文档</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def fun_a(x,y,z):</span><br><span class="line">    &quot;&quot;&quot; 这是测试函数 </span><br><span class="line">        x:int</span><br><span class="line">        y:int</span><br><span class="line">        z:int</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    print(x,y,z)</span><br><span class="line"></span><br><span class="line">#help 查看帮助信息</span><br><span class="line">print(help(fun_a))</span><br></pre></td></tr></table></figure>
+
+<h1 id="十三-13-票务管理系统-函数版"><a href="#十三-13-票务管理系统-函数版" class="headerlink" title="十三.13_票务管理系统_函数版"></a>十三.13_票务管理系统_函数版</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">函数版</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#打印菜单</span><br><span class="line">def print_menu():</span><br><span class="line">    print(&quot;*&quot;*50)</span><br><span class="line">    print(&quot;1 查询所有车票&quot;)</span><br><span class="line">    print(&quot;2 根据开始站点,目的站点,时间来查询&quot;)</span><br><span class="line">    print(&quot;3 购买车票&quot;)</span><br><span class="line">    print(&quot;4 退票&quot;)</span><br><span class="line">    print(&quot;5 退出系统&quot;)</span><br><span class="line">    print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">tickets &#x3D; [</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;广州&quot;,&quot;目的站点&quot;:&quot;北京&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:500,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;广州&quot;,&quot;目的站点&quot;:&quot;武汉&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:300,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;北京&quot;,&quot;目的站点&quot;:&quot;青岛&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:300,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;郑州&quot;,&quot;目的站点&quot;:&quot;北京&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:300,&quot;数量&quot;:100&#125;,</span><br><span class="line">    &#123;&quot;开始站点&quot;:&quot;北京&quot;,&quot;目的站点&quot;:&quot;丽江&quot;,&quot;日期&quot;:&quot;20200101&quot;,&quot;票价&quot;:600,&quot;数量&quot;:100&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">#查询所有车票</span><br><span class="line">def query_all():</span><br><span class="line">    for ticket in tickets:</span><br><span class="line">        print(ticket)</span><br><span class="line">        </span><br><span class="line">#根据条件查询</span><br><span class="line">def query_by_params(start_tmp,end_tmp,date):</span><br><span class="line">     for ticket in tickets:</span><br><span class="line">        if ticket[&quot;开始站点&quot;] &#x3D;&#x3D; start_tmp and ticket[&quot;目的站点&quot;] &#x3D;&#x3D; end_tmp and ticket[&quot;日期&quot;] &#x3D;&#x3D; date :</span><br><span class="line">            return ticket</span><br><span class="line">     return None;</span><br><span class="line"></span><br><span class="line">#购买车票</span><br><span class="line">def buy_ticket(start_tmp,end_tmp,date):</span><br><span class="line">    ticket &#x3D; query_by_params(start_tmp,end_tmp,date)</span><br><span class="line">    if ticket &#x3D;&#x3D; None:</span><br><span class="line">        print(&quot;没有找到对应的票务信息&quot;)</span><br><span class="line">    else:</span><br><span class="line">        if ticket[&quot;数量&quot;] &gt; 0 :</span><br><span class="line">            ticket[&quot;数量&quot;] -&#x3D; 1</span><br><span class="line">            print(&quot;购票成功&quot;)</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;余票不足&quot;)</span><br><span class="line"></span><br><span class="line">#退票</span><br><span class="line">def return_ticket(start_tmp,end_tmp,date,price):</span><br><span class="line">    ticket &#x3D; query_by_params(start_tmp,end_tmp,date)</span><br><span class="line">    if ticket &#x3D;&#x3D; None:</span><br><span class="line">        tickets.append(&#123;&quot;开始站点&quot;:start,&quot;目的站点&quot;:end,&quot;日期&quot;:date,&quot;票价&quot;:price,&quot;数量&quot;:1&#125;)</span><br><span class="line">    else:</span><br><span class="line">        ticket[&quot;数量&quot;] +&#x3D; 1</span><br><span class="line">    print(&quot;退票成功&quot;)</span><br><span class="line"></span><br><span class="line">#打印菜单</span><br><span class="line">print_menu()</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    model &#x3D; input(&quot;请输入你选择的操作序号:&quot;)</span><br><span class="line">    if model &#x3D;&#x3D; &quot;1&quot;:</span><br><span class="line">        query_all()</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;2&quot;:</span><br><span class="line">        start &#x3D; input(&quot;请输入开始站点:&quot;)</span><br><span class="line">        end &#x3D; input(&quot;请输入目的站点:&quot;)</span><br><span class="line">        date &#x3D; input(&quot;请输入日期:&quot;)</span><br><span class="line">        ticket &#x3D; query_by_params(start,end,date)</span><br><span class="line">        if ticket &#x3D;&#x3D; None:</span><br><span class="line">            print(&quot;没有找到你需要的车票信息&quot;)</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;票务信息:&quot;,ticket)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;3&quot;:</span><br><span class="line">        start &#x3D; input(&quot;请输入开始站点:&quot;)</span><br><span class="line">        end &#x3D; input(&quot;请输入目的站点:&quot;)</span><br><span class="line">        date &#x3D; input(&quot;请输入日期:&quot;)</span><br><span class="line">        buy_ticket(start,end,date)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;4&quot;:</span><br><span class="line">        start &#x3D; input(&quot;请输入开始站点:&quot;)</span><br><span class="line">        end &#x3D; input(&quot;请输入目的站点:&quot;)</span><br><span class="line">        date &#x3D; input(&quot;请输入日期:&quot;)</span><br><span class="line">        price &#x3D; input(&quot;请输入票价:&quot;)</span><br><span class="line">        return_ticket(start,end,date,price)</span><br><span class="line">    elif model &#x3D;&#x3D; &quot;5&quot;:</span><br><span class="line">        break</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;输入序号有误，请重新输入&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十四-14-回调函数"><a href="#十四-14-回调函数" class="headerlink" title="十四.14_回调函数"></a>十四.14_回调函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">def send_msg():</span><br><span class="line">    &quot;&quot;&quot;发送消息&quot;&quot;&quot;</span><br><span class="line">    print(&quot;亲爱的，我到家了&quot;)</span><br><span class="line"></span><br><span class="line">#回调函数，传函数名称即可</span><br><span class="line">def go_home(callback):</span><br><span class="line">    &quot;&quot;&quot;回家</span><br><span class="line">        callback:function</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    print(&quot;打出租车回家了&quot;)</span><br><span class="line">    print(&quot;到家了&quot;)</span><br><span class="line">    callback()</span><br><span class="line"></span><br><span class="line">def eat():</span><br><span class="line">    print(&quot;肚子饿了，吃点方便面&quot;)</span><br><span class="line"></span><br><span class="line">#go_home(eat)</span><br><span class="line">#go_home(send_msg)</span><br><span class="line"></span><br><span class="line">#lambda: 匿名函数</span><br><span class="line">go_home(lambda: print(&quot;再和别人去看电影&quot;))</span><br></pre></td></tr></table></figure>
+
+<h1 id="十五-15-lambda表达式"><a href="#十五-15-lambda表达式" class="headerlink" title="十五.15_lambda表达式"></a>十五.15_lambda表达式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">#用于计算两个数字的和</span><br><span class="line">def sum(x,y):</span><br><span class="line">    &quot;&quot;&quot;用于计算两个数字之和&quot;&quot;&quot;</span><br><span class="line">    return x+y</span><br><span class="line"></span><br><span class="line">#通过 lambda表达式 可以简化代码</span><br><span class="line">sum2 &#x3D; lambda x,y: x+y</span><br><span class="line">print(sum(1,2))</span><br><span class="line">print(sum2(3,4))</span><br><span class="line"></span><br><span class="line">def go_home(callback):</span><br><span class="line">    print(&quot;开始执行&quot;)</span><br><span class="line">    callback()</span><br><span class="line">    print(&quot;完成执行&quot;)</span><br><span class="line"></span><br><span class="line">go_home(lambda: print(&quot;lambda函数&quot;))</span><br><span class="line"></span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">def max(x,y):</span><br><span class="line">    &quot;&quot;&quot; 返回x,y中最大数 &quot;&quot;&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if x &gt;&#x3D; y:</span><br><span class="line">        return x</span><br><span class="line">    else:</span><br><span class="line">        return y</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    #三元运算符</span><br><span class="line">    # x if x&gt;&#x3D; y   表示：默认返回x,是在x&gt;&#x3D;y的情况返回的</span><br><span class="line">    # else y  表示：前边的x&gt;&#x3D;y不成立，返回的是y值</span><br><span class="line">    return x if x &gt;&#x3D;y else y</span><br><span class="line">    </span><br><span class="line">#lambda表达式</span><br><span class="line">max2 &#x3D; lambda x,y: x if x&gt;&#x3D;y else y</span><br><span class="line">print(max(1,4))</span><br><span class="line">print(max(1,4))</span><br><span class="line"></span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line"></span><br><span class="line">def max3(x,y,z):</span><br><span class="line">    &quot;&quot;&quot; 返回x,y,z中的最大数 &quot;&quot;&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    #普通方式</span><br><span class="line">    if x&gt;&#x3D; y and x&gt;&#x3D;z:</span><br><span class="line">        return x</span><br><span class="line">    elif y&gt;&#x3D;x and y&gt;&#x3D;z:</span><br><span class="line">        return y</span><br><span class="line">    else:</span><br><span class="line">        return z</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    #使用lambda表达式, 在不够清晰的时候，不建议使用lambda表达式</span><br><span class="line">    return x if x&gt;&#x3D;y and x&gt;&#x3D;z else y if y&gt;&#x3D;x and y&gt;&#x3D;z else z</span><br><span class="line">print(max3(1,3,5))</span><br><span class="line"></span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line">def max4(x,y,z):</span><br><span class="line">    &quot;&quot;&quot; 返回x,y,z中的最大数 &quot;&quot;&quot;</span><br><span class="line">    #普通方式</span><br><span class="line">    print(&quot;max4：123&quot;)</span><br><span class="line">    print(&quot;max4: 456&quot;)</span><br><span class="line">    if x&gt;&#x3D; y and x&gt;&#x3D;z:</span><br><span class="line">        return x</span><br><span class="line">    elif y&gt;&#x3D;x and y&gt;&#x3D;z:</span><br><span class="line">        return y</span><br><span class="line">    else:</span><br><span class="line">        return z</span><br><span class="line"></span><br><span class="line">#在表达式中执行多个语句时，需要使用逻辑运算符 or 或者 and</span><br><span class="line">max5 &#x3D; lambda x,y,z: print(&quot;max5: 123&quot;) or print(&quot;max5: 456&quot;) or (x if x&gt;&#x3D;y and x&gt;&#x3D;z else y if y&gt;&#x3D;x and y&gt;&#x3D;z else z)</span><br><span class="line">print(max4(10,3,5))</span><br><span class="line">print(max5(10,3,5))</span><br></pre></td></tr></table></figure>
+
+<h1 id="十六-16-函数递归"><a href="#十六-16-函数递归" class="headerlink" title="十六.16_函数递归"></a>十六.16_函数递归</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#需求：计算 1 - N之间的整数加和</span><br><span class="line"></span><br><span class="line">#普通的循环</span><br><span class="line">def sum(x):</span><br><span class="line">    value &#x3D; 0</span><br><span class="line">    for item in range(1,x+1):</span><br><span class="line">        value +&#x3D; item</span><br><span class="line">    return value</span><br><span class="line"></span><br><span class="line">print(sum(10))</span><br><span class="line"></span><br><span class="line">#递归</span><br><span class="line">def sum2(x):</span><br><span class="line">    value &#x3D; 0</span><br><span class="line">    if x &gt; 1:</span><br><span class="line">        value &#x3D; x + sum2(x-1)</span><br><span class="line">    else:</span><br><span class="line">        value &#x3D; 1</span><br><span class="line">    return value</span><br><span class="line">    </span><br><span class="line">print(sum2(10))</span><br></pre></td></tr></table></figure>
+
+<h1 id="十七-17-高阶函数"><a href="#十七-17-高阶函数" class="headerlink" title="十七.17_高阶函数"></a>十七.17_高阶函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">高阶函数定义：（满足下边两个条件之一）</span><br><span class="line">1，接受一个或者多个函数作为参数</span><br><span class="line">2，输出一个函数</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">#高阶函数</span><br><span class="line">def fun_a(callback):</span><br><span class="line">    callback()</span><br><span class="line">    print(&quot;fun_a&quot;)</span><br><span class="line"></span><br><span class="line">def fun_b():</span><br><span class="line">    print(&quot;fun_b&quot;)</span><br><span class="line"></span><br><span class="line">fun_a(fun_b)</span><br><span class="line"></span><br><span class="line">def fun_c():</span><br><span class="line">    print(&quot;fun_c&quot;)</span><br><span class="line">    return fun_b</span><br><span class="line"></span><br><span class="line">ret &#x3D; fun_c()</span><br><span class="line">print(ret)</span><br><span class="line">ret()</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#需求：将列表[1,2,3,4,5]中的每个元素都加上10，生成一个新的列表</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">#for循环方式</span><br><span class="line">list_a &#x3D; [1,2,3,4,5]</span><br><span class="line">list_b &#x3D; []</span><br><span class="line">for item in list_a:</span><br><span class="line">    list_b.append(item+10)</span><br><span class="line">print(list_b)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#map方式</span><br><span class="line">#map 是一个映射，接收两个参数，第一个参数为一个函数，第二个参数为序列（列表，元组）</span><br><span class="line"># map的返回值是一个可迭代的对象，使用list(ret)转换为序列</span><br><span class="line">list_a &#x3D; [1,2,3,4,5]</span><br><span class="line">fn &#x3D; lambda x: x+10</span><br><span class="line">ret &#x3D; map(fn,list_a)</span><br><span class="line">print(ret)</span><br><span class="line">print(list(ret))</span><br><span class="line"></span><br><span class="line">print(&quot;需求二:&quot;)</span><br><span class="line">print(&quot;*&quot;*50)</span><br><span class="line">#将两个列表中的索引对应的元素加起来，形成一个新的列表</span><br><span class="line">list_x &#x3D; [11,12,13,14,15]</span><br><span class="line">list_y &#x3D; [21,22,23,24,25]</span><br><span class="line">ret &#x3D; map(lambda x,y:x+y, list_x,list_y)</span><br><span class="line">print(list(ret))</span><br></pre></td></tr></table></figure>
+
+<h1 id="十八-18-高阶函数2"><a href="#十八-18-高阶函数2" class="headerlink" title="十八.18_高阶函数2"></a>十八.18_高阶函数2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#reduce(fn,序列) 用于做累计运算</span><br><span class="line">#fn: 函数，有2个参数，返回一个值</span><br><span class="line">#整体返回一个需要累计运算的值</span><br><span class="line"></span><br><span class="line">#需求：计算数字列表中，所有的数字乘积</span><br><span class="line"></span><br><span class="line">from functools import reduce</span><br><span class="line">list_a &#x3D; [2,4,6,8,10]</span><br><span class="line">ret &#x3D; reduce(lambda x,y:x*y, list_a)</span><br><span class="line">print(ret)</span><br><span class="line"></span><br><span class="line">#需求：给定一个list集合，找出所有大于80的数据</span><br><span class="line"></span><br><span class="line">#filter(fn,序列) ：用来做过滤</span><br><span class="line">#fn: 接受一个参数，返回一个布尔值</span><br><span class="line">list_b &#x3D; [112,134,34,60,100]</span><br><span class="line">ret &#x3D; filter(lambda x: x&gt;&#x3D;80, list_b)</span><br><span class="line">print(ret)</span><br><span class="line">print(list(ret))</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">总结：</span><br><span class="line">高阶函数有:</span><br><span class="line">map, reduce, filter, sorted</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="十九-19-闭包"><a href="#十九-19-闭包" class="headerlink" title="十九.19_闭包"></a>十九.19_闭包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#闭包定义：</span><br><span class="line">#1，函数A 中定义函数B</span><br><span class="line">#2，函数A 返回 函数B</span><br><span class="line">#3，函数B 中访问了 函数A中的变量</span><br><span class="line"></span><br><span class="line">#需求：提供一个函数，用于生成一个自动增长的数字1,2,3,4</span><br><span class="line"></span><br><span class="line">def get_id():</span><br><span class="line">    num &#x3D; 0</span><br><span class="line">    def gen_id():</span><br><span class="line">        #非全局变量</span><br><span class="line">        nonlocal num</span><br><span class="line">        num +&#x3D; 1</span><br><span class="line">        return num</span><br><span class="line">    return gen_id</span><br><span class="line">    </span><br><span class="line">callback &#x3D; get_id()</span><br><span class="line">print(callback())</span><br><span class="line">print(callback())</span><br><span class="line">print(callback())</span><br><span class="line">print(callback())</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href></a></li>
+<li><a href></a></li>
+</ul>
+</blockquote>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2020/09/22/python/base/05-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    05-面向对象
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2020/09/22/python/base/03-%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">03-高级数据类型</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            庞占立 &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

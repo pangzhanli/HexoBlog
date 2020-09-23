@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>01-python基础 | Hexo</title>
+    
+    
+        <meta name="keywords" content="01-python基础" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一. 变量和常量1234567891011username &#x3D; &quot;jack&quot;print(username)print(type(username))username &#x3D; 8print(username)print(username+5)print(type(username))  二. 变量_对象和引用12345678910111213141516&amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01-python基础">
+<meta property="og:url" content="http://pangzhanli.top/2020/09/22/python/base/01-python%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一. 变量和常量1234567891011username &#x3D; &quot;jack&quot;print(username)print(type(username))username &#x3D; 8print(username)print(username+5)print(type(username))  二. 变量_对象和引用12345678910111213141516&amp;quot">
+<meta property="article:published_time" content="2020-09-22T09:14:52.000Z">
+<meta property="article:modified_time" content="2020-09-23T02:20:54.721Z">
+<meta property="article:author" content="庞占立">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Hexo</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            C语言
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/">C语言基本数据类型简单介绍</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E4%B8%AD%E7%9A%84%E8%87%AA%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">C语言基本运算中的自增运算符和自减运算符以及三目运算符</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E8%BE%93%E5%87%BA/">C语言中的字符串的定义及初始化和输出</a></li>  <li class="file"><a href="/2020/04/03/c/c-maopaopaixu/">C语言中的冒泡排序简单介绍</a></li>  <li class="file"><a href="/2020/04/03/c/c-pointer-desc/">C语言中指针的简单介绍</a></li>  <li class="file"><a href="/2020/04/03/c/c-enum-desc/">C语言中枚举的简单介绍</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hexo
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/02/hexo/hello-hexo/">Hexo简单介绍</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            OC
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Foundation
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_category_desc/">OC中的Category简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_block_desc/">OC中的Block简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_class_init/">OC中类的创建简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-struct/">Foundation中结构体的简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-string/">Foundation框架中字符串的创建</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-mulString/">Foundation中的NSMutableString的创建</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-strFile/">Foundation中将字符串写入到磁盘文件上</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            OC动画
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/">IOS旋转菜单</a></li>  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-customProgressCircle/">IOS-自制进度圈</a></li>  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-TableViewHeader/">UITableViewHeader头部拉伸变化</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Screen
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/24/oc/Screen/oc-screenSize-detail/">iphone屏幕尺寸，分辨率， PPI详细数据对比</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UITableView
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/">使用代码创建UITableViewCell</a></li>  <li class="file"><a href="/2020/04/03/oc/UITableView/oc-UITableViewCell-xib/">使用xib文件创建UITableViewCell</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            上传
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Upload/oc-Upload-putAndPost/">IOS文件上传PUT和POST</a></li>  <li class="file"><a href="/2020/04/03/oc/Upload/oc-Upload-nativeUpload/">ios原生API文件上传(NSURLSession)</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            水印
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/15/oc/WaterMark/oc-WaterMark-rotateLabel/">旋转UILabel</a></li>  <li class="file"><a href="/2020/04/15/oc/WaterMark/oc-WaterMark-wk/">水印</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            登录
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Login/oc-Login-AppleLogin/">IOS苹果登录(sign in with apple)</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-TouchID/">IOS指纹登录</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-AKeyLogin/">IOS一键登录</a></li>  <li class="file"><a href="/2020/04/08/oc/Login/oc-Login-QRCode/">IOS扫码登录</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            flutter
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Dart语法
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/01/flutter/Dart/01-Dart%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">01-Dart环境搭建</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/02-%E5%85%A5%E5%8F%A3%EF%BC%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B8%B8%E9%87%8F%EF%BC%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">02-入口，注释，变量，常量，命名规则</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-数据类型</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/04-Dart%E8%BF%90%E7%AE%97%E7%AC%A6/">04-Dart运算符</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/05-%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6%EF%BC%8C%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%EF%BC%8C%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA/">05-图片组件，网络图片以及本地图片，图片裁剪</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/06-Dart%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%8C-List-Set-Map/">06-Dart集合类型， List, Set, Map</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/07-%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0/">07-方法参数</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/08-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%EF%BC%8C%E8%87%AA%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AD%E5%8C%85/">08-箭头函数，匿名方法，自执行方法，闭包</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">09-面向对象</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/10-%E7%B1%BB%E4%B8%AD%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%EF%BC%8C%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BB%A7%E6%89%BF/">10-类中静态成员，静态方法，操作符，以及继承</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/11-Dart%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB/">11-Dart中抽象类</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/12-Dart%E4%B8%AD%E7%9A%84mixins/">12-Dart中的mixins</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/13-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E6%B3%9B%E5%9E%8B%E7%B1%BB%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3/">13-泛型方法，泛型类，泛型接口</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/14-Dart%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%93%EF%BC%8C%E7%B3%BB%E7%BB%9F%E5%BA%93%EF%BC%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">14-Dart中自定义库，系统库，第三方库</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            flutter框架一
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/01-flutter%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%A7%8B/">01-flutter学习开始</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">02-flutter之环境搭建</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/03-Hello-Flutter/">03-Hello Flutter</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/04-Android-Studio-%E4%B8%AD%E4%B8%8B%E8%BD%BDAndroid-SDK%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">04-Android Studio 中下载Android SDK的两种方式</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/05-Dart-%E4%B8%80/">05-Dart(一)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/06-Dart-%E4%BA%8C/">06-Dart(二)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/">07-Flutter的基础Widget</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/08-%E6%8C%89%E9%92%AE%E5%8F%98%E5%B0%8F%E8%AE%BE%E7%BD%AE/">08-按钮变小设置</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/09-StatefulWidget%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">09-StatefulWidget生命周期</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/10-%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%EF%BC%8C%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9B%BE%E7%89%87/">10-图文混排，按钮，图片</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/11-%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">11-基础组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/12-%E6%BB%9A%E5%8A%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">12-滚动组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/13-Dart%E4%B8%AD%E7%9A%84%E5%BC%82%E6%AD%A5/">13-Dart中的异步</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/14-%E8%99%9A%E7%BA%BF%E5%92%8C%E6%98%9F%E6%98%9F%E8%AF%84%E5%88%86/">14-虚线和星星评分</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/15-%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%E7%9A%84%E5%AE%9E%E7%8E%B0/">15-豆瓣首页的实现</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python基础
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2020/09/22/python/base/01-python%E5%9F%BA%E7%A1%80/">01-python基础</a></li>  <li class="file"><a href="/2020/09/22/python/base/02-python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">02-python流程控制</a></li>  <li class="file"><a href="/2020/09/22/python/base/03-%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-高级数据类型</a></li>  <li class="file"><a href="/2020/09/22/python/base/04-%E5%87%BD%E6%95%B0/">04-函数</a></li>  <li class="file"><a href="/2020/09/22/python/base/05-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">05-面向对象</a></li>  <li class="file"><a href="/2020/09/22/python/base/06-%E6%A8%A1%E5%9D%97/">06-模块</a></li>  <li class="file"><a href="/2020/09/22/python/base/07-%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">07-植物大战僵尸</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/2020/09/01/hexo/hello-world/">Hello World</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-python/base/01-python基础" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/python/">python</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/python/python%E5%9F%BA%E7%A1%80/">python基础</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2020/09/22/python/base/01-python%E5%9F%BA%E7%A1%80/">
+            <time datetime="2020-09-22T09:14:52.000Z" itemprop="datePublished">2020-09-22</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a href='https://github.com/zthxxx/Wiki-site/raw/writing/source/_posts/python/base/01-python基础.md' target="_blank" rel="noopener"> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/zthxxx/Wiki-site/edit/writing/source/_posts/python/base/01-python基础.md' target="_blank" rel="noopener"> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a href='https://github.com/zthxxx/Wiki-site/commits/writing/source/_posts/python/base/01-python基础.md' target="_blank" rel="noopener"> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            01-python基础
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-变量和常量"><span class="toc-number">1.</span> <span class="toc-text">一. 变量和常量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-变量-对象和引用"><span class="toc-number">2.</span> <span class="toc-text">二. 变量_对象和引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-垃圾回收-共享引用"><span class="toc-number">3.</span> <span class="toc-text">三. 垃圾回收_共享引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-数字基本操作"><span class="toc-number">4.</span> <span class="toc-text">四. 数字基本操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-数字的其他操作"><span class="toc-number">5.</span> <span class="toc-text">五. 数字的其他操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六-布尔类型"><span class="toc-number">6.</span> <span class="toc-text">六. 布尔类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七-字符串基本操作"><span class="toc-number">7.</span> <span class="toc-text">七. 字符串基本操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八-转义字符-原始字符"><span class="toc-number">8.</span> <span class="toc-text">八. 转义字符_原始字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九-字符串转换"><span class="toc-number">9.</span> <span class="toc-text">九. 字符串转换</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十-字符串分片-py"><span class="toc-number">10.</span> <span class="toc-text">十. 字符串分片.py</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十一-字符串格式化"><span class="toc-number">11.</span> <span class="toc-text">十一. 字符串格式化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十二-字符串的常用方法"><span class="toc-number">12.</span> <span class="toc-text">十二. 字符串的常用方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十三-运算符操作"><span class="toc-number">13.</span> <span class="toc-text">十三. 运算符操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十四-运算符-实体关系"><span class="toc-number">14.</span> <span class="toc-text">十四. 运算符_实体关系</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h1 id="一-变量和常量"><a href="#一-变量和常量" class="headerlink" title="一. 变量和常量"></a>一. 变量和常量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">username &#x3D; &quot;jack&quot;</span><br><span class="line">print(username)</span><br><span class="line"></span><br><span class="line">print(type(username))</span><br><span class="line"></span><br><span class="line">username &#x3D; 8</span><br><span class="line">print(username)</span><br><span class="line"></span><br><span class="line">print(username+5)</span><br><span class="line"></span><br><span class="line">print(type(username))</span><br></pre></td></tr></table></figure>
+
+<h1 id="二-变量-对象和引用"><a href="#二-变量-对象和引用" class="headerlink" title="二. 变量_对象和引用"></a>二. 变量_对象和引用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">操作流程</span><br><span class="line">1，创建一个数字对象100</span><br><span class="line">2， 创建一个变量a</span><br><span class="line">3, 将100赋值给变量a</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">a &#x3D; 100</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"> # id(a),   变量a中所存放的内存地址</span><br><span class="line">print(id(a))</span><br><span class="line"></span><br><span class="line">a &#x3D; 108</span><br><span class="line">print(a)</span><br><span class="line">print(id(a))</span><br></pre></td></tr></table></figure>
+
+<h1 id="三-垃圾回收-共享引用"><a href="#三-垃圾回收-共享引用" class="headerlink" title="三. 垃圾回收_共享引用"></a>三. 垃圾回收_共享引用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">在程序运行的过程中，把创建的对象而且已经是没有用的对象自动回收，这个过程，称之为垃圾回收</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">a &#x3D; &quot;python&quot;</span><br><span class="line">b &#x3D; a</span><br><span class="line"></span><br><span class="line"> #a, b两个变量共享引用数据 python</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br><span class="line"></span><br><span class="line">a &#x3D; &quot;wolfcode&quot;</span><br><span class="line">print(a)</span><br><span class="line">print(id(a))</span><br><span class="line">print(id(b))</span><br></pre></td></tr></table></figure>
+
+<h1 id="四-数字基本操作"><a href="#四-数字基本操作" class="headerlink" title="四. 数字基本操作"></a>四. 数字基本操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">数值类型：整数(int) ,和 小数(float), 复数</span><br><span class="line">1，数值是不可变类型的对象</span><br><span class="line">2，数值的表达方式有： 十进制，十六进制，八进制， 二进制</span><br><span class="line">3，数据之间的进制转换 </span><br><span class="line">    hex()，转换成十六进制</span><br><span class="line">    oct(), 转换成八进制</span><br><span class="line">    bin(), 转换成二进制</span><br><span class="line">    int(),  转换成十进制</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">#十进制</span><br><span class="line">num1 &#x3D; 100</span><br><span class="line">print(num1)</span><br><span class="line"></span><br><span class="line">#十六进制</span><br><span class="line">num2 &#x3D; 0xff</span><br><span class="line">print(num2)</span><br><span class="line"></span><br><span class="line">#八进制</span><br><span class="line">num3 &#x3D; 0o75</span><br><span class="line">print(num3)</span><br><span class="line"></span><br><span class="line">#二进制</span><br><span class="line">num4 &#x3D; 0b101</span><br><span class="line">print(num4)</span><br><span class="line"></span><br><span class="line">#进制之间的转换</span><br><span class="line">num5 &#x3D; 6890</span><br><span class="line">print(num5)</span><br><span class="line">#bin(num)  使用二进制表示</span><br><span class="line">print(bin(num5))</span><br><span class="line"></span><br><span class="line">#hex(num)  使用十六进制表示</span><br><span class="line">print(hex(num5))</span><br><span class="line"></span><br><span class="line">#oct(num)  使用八进制表示</span><br><span class="line">print(oct(num5))</span><br><span class="line"></span><br><span class="line">#把八进制转换成十进制</span><br><span class="line">print(int(0o77))</span><br><span class="line"></span><br><span class="line">#把字符串转换成数字</span><br><span class="line">print(int(&quot;1099&quot;))</span><br></pre></td></tr></table></figure>
+
+<h1 id="五-数字的其他操作"><a href="#五-数字的其他操作" class="headerlink" title="五. 数字的其他操作"></a>五. 数字的其他操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">表达式操作</span><br><span class="line">x&#x2F;&#x2F;y  整除， 取x除以y的整除部分</span><br><span class="line">x%y   取余数， x除以y的余数部分</span><br><span class="line">x**Y   x的y次方</span><br><span class="line"></span><br><span class="line">pow(x,y)  &#x3D;&#x3D;&gt;   x**y 的次方</span><br><span class="line">abs(x) &#x3D;&#x3D;&gt; |x| 返回的是x的绝对值</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">import  random</span><br><span class="line"></span><br><span class="line">print(5&#x2F;2)</span><br><span class="line">print(-5&#x2F;2)</span><br><span class="line">print(5&#x2F;&#x2F;2)</span><br><span class="line">print(-5&#x2F;&#x2F;2)</span><br><span class="line">print(5%2)</span><br><span class="line">print(5*2)</span><br><span class="line">print(5**2)</span><br><span class="line"></span><br><span class="line">print(pow(5,3))</span><br><span class="line">print(abs(-3))</span><br><span class="line"></span><br><span class="line">print(&quot;int转换&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;)</span><br><span class="line">print(int(&quot;100&quot;))   #100，   转换成十进制数字</span><br><span class="line">print(int(&quot;100&quot;,2))  # 100是二进制数字，转换成十进制数字&#x3D;4</span><br><span class="line">print(int(&quot;100&quot;,16))</span><br><span class="line"></span><br><span class="line">print(&quot;随机数&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;)</span><br><span class="line"></span><br><span class="line">#生成一个1-10之间的随机数字</span><br><span class="line">print(random.randint(1,10))</span><br><span class="line"></span><br><span class="line">#dir 显示模块有哪些方法可以使用</span><br><span class="line">print(dir(random))</span><br><span class="line"></span><br><span class="line">#help 查看方法的帮助文档</span><br><span class="line">print(help(random.randint))</span><br></pre></td></tr></table></figure>
+
+<h1 id="六-布尔类型"><a href="#六-布尔类型" class="headerlink" title="六. 布尔类型"></a>六. 布尔类型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">布尔类型： 只有两个值，True,和 False,</span><br><span class="line">1, 可以和整数直接参数运算</span><br><span class="line">2, 如果把True, False 转换为数字， True --&gt; 1, False --&gt; 0</span><br><span class="line">3, 数字可以转换为布尔类型， 0--&gt;False，非0 --&gt;Ture   使用bool(num)函数</span><br><span class="line">4, 在python中，所有的数据都可以表示为True,False, </span><br><span class="line">    在字符串中，空字符串表示为False, 非空字符串表示True,   bool(str) 函数</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">flag &#x3D; True</span><br><span class="line"></span><br><span class="line">print(flag)</span><br><span class="line"></span><br><span class="line"># 进行加法运算</span><br><span class="line">print(flag+4)</span><br><span class="line"></span><br><span class="line"># bool(num)  把一个数字转换为布尔类型</span><br><span class="line">print(bool(0.0))</span><br><span class="line">print(bool(100))</span><br><span class="line"></span><br><span class="line">print(bool(&quot;&quot;))</span><br><span class="line">print(bool(&quot;\n&quot;))</span><br></pre></td></tr></table></figure>
+
+<h1 id="七-字符串基本操作"><a href="#七-字符串基本操作" class="headerlink" title="七. 字符串基本操作"></a>七. 字符串基本操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">字符串：使用引号括起来的文字，通常情况表达的是文字的信息，有序的字符集合</span><br><span class="line">1, 使用单引号</span><br><span class="line">2，使用双引号</span><br><span class="line">3, 使用三重引号，可以对字符串换行</span><br><span class="line"></span><br><span class="line">字符串的特点：</span><br><span class="line">1，有序的字符集合</span><br><span class="line">2，对于字符串中的每一个字符串都有一个对应的索引，从左往右，从0开始， text[0]</span><br><span class="line">    索引特点： 从左往右，从0开始， 从右往左，从-1开始</span><br><span class="line">3，对于字符串是不可变对象，跟数字一样</span><br><span class="line">4，对于字符串的长度，可以使用len()函数</span><br><span class="line">5，str()函数，可以把其他对应转换为字符串</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">text &#x3D; &quot;python&quot;</span><br><span class="line">print(text)</span><br><span class="line">#type(text) 查看对象的类型</span><br><span class="line">print(type(text))</span><br><span class="line"></span><br><span class="line">text2 &#x3D; &quot;wolfcode&quot;</span><br><span class="line">print(text2)</span><br><span class="line"></span><br><span class="line">text3 &#x3D; &quot;&quot;&quot;呵呵呵</span><br><span class="line"> 你好啊</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">print(text3)</span><br><span class="line">print(type(text3))</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;)</span><br><span class="line">#访问text的第一个字符</span><br><span class="line">print(text[0])</span><br><span class="line">#访问text的最后一个字符</span><br><span class="line">print(text[-1])</span><br><span class="line"></span><br><span class="line">#错误，不能修改字符串中的字符</span><br><span class="line">#text[-1]&#x3D;&quot;B&quot;</span><br><span class="line"></span><br><span class="line">#len(text) text的长度</span><br><span class="line">print(len(text))</span><br><span class="line"></span><br><span class="line">#去除最后一个元素</span><br><span class="line">print(text[len(text) -1])</span><br><span class="line"></span><br><span class="line">#str(123), 将数字123转换成字符串</span><br><span class="line">print(str(123456))</span><br><span class="line">print(type(str(123456)))</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&#x3D;&#x3D;&#x3D;加法和乘法&#x3D;&#x3D;&#x3D;&#x3D;&quot;)</span><br><span class="line">#字符串连接符号</span><br><span class="line">print(&quot;python&quot; + &quot;java&quot;)</span><br><span class="line">print(&quot;123&quot; + str(456))</span><br><span class="line">print(int(123) + 456)</span><br><span class="line"></span><br><span class="line">#乘法操作, 显示50个 &#x3D; 字符</span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br></pre></td></tr></table></figure>
+
+<h1 id="八-转义字符-原始字符"><a href="#八-转义字符-原始字符" class="headerlink" title="八. 转义字符_原始字符"></a>八. 转义字符_原始字符</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">转义字符：</span><br><span class="line">转义序列可以让我们在字符串中表示不容易通过键盘输入或者在输入过程中字符本身有一些特殊意义的，</span><br><span class="line">我们需要使用转义字符来表示</span><br><span class="line">\n 表示换行</span><br><span class="line">转义字符： \+固定的字符</span><br><span class="line">比如：</span><br><span class="line">\&#39;  单引号，普通的字符串，不在是字符串的边界标记</span><br><span class="line">\&quot;  双引号，普通的字符串，不在是字符串的边界标记</span><br><span class="line">\n  换行符, 输入换行符</span><br><span class="line">\t  制表符</span><br><span class="line">\r  回车， 返回到当前行最开始的位置</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">text &#x3D; &quot;abc\nmp&quot;</span><br><span class="line">print(text)</span><br><span class="line">print(len(text))</span><br><span class="line"></span><br><span class="line">text2 &#x3D; &#39;abc\&#39;\&quot;mp&#39;</span><br><span class="line">print(text2)</span><br><span class="line"></span><br><span class="line">text3 &#x3D; &quot;abc\tdef&quot;</span><br><span class="line">print(text3)</span><br><span class="line"></span><br><span class="line"># \r返回当前行最开始的地方</span><br><span class="line">print(&quot;abcdefghijk\r呵呵呵&quot;)</span><br><span class="line"></span><br><span class="line">print(&quot;abc\\tdef&quot;)</span><br><span class="line"></span><br><span class="line">#filename &#x3D; &quot;d:\\name\\text2.txt&quot;</span><br><span class="line">#在字符串的前面加上r, 代表原始字符串</span><br><span class="line">filename &#x3D; r&quot;d:\name\text2.txt&quot;</span><br><span class="line">print(filename)</span><br></pre></td></tr></table></figure>
+
+<h1 id="九-字符串转换"><a href="#九-字符串转换" class="headerlink" title="九. 字符串转换"></a>九. 字符串转换</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">str()   把一个对象转换为字符串</span><br><span class="line">ord()   返回字符的unicode编码</span><br><span class="line">chr()   把unicode编码转换为字符</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#字符串拼接</span><br><span class="line">print(&quot;123&quot;+str(456))</span><br><span class="line"></span><br><span class="line">#中 对应的unicode编码</span><br><span class="line">print(ord(&quot;A&quot;))</span><br><span class="line"></span><br><span class="line"># 将unicode编码转换成字符</span><br><span class="line">print(chr(65))</span><br></pre></td></tr></table></figure>
+
+<h1 id="十-字符串分片-py"><a href="#十-字符串分片-py" class="headerlink" title="十. 字符串分片.py"></a>十. 字符串分片.py</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">字符串是一个有序的字符的集合</span><br><span class="line">通过字符串索引text[0] 是可以获取到一个字符</span><br><span class="line">如果需要从字符串中获取多个字符的话，需要用到分片</span><br><span class="line"></span><br><span class="line">str[start:end:step]</span><br><span class="line">如果start省略，默认0</span><br><span class="line">如果end省略， 默认len(str)</span><br><span class="line">如果step省略， 默认1</span><br><span class="line">start: 正整数，负整数</span><br><span class="line">end:正整数，负整数</span><br><span class="line">step: 正整数，正偏移， 负整数，负偏移</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">text &#x3D; &quot;python&quot;</span><br><span class="line">text2 &#x3D; &quot;wolfcode&quot;</span><br><span class="line"></span><br><span class="line">text3 &#x3D; text2[4:8]</span><br><span class="line">print(text3)</span><br><span class="line"></span><br><span class="line">#如果不写结束索引，默认为结尾，即字符串的长度len(text2)</span><br><span class="line">print(text2[2:])</span><br><span class="line"></span><br><span class="line">#如果不写开始索引，默认为0</span><br><span class="line">print(text2[:4])</span><br><span class="line"></span><br><span class="line">#拷贝出一个新的字符串</span><br><span class="line">text4 &#x3D; text2[:]</span><br><span class="line">print(text4)</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br><span class="line"></span><br><span class="line">#步长： 默认为1</span><br><span class="line">#text2[start:end:step]</span><br><span class="line">#需求： 索引值0 2 4 6 8 这样的字符</span><br><span class="line">text5 &#x3D; text2[::2]</span><br><span class="line">print(text5)</span><br><span class="line"></span><br><span class="line">#需求： 获取wolfcode的最后三个字符</span><br><span class="line">print(text2[-3:])</span><br><span class="line"></span><br><span class="line">#需求，将字符串wolfcode倒叙过来，组成edocflow这个字符串</span><br><span class="line">print(text2[-1::-1])</span><br></pre></td></tr></table></figure>
+
+<h1 id="十一-字符串格式化"><a href="#十一-字符串格式化" class="headerlink" title="十一. 字符串格式化"></a>十一. 字符串格式化</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">方式一： %占位符来表示字符串中的变量</span><br><span class="line">%s 字符串  %d整数 %f小数</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">#方式一</span><br><span class="line">name &#x3D; &quot;lucy&quot;</span><br><span class="line">age &#x3D; 19</span><br><span class="line">print(&quot;my name is %s&quot;%name)</span><br><span class="line">print(&quot;my name is %s, I am %d&quot;%(name,age))</span><br><span class="line"></span><br><span class="line">job &#x3D; &quot;IT&quot;</span><br><span class="line">print(&quot;my job is %s, your job is %s&quot;%(job,job))</span><br><span class="line"></span><br><span class="line"># %.2f 保留两位小数</span><br><span class="line">print(&quot;this number is %.2f&quot;%3.1415926)</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br><span class="line"></span><br><span class="line">#使用位置占位符，如果不写，默认是从0开始</span><br><span class="line">#text &#x3D; &quot;my name is &#123;&#125;, I am &#123;&#125;&quot;.format(name,age)</span><br><span class="line">#text &#x3D; &quot;my name is &#123;0&#125;, I am &#123;1&#125;&quot;.format(name,age)</span><br><span class="line"></span><br><span class="line">#使用名称占位符</span><br><span class="line">text &#x3D; &quot;my name is &#123;name&#125;, I am &#123;age&#125;&quot;.format(name&#x3D;&quot;jack&quot;, age&#x3D;18)</span><br><span class="line">print(text)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十二-字符串的常用方法"><a href="#十二-字符串的常用方法" class="headerlink" title="十二. 字符串的常用方法"></a>十二. 字符串的常用方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">查找：x.find(y) 在字符串x中查找y,如果找到，返回第一次找到对应的索引值,</span><br><span class="line">    如果没有找到，返回-1</span><br><span class="line">    text &#x3D; &quot; good good study day day up&quot;</span><br><span class="line">    num &#x3D; text.find(&quot;study1&quot;)</span><br><span class="line">    print(num)</span><br><span class="line"></span><br><span class="line">x.index(y): 在字符串x中查找y, 如果找到，返回第一次找到的索引，如果找不到，</span><br><span class="line">    报错 ValueError</span><br><span class="line">    text &#x3D; &quot; good good study day day up&quot;</span><br><span class="line">    num &#x3D; text.index(&quot;study1&quot;)</span><br><span class="line">    print(num)</span><br><span class="line"></span><br><span class="line">替换：</span><br><span class="line">x.replace(y,z), 把字符串x中的y替换为z, 替换完之后返回一个新的字符串，</span><br><span class="line">    原来的字符串不变</span><br><span class="line">    x &#x3D; &quot;I am good boy&quot;</span><br><span class="line">    text2 &#x3D; x.replace(&quot;good&quot;,&quot;bad&quot;)</span><br><span class="line">    print(text2)</span><br><span class="line"></span><br><span class="line">字符串分割：x.split([y]), 把字符串x按照y进行分割</span><br><span class="line">字符串合并: y.join(x),  用字符串y将x中的每个数据进行连接</span><br><span class="line">去除空格： x.strip(), 把字符串x两边的空格去掉</span><br><span class="line">编码： x.encode(&quot;utf-8&quot;)   把字符串x编码为字节数据，参数为编码规则，默认为utf-8</span><br><span class="line">解码： x.decode(&quot;utf-8&quot;)   把字节数据x解码为字符串，参数为解码规则，同编码一致</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">x &#x3D; &quot;你好,谢谢,对不起,请,再见&quot;</span><br><span class="line">text3 &#x3D; x.split(&quot;,&quot;)</span><br><span class="line">print(text3)</span><br><span class="line"></span><br><span class="line">text4 &#x3D; &quot;%4%&quot;.join(text3)</span><br><span class="line">print(text4)</span><br><span class="line"></span><br><span class="line">x &#x3D; &quot;   wolf code,   code color   &quot;</span><br><span class="line">y &#x3D; x.strip()</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br><span class="line">x &#x3D; &quot;hello,你好&quot;</span><br><span class="line">y &#x3D; x.encode(&quot;utf-8&quot;)   #b开头</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br><span class="line">print(type(x))</span><br><span class="line">print(type(y))</span><br><span class="line">text5 &#x3D; y.decode()</span><br><span class="line">print(text5)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十三-运算符操作"><a href="#十三-运算符操作" class="headerlink" title="十三. 运算符操作"></a>十三. 运算符操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">1，复合运算符 + - * &#x2F; +&#x3D;</span><br><span class="line">x+&#x3D;y  &#x3D;&#x3D;&gt; x &#x3D; x+y</span><br><span class="line"></span><br><span class="line">2，关系运算符 &gt; &lt; &gt;&#x3D; &lt;&#x3D;  &#x3D;&#x3D; 返回结果是布尔值，True,False</span><br><span class="line"></span><br><span class="line">3, 逻辑运算符, 对于所有的对象数据都可以转换为布尔类型</span><br><span class="line">    逻辑与： and</span><br><span class="line">    逻辑或： or</span><br><span class="line">    逻辑非:  not</span><br><span class="line">x and y:  如果x为False，那么返回x, 否则返回y, 返回第一个为False的值， 或者是最后一个值</span><br><span class="line">x or y: 如果x为True, 那么返回x, 否则就返回y, 返回第一个为True的值，或者是最后一个值</span><br><span class="line">not x: x如果为True的话，返回False, 否则返回True</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">print(0 and 100)</span><br><span class="line">print(1 and 100)</span><br><span class="line">print(&quot;wolf&quot; and 80)</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br><span class="line">print(&quot;wolf&quot; or 1)</span><br><span class="line">print(&quot;&quot; or 10)</span><br><span class="line">print(0 or 10)</span><br><span class="line">print(1 or 0)</span><br><span class="line"></span><br><span class="line">print(&quot;&#x3D;&quot;*50)</span><br><span class="line">print(not &quot;wolf&quot;)</span><br><span class="line">print(not &quot;&quot;)</span><br><span class="line">print(not 0)</span><br><span class="line">print(not 10)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十四-运算符-实体关系"><a href="#十四-运算符-实体关系" class="headerlink" title="十四. 运算符_实体关系"></a>十四. 运算符_实体关系</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">成员关系： 体现的是对象(序列对象，字符串，元组，列表，集合)之间的包含关系</span><br><span class="line">x in y:   如果在y中包含x, 返回True, 否则返回False</span><br><span class="line">x not in y: 如果在y中不包含x, 返回True, 否则返回False</span><br><span class="line"></span><br><span class="line">实体对象测试：判断两个变量是否存的是同一个对象（共享引用），id(x) &#x3D;&#x3D; id(y)</span><br><span class="line">x is y: 表示x和y是同一个对象 即id(x)&#x3D;id(y), 内存地址是同一个</span><br><span class="line">x is not y: 表示x和y不是同一个对象,即内存地址不一样</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">text1 &#x3D; &quot;wolfcode&quot;</span><br><span class="line">text2 &#x3D; &quot;code&quot;</span><br><span class="line">print(text2 in text1)  #True</span><br><span class="line">print(text2 not in text1) #False</span><br><span class="line">print(&quot;00xx&quot; not in text1) #True</span><br><span class="line"></span><br><span class="line">text3 &#x3D; text1</span><br><span class="line"></span><br><span class="line">print(id(text1))</span><br><span class="line">print(id(text3))</span><br><span class="line">print(text1 is text3)  #这儿比较的是内存地址</span><br><span class="line">print(text1 &#x3D;&#x3D; text3)  #这儿比较的是值</span><br></pre></td></tr></table></figure>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2020/09/22/python/base/02-python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    02-python流程控制
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/15-%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%E7%9A%84%E5%AE%9E%E7%8E%B0/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">15-豆瓣首页的实现</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            庞占立 &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
