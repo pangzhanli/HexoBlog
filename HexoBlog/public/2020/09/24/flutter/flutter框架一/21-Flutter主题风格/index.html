@@ -9,16 +9,29 @@
         <meta name="keywords" content="21-Flutter主题风格" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="参考资料">
+    <meta name="description" content="一. 主题简单介绍Theme分为：全局Theme和局部Theme 主题有两个作用：  设置了主题之后，某些Widget会自动使用主题的样式（比如AppBar的颜色） 将某些样式放到主题中统一管理，在应用程序的其它地方直接引用  1.1. 全局Theme全局Theme会影响整个app的颜色和字体样式。 使用起来非常简单，只需要向MaterialApp构造器传入 ThemeData 即可。  如果没有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="21-Flutter主题风格">
 <meta property="og:url" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="参考资料">
+<meta property="og:description" content="一. 主题简单介绍Theme分为：全局Theme和局部Theme 主题有两个作用：  设置了主题之后，某些Widget会自动使用主题的样式（比如AppBar的颜色） 将某些样式放到主题中统一管理，在应用程序的其它地方直接引用  1.1. 全局Theme全局Theme会影响整个app的颜色和字体样式。 使用起来非常简单，只需要向MaterialApp构造器传入 ThemeData 即可。  如果没有">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_001.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_002.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_003.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_004.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_005.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_006.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_007.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_008.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_009.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_010.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_011.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_012.png">
 <meta property="article:published_time" content="2020-09-24T10:56:00.000Z">
-<meta property="article:modified_time" content="2020-09-24T11:23:53.858Z">
+<meta property="article:modified_time" content="2020-10-14T11:28:19.017Z">
 <meta property="article:author" content="庞占立">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_001.png">
     
 
     
@@ -264,6 +277,15 @@
                         </a>
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Login/oc-Login-AppleLogin/">IOS苹果登录(sign in with apple)</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-TouchID/">IOS指纹登录</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-AKeyLogin/">IOS一键登录</a></li>  <li class="file"><a href="/2020/04/08/oc/Login/oc-Login-QRCode/">IOS扫码登录</a></li>  </ul> 
                     </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            静态库和动态库
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/10/15/oc/Library/01-%E9%9D%99%E6%80%81%E5%BA%93%E5%92%8C%E5%8A%A8%E6%80%81%E5%BA%93%E7%9A%84%E7%AE%80%E4%BB%8B/">01-静态库和动态库的简介</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/02-%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93%E5%A4%A7%E6%AD%A5%E9%AA%A4/">02-生成静态库大步骤</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/03-%E5%90%88%E5%B9%B6-a%E6%96%87%E4%BB%B6/">03-合并.a文件</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/04-1-%E5%88%B6%E4%BD%9C%E9%9D%99%E6%80%81%E5%BA%93framework/">04-1-制作静态库framework</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/04-2-%E5%88%B6%E4%BD%9C%E5%8A%A8%E6%80%81%E5%BA%93framework/">04-2-制作动态库framework</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/05-%E9%9D%99%E6%80%81%E5%BA%93%E6%80%BB%E7%BB%93/">05-静态库总结</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/06-%E6%B5%8B%E8%AF%95%E9%9D%99%E6%80%81%E5%BA%93/">06-测试静态库</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/07-MRC%E9%9D%99%E6%80%81%E5%BA%93%E7%9B%B8%E5%85%B3/">07-MRC静态库相关</a></li>  </ul> 
+                    </li> 
                      </ul> 
                     </li> 
                     
@@ -280,7 +302,7 @@
                             &nbsp;
                             Dart语法
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/01/flutter/Dart/01-Dart%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">01-Dart环境搭建</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/02-%E5%85%A5%E5%8F%A3%EF%BC%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B8%B8%E9%87%8F%EF%BC%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">02-入口，注释，变量，常量，命名规则</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-数据类型</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/04-Dart%E8%BF%90%E7%AE%97%E7%AC%A6/">04-Dart运算符</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/05-%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6%EF%BC%8C%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%EF%BC%8C%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA/">05-图片组件，网络图片以及本地图片，图片裁剪</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/06-Dart%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%8C-List-Set-Map/">06-Dart集合类型， List, Set, Map</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/07-%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0/">07-方法参数</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/08-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%EF%BC%8C%E8%87%AA%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AD%E5%8C%85/">08-箭头函数，匿名方法，自执行方法，闭包</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">09-面向对象</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/10-%E7%B1%BB%E4%B8%AD%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%EF%BC%8C%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BB%A7%E6%89%BF/">10-类中静态成员，静态方法，操作符，以及继承</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/11-Dart%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB/">11-Dart中抽象类</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/12-Dart%E4%B8%AD%E7%9A%84mixins/">12-Dart中的mixins</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/13-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E6%B3%9B%E5%9E%8B%E7%B1%BB%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3/">13-泛型方法，泛型类，泛型接口</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/14-Dart%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%93%EF%BC%8C%E7%B3%BB%E7%BB%9F%E5%BA%93%EF%BC%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">14-Dart中自定义库，系统库，第三方库</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/01/flutter/Dart/01-Dart%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">01-Dart环境搭建</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/02-%E5%85%A5%E5%8F%A3%EF%BC%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B8%B8%E9%87%8F%EF%BC%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">02-入口，注释，变量，常量，命名规则</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-数据类型</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/04-Dart%E8%BF%90%E7%AE%97%E7%AC%A6/">04-Dart运算符</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/05-%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6/">05-图片组件</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/06-Dart%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%8C-List-Set-Map/">06-Dart集合类型， List, Set, Map</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/07-%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0/">07-方法参数</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/08-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%EF%BC%8C%E8%87%AA%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AD%E5%8C%85/">08-箭头函数，匿名方法，自执行方法，闭包</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">09-面向对象</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/10-%E7%B1%BB%E4%B8%AD%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%EF%BC%8C%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BB%A7%E6%89%BF/">10-类中静态成员，静态方法，操作符，以及继承</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/11-Dart%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB/">11-Dart中抽象类</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/12-Dart%E4%B8%AD%E7%9A%84mixins/">12-Dart中的mixins</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/13-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E6%B3%9B%E5%9E%8B%E7%B1%BB%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3/">13-泛型方法，泛型类，泛型接口</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/14-Dart%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%93%EF%BC%8C%E7%B3%BB%E7%BB%9F%E5%BA%93%EF%BC%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">14-Dart中自定义库，系统库，第三方库</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -447,17 +469,64 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">Catalogue</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">1.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-主题简单介绍"><span class="toc-number">1.</span> <span class="toc-text">一. 主题简单介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-全局Theme"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1. 全局Theme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-局部Theme"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2. 局部Theme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Flutter中文网错误"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.3. Flutter中文网错误</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-暗黑Theme适配"><span class="toc-number">2.</span> <span class="toc-text">二. 暗黑Theme适配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-darkTheme"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1. darkTheme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-开发中适配"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2. 开发中适配</span></a></li></ol></li></ol></li></ol>
                 </div>
             
         
         
-            <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+            <h1 id="一-主题简单介绍"><a href="#一-主题简单介绍" class="headerlink" title="一. 主题简单介绍"></a>一. 主题简单介绍</h1><p>Theme分为：全局Theme和局部Theme</p>
+<p>主题有两个作用：</p>
 <ul>
-<li><a href></a></li>
-<li><a href></a></li>
+<li>设置了主题之后，某些Widget会自动使用主题的样式（比如AppBar的颜色）</li>
+<li>将某些样式放到主题中统一管理，在应用程序的其它地方直接引用</li>
 </ul>
-</blockquote>
+<h3 id="1-1-全局Theme"><a href="#1-1-全局Theme" class="headerlink" title="1.1. 全局Theme"></a>1.1. 全局Theme</h3><p>全局Theme会影响整个app的颜色和字体样式。</p>
+<p>使用起来非常简单，只需要向MaterialApp构造器传入 ThemeData 即可。</p>
+<ul>
+<li>如果没有设置Theme，Flutter将会使用预设的样式。</li>
+<li>当然，我们可以对它进行定制。</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_001.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_002.png" alt="图1"></p>
+<h3 id="1-2-局部Theme"><a href="#1-2-局部Theme" class="headerlink" title="1.2. 局部Theme"></a>1.2. 局部Theme</h3><p>如果某个具体的Widget不希望直接使用全局的Theme，而希望自己来定义，应该如何做呢？</p>
+<ul>
+<li>非常简单，只需要在Widget的父节点包裹一下Theme即可</li>
+</ul>
+<p>创建另外一个新的页面，页面中使用新的主题：</p>
+<ul>
+<li>在新的页面的Scaffold外，包裹了一个Theme，并且设置data为一个新的ThemeData</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_003.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_004.png" alt="图1"></p>
+<p>但是，我们很多时候并不是想完全使用一个新的主题，而且在之前的主题基础之上进行修改：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_005.png" alt="图1"></p>
+<h3 id="1-3-Flutter中文网错误"><a href="#1-3-Flutter中文网错误" class="headerlink" title="1.3. Flutter中文网错误"></a>1.3. Flutter中文网错误</h3><p>但是这里有一个注意事项：accentColor在这里并不会被覆盖。</p>
+<p>为什么不能覆盖呢？<a href="https://github.com/material-components/material-components-flutter-codelabs/issues/106" target="_blank" rel="noopener">https://github.com/material-components/material-components-flutter-codelabs/issues/106</a></p>
+<p>我摘抄一点官方人员的回复：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_006.png" alt="图1"></p>
+<p>其实官网文档中之前也出现了类似的错误，比如Flutter中文网之前是翻译官方文档的</p>
+<ul>
+<li><a href="https://flutterchina.club/cookbook/design/themes/其中就有该错误" target="_blank" rel="noopener">https://flutterchina.club/cookbook/design/themes/其中就有该错误</a></li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_007.png" alt="图1"></p>
+<p>后来官网文档中对这个问题进行了修正：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_008.png" alt="图1"></p>
+<h1 id="二-暗黑Theme适配"><a href="#二-暗黑Theme适配" class="headerlink" title="二. 暗黑Theme适配"></a>二. 暗黑Theme适配</h1><h3 id="2-1-darkTheme"><a href="#2-1-darkTheme" class="headerlink" title="2.1. darkTheme"></a>2.1. darkTheme</h3><p>目前很多应用程序都需要适配暗黑模式，Flutter中如何做到暗黑模式的适配呢？</p>
+<p>事实上，MaterialApp中有theme和dartTheme两个参数：</p>
+<ul>
+<li>按照下面的写法，我们已经默认适配了暗黑主题</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_009.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_010.png" alt="图1"></p>
+<h3 id="2-2-开发中适配"><a href="#2-2-开发中适配" class="headerlink" title="2.2. 开发中适配"></a>2.2. 开发中适配</h3><p>在开发中，为了能适配两种主题（设置是更多的主题），我们可以封装一个AppTheme</p>
+<ul>
+<li>1.公共的样式抽取成常量</li>
+<li>2.封装一个亮色主题</li>
+<li>3.封装一个暗黑主题</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_011.png" alt="图1"></p>
+<p>在MaterialApp中，可以决定使用哪一个主题：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/21_012.png" alt="图1"></p>
 
             </div>
         
