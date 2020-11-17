@@ -93,3 +93,23 @@ code
 if sidebar is left
     #profile
         float: right
+
+
+
+#page-nav .extend,
+#page-nav .page-number {
+    position: relative;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    color: rgb(255, 255, 255);
+    transform: skewX(-20deg);
+    padding: 0px 10px;
+    margin: 0 3px;
+    transition: background 0.3s ease 0s;
+    background: rgb(204, 204, 204);
+    text-decoration: none;
+}
+#page-nav .page-number.current {
+        background: rgb(32, 92, 170);
+}

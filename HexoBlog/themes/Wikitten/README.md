@@ -1,3 +1,15 @@
+# 说明
+主题原仓库地址是：https://github.com/zthxxx/hexo-theme-Wikitten
+感谢 [@zthxxx](https://github.com/zthxxx)  同学开发出这样一个主题。
+
+出于主题个性化（不折腾不开森）和 [GitHub](https://github.com/)访问速度（最近又开始变慢了）考虑，将其搬到码云托管。
+
+再次感谢！
+
+以下是原 README 内容
+
+---
+
 # hexo-theme-Wikitten
 
 [中文版文档](./README_zh-CN.md)
@@ -71,25 +83,6 @@ or in the **site folder**, you can install them with the following command:
 
 ```bash
 $ npm install --save hexo-autonofollow hexo-directory-category hexo-generator-feed hexo-generator-json-content hexo-generator-sitemap
-```
-
-5. `mathjax` renderer configuration (optional)：
-
-If you need to write mathematical formulas, the following configuration is recommended:
-
-First, you need to install [pandoc](https://pandoc.org/installing.html)，and modify the rendering engine under the hexo site in the meanwhile:
-
-```bash
-$ npm un hexo-renderer-marked --save
-$ npm i hexo-rendere-pandoc --save # or hexo-renderer-krammed
-```
-
-Modify settings in site config file `_config.yml`:
-
-```bash
-math:
-  enable: true
-  engine: mathjax
 ```
 
 ### Enable
@@ -195,7 +188,6 @@ history_control: # make you wiki has history version control in page (view sourc
 ## License
 
 [MIT LICENSE](./LICENSE)
-
 
 
 

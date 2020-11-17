@@ -170,7 +170,7 @@ code {
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
-  background-image: url("/logo.png");
+  background-image: url("/wiki/logo.jpg");
   -webkit-background-size: 40px 40px;
   -moz-background-size: 40px 40px;
   background-size: 40px 40px;
@@ -809,7 +809,6 @@ code {
   border-color: transparent transparent #ced0d1 transparent;
 }
 article {
-  padding: 3px;
   border-radius: 4px;
   background-color: #c1cfdc;
 }
@@ -881,20 +880,21 @@ a.article-title:hover {
   color: #38b7ea;
 }
 div.article-meta-button {
-  float: right;
-  margin-right: 0;
-  margin-left: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
 div.article-meta-button a {
   padding: 4px 8px;
   margin: 2px 0;
   font-size: 85%;
-  background: #555;
+  background: #7b848c;
+  color: #fff;
   border-radius: 3px;
   text-transform: none;
 }
 div.article-meta-button a:hover {
   background: #333;
+  color: #fff;
 }
 .article-inner .article-meta {
   line-height: 20px;
@@ -2352,6 +2352,26 @@ ol.toc {
 .highlight .code .selector-id {
   font-weight: bold;
 }
-#profile {
-  float: right;
+#page-nav .extend,
+#page-nav .page-number {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  padding: 0px 10px;
+  margin: 0 3px;
+  -webkit-transition: background 0.3s ease 0s;
+  -moz-transition: background 0.3s ease 0s;
+  -ms-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
+  background: #ccc;
+  text-decoration: none;
+}
+#page-nav .page-number.current {
+  background: #205caa;
 }

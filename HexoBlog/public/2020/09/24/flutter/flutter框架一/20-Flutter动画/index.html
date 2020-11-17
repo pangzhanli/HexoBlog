@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>20-Flutter动画 | Hexo</title>
+    
+    
+        <meta name="keywords" content="20-Flutter动画" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="对于一个前端的App来说，添加适当的动画，可以给用户更好的体验和视觉效果。所以无论是原生的iOS或Android，还是前端开发中都会提供完成某些动画的API。Flutter有自己的渲染闭环，我们当然可以给它提供一定的数据模型，来让它帮助我们实现对应的动画效果。 一. 动画API认识动画其实是我们通过某些方式（比如对象，Animation对象）给Flutter引擎提供不同的值，而Flutter可以根">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20-Flutter动画">
+<meta property="og:url" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对于一个前端的App来说，添加适当的动画，可以给用户更好的体验和视觉效果。所以无论是原生的iOS或Android，还是前端开发中都会提供完成某些动画的API。Flutter有自己的渲染闭环，我们当然可以给它提供一定的数据模型，来让它帮助我们实现对应的动画效果。 一. 动画API认识动画其实是我们通过某些方式（比如对象，Animation对象）给Flutter引擎提供不同的值，而Flutter可以根">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_001.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_002.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_003.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_004.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_005.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_006.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_007.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_008.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_009.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_010.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_011.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_012.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_013.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_014.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_015.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_016.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_017.png">
+<meta property="og:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_018.png">
+<meta property="article:published_time" content="2020-09-24T10:55:52.000Z">
+<meta property="article:modified_time" content="2020-10-29T06:30:34.229Z">
+<meta property="article:author" content="庞占立">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pangzhanli.top/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_001.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    <!-- 
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+ -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- 
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+ -->
+    <!-- 
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+ -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?d33dd688273c3b2789b38b67a6cb659d";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Hexo</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            C语言
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/c/c-enum-desc/">C语言中枚举的简单介绍</a></li>  <li class="file"><a href="/2020/04/03/c/c-maopaopaixu/">C语言中的冒泡排序简单介绍</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/">C语言基本数据类型简单介绍</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E8%BE%93%E5%87%BA/">C语言中的字符串的定义及初始化和输出</a></li>  <li class="file"><a href="/2020/04/03/c/c-pointer-desc/">C语言中指针的简单介绍</a></li>  <li class="file"><a href="/2020/04/02/c/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E4%B8%AD%E7%9A%84%E8%87%AA%E5%A2%9E%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6/">C语言基本运算中的自增运算符和自减运算符以及三目运算符</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Hexo
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/02/hexo/hello-hexo/">Hexo简单介绍</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            OC
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Foundation
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-mulString/">Foundation中的NSMutableString的创建</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-strFile/">Foundation中将字符串写入到磁盘文件上</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-string/">Foundation框架中字符串的创建</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_block_desc/">OC中的Block简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc-foundation-struct/">Foundation中结构体的简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_class_init/">OC中类的创建简单介绍</a></li>  <li class="file"><a href="/2020/04/03/oc/Foundation/oc_category_desc/">OC中的Category简单介绍</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            OC动画
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-TableViewHeader/">UITableViewHeader头部拉伸变化</a></li>  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-customProgressCircle/">IOS-自制进度圈</a></li>  <li class="file"><a href="/2020/04/03/oc/Ani/oc-Ani-rotatingMenu/">IOS旋转菜单</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Realm
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/10/15/oc/Realm/01-Realm%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/">01-Realm简单介绍</a></li>  <li class="file"><a href="/2020/10/15/oc/Realm/02-Realm%E4%BF%9D%E5%AD%98%E6%8C%87%E5%AE%9A%E6%A8%A1%E5%9E%8B/">02-Realm保存指定模型</a></li>  <li class="file"><a href="/2020/10/15/oc/Realm/03-Realm%E6%9B%B4%E6%96%B0%E6%8C%87%E4%BB%A4/">03-Realm更新指令</a></li>  <li class="file"><a href="/2020/10/15/oc/Realm/04-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">04-删除数据</a></li>  <li class="file"><a href="/2020/10/15/oc/Realm/05-%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/">05-数据查询</a></li>  <li class="file"><a href="/2020/10/15/oc/Realm/06-%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">06-支持的数据类型</a></li>  <li class="file"><a href="/2020/10/15/oc/Realm/07-Realm%E5%85%B3%E7%B3%BB/">07-Realm关系</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Screen
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/24/oc/Screen/oc-screenSize-detail/">iphone屏幕尺寸，分辨率， PPI详细数据对比</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UITableView
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/UITableView/oc-UITableViewCell-sc/">使用代码创建UITableViewCell</a></li>  <li class="file"><a href="/2020/04/03/oc/UITableView/oc-UITableViewCell-xib/">使用xib文件创建UITableViewCell</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            上传
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/03/oc/Upload/oc-Upload-nativeUpload/">ios原生API文件上传(NSURLSession)</a></li>  <li class="file"><a href="/2020/04/03/oc/Upload/oc-Upload-putAndPost/">IOS文件上传PUT和POST</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            水印
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/15/oc/WaterMark/oc-WaterMark-rotateLabel/">旋转UILabel</a></li>  <li class="file"><a href="/2020/04/15/oc/WaterMark/oc-WaterMark-wk/">水印</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            登录
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-AKeyLogin/">IOS一键登录</a></li>  <li class="file"><a href="/2020/04/03/oc/Login/oc-Login-AppleLogin/">IOS苹果登录(sign in with apple)</a></li>  <li class="file"><a href="/2020/04/08/oc/Login/oc-Login-QRCode/">IOS扫码登录</a></li>  <li class="file"><a href="/2020/04/07/oc/Login/oc-Login-TouchID/">IOS指纹登录</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            静态库和动态库
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/10/15/oc/Library/01-%E9%9D%99%E6%80%81%E5%BA%93%E5%92%8C%E5%8A%A8%E6%80%81%E5%BA%93%E7%9A%84%E7%AE%80%E4%BB%8B/">01-静态库和动态库的简介</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/02-%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93%E5%A4%A7%E6%AD%A5%E9%AA%A4/">02-生成静态库大步骤</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/03-%E5%90%88%E5%B9%B6-a%E6%96%87%E4%BB%B6/">03-合并.a文件</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/04-1-%E5%88%B6%E4%BD%9C%E9%9D%99%E6%80%81%E5%BA%93framework/">04-1-制作静态库framework</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/05-%E9%9D%99%E6%80%81%E5%BA%93%E6%80%BB%E7%BB%93/">05-静态库总结</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/04-2-%E5%88%B6%E4%BD%9C%E5%8A%A8%E6%80%81%E5%BA%93framework/">04-2-制作动态库framework</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/06-%E6%B5%8B%E8%AF%95%E9%9D%99%E6%80%81%E5%BA%93/">06-测试静态库</a></li>  <li class="file"><a href="/2020/10/15/oc/Library/07-MRC%E9%9D%99%E6%80%81%E5%BA%93%E7%9B%B8%E5%85%B3/">07-MRC静态库相关</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            flutter
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Dart语法
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/01/flutter/Dart/01-Dart%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">01-Dart环境搭建</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/04-Dart%E8%BF%90%E7%AE%97%E7%AC%A6/">04-Dart运算符</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/02-%E5%85%A5%E5%8F%A3%EF%BC%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%98%E9%87%8F%EF%BC%8C%E5%B8%B8%E9%87%8F%EF%BC%8C%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99/">02-入口，注释，变量，常量，命名规则</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-数据类型</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/05-%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6/">05-图片组件</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/08-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95%EF%BC%8C%E8%87%AA%E6%89%A7%E8%A1%8C%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AD%E5%8C%85/">08-箭头函数，匿名方法，自执行方法，闭包</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/06-Dart%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%EF%BC%8C-List-Set-Map/">06-Dart集合类型， List, Set, Map</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/07-%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0/">07-方法参数</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/09-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">09-面向对象</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/12-Dart%E4%B8%AD%E7%9A%84mixins/">12-Dart中的mixins</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/11-Dart%E4%B8%AD%E6%8A%BD%E8%B1%A1%E7%B1%BB/">11-Dart中抽象类</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/10-%E7%B1%BB%E4%B8%AD%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%EF%BC%8C%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%EF%BC%8C%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%BB%A7%E6%89%BF/">10-类中静态成员，静态方法，操作符，以及继承</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/13-%E6%B3%9B%E5%9E%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E6%B3%9B%E5%9E%8B%E7%B1%BB%EF%BC%8C%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3/">13-泛型方法，泛型类，泛型接口</a></li>  <li class="file"><a href="/2020/09/01/flutter/Dart/14-Dart%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%93%EF%BC%8C%E7%B3%BB%E7%BB%9F%E5%BA%93%EF%BC%8C%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">14-Dart中自定义库，系统库，第三方库</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            demo
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/25/flutter/demo/01-%E4%B9%9D%E5%AE%AB%E6%A0%BC%E6%89%8B%E5%8A%BF%E8%A7%A3%E9%94%81/">01-九宫格手势解锁</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            flutter框架一
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/01-flutter%E5%AD%A6%E4%B9%A0%E5%BC%80%E5%A7%8B/">01-flutter学习开始</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/02-flutter%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">02-flutter之环境搭建</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/03-Hello-Flutter/">03-Hello Flutter</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/04-Android-Studio-%E4%B8%AD%E4%B8%8B%E8%BD%BDAndroid-SDK%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">04-Android Studio 中下载Android SDK的两种方式</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/05-Dart-%E4%B8%80/">05-Dart(一)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/06-Dart-%E4%BA%8C/">06-Dart(二)</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/07-Flutter%E7%9A%84%E5%9F%BA%E7%A1%80Widget/">07-Flutter的基础Widget</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/08-%E6%8C%89%E9%92%AE%E5%8F%98%E5%B0%8F%E8%AE%BE%E7%BD%AE/">08-按钮变小设置</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/09-StatefulWidget%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">09-StatefulWidget生命周期</a></li>  <li class="file"><a href="/2020/09/02/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/10-%E5%9B%BE%E6%96%87%E6%B7%B7%E6%8E%92%EF%BC%8C%E6%8C%89%E9%92%AE%EF%BC%8C%E5%9B%BE%E7%89%87/">10-图文混排，按钮，图片</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/11-%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">11-基础组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/12-%E6%BB%9A%E5%8A%A8%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8/">12-滚动组件的使用</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/13-Dart%E4%B8%AD%E7%9A%84%E5%BC%82%E6%AD%A5/">13-Dart中的异步</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/14-%E8%99%9A%E7%BA%BF%E5%92%8C%E6%98%9F%E6%98%9F%E8%AF%84%E5%88%86/">14-虚线和星星评分</a></li>  <li class="file"><a href="/2020/09/18/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/15-%E8%B1%86%E7%93%A3%E9%A6%96%E9%A1%B5%E7%9A%84%E5%AE%9E%E7%8E%B0/">15-豆瓣首页的实现</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/16-Flutter%E7%9A%84Widget-Element-RenderObject/">16-Flutter的Widget-Element-RenderObject</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/17-Flutter%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">17-Flutter状态管理</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/18-Flutter%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/">18-Flutter事件监听</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/19-Flutter%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA/">19-Flutter路由导航</a></li>  <li class="file active"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/">20-Flutter动画</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/">21-Flutter主题风格</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/22-Flutter%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/">22-Flutter屏幕适配</a></li>  <li class="file"><a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/23-Flutter%E5%BA%94%E7%94%A8%E4%BF%A1%E6%81%AF/">23-Flutter应用信息</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            动画组件
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/10/29/flutter/Animation/01-AnimatedBuilder/">01-AnimatedBuilder</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/03-AnimatedOpacity/">03-AnimatedOpacity</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/02-AlignTransition/">02-AlignTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/06-AnimatedCrossFade/">06-AnimatedCrossFade</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/04-AnimatedAlign/">04-AnimatedAlign</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/05-AnimatedPadding/">05-AnimatedPadding</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/08-AnimatedPositioned/">08-AnimatedPositioned</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/07-AnimatedContainer/">07-AnimatedContainer</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/09-AnimatedPositionedDirectional/">09-AnimatedPositionedDirectional</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/10-AnimatedSwitcher/">10-AnimatedSwitcher</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/11-AnimatedIcon/">11-AnimatedIcon</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/12-TweenAnimationBuilder/">12-TweenAnimationBuilder</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/13-DecoratedBoxTransition/">13-DecoratedBoxTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/14-DefaultTextStyleTransition/">14-DefaultTextStyleTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/15-AnimatedDefaultTextStyle/">15-AnimatedDefaultTextStyle</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/16-PositionedTransition/">16-PositionedTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/19-ScaleTransition/">19-ScaleTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/17-RelativePositionedTransition/">17-RelativePositionedTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/18-RotationTransition/">18-RotationTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/21-SlideTransition/">21-SlideTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/20-SizeTransition/">20-SizeTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/23-AnimatedModalBarrier/">23-AnimatedModalBarrier</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/22-FadeTransition/">22-FadeTransition</a></li>  <li class="file"><a href="/2020/10/29/flutter/Animation/24-AnimatedList/">24-AnimatedList</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            python基础
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2020/09/22/python/base/01-python%E5%9F%BA%E7%A1%80/">01-python基础</a></li>  <li class="file"><a href="/2020/09/22/python/base/03-%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">03-高级数据类型</a></li>  <li class="file"><a href="/2020/09/22/python/base/04-%E5%87%BD%E6%95%B0/">04-函数</a></li>  <li class="file"><a href="/2020/09/22/python/base/02-python%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">02-python流程控制</a></li>  <li class="file"><a href="/2020/09/22/python/base/06-%E6%A8%A1%E5%9D%97/">06-模块</a></li>  <li class="file"><a href="/2020/09/22/python/base/05-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">05-面向对象</a></li>  <li class="file"><a href="/2020/09/22/python/base/07-%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8/">07-植物大战僵尸</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/2020/10/29/hexo/hello-world/">Hello World</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-flutter/flutter框架一/20-Flutter动画" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/flutter/">flutter</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/">flutter框架一</a>
+    </div>
+
+                        <div style="display: flex; float: right;">
+                            
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/">
+            <time datetime="2020-09-24T10:55:52.000Z" itemprop="datePublished">2020-09-24</time>
+        </a>
+    </div>
+
+
+                            <div style="margin-left: 10px;">
+                                
+                                    <i class="fa fa-bar-chart"></i>
+                                    <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            20-Flutter动画
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-动画API认识"><span class="toc-number">1.</span> <span class="toc-text">一. 动画API认识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Animation"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1. Animation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-AnimationController"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2. AnimationController</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-CurvedAnimation"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.3. CurvedAnimation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Tween"><span class="toc-number">1.0.4.</span> <span class="toc-text">1.4. Tween</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-动画案例练习"><span class="toc-number">2.</span> <span class="toc-text">二. 动画案例练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-动画的基本使用"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1. 动画的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-AnimatedWidget"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2. AnimatedWidget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-AnimatedBuilder"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.3. AnimatedBuilder</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-其它动画补充"><span class="toc-number">3.</span> <span class="toc-text">三. 其它动画补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-交织动画"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1. 交织动画</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Hero动画"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2. Hero动画</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+        
+        
+            <p>对于一个前端的App来说，添加适当的动画，可以给用户更好的体验和视觉效果。所以无论是原生的iOS或Android，还是前端开发中都会提供完成某些动画的API。<br>Flutter有自己的渲染闭环，我们当然可以给它提供一定的数据模型，来让它帮助我们实现对应的动画效果。</p>
+<h1 id="一-动画API认识"><a href="#一-动画API认识" class="headerlink" title="一. 动画API认识"></a>一. 动画API认识</h1><p>动画其实是我们通过某些方式（比如对象，Animation对象）给Flutter引擎提供不同的值，而Flutter可以根据我们提供的值，给对应的Widget添加顺滑的动画效果。</p>
+<p>针对动画这个章节，我打算先理清楚他们的API关系和作用，再来讲解如何利用这些API来实现不同的动画效果。</p>
+<h3 id="1-1-Animation"><a href="#1-1-Animation" class="headerlink" title="1.1. Animation"></a>1.1. Animation</h3><p>在Flutter中，实现动画的核心类是Animation，Widget可以直接将这些动画合并到自己的build方法中来读取它们的当前值或者监听它们的状态变化。</p>
+<p>我们一起来看一下Animation这个类，它是一个抽象类：</p>
+<ul>
+<li><p>addListener方法</p>
+<ul>
+<li>每当动画的状态值发生变化时，动画都会通知所有通过 addListener 添加的监听器。</li>
+<li>通常，一个正在监听动画的state对象会调用自身的setState方法，将自身传入这些监听器的回调函数来通知 widget 系统需要根据新状态值进行重新构建。</li>
+</ul>
+</li>
+<li><p>addStatusListener</p>
+<ul>
+<li>当动画的状态发生变化时，会通知所有通过 addStatusListener 添加的监听器。</li>
+<li>通常情况下，动画会从 dismissed 状态开始，表示它处于变化区间的开始点。</li>
+<li>举例来说，从 0.0 到 1.0 的动画在 dismissed 状态时的值应该是 0.0。</li>
+<li>动画进行的下一状态可能是 forward（比如从 0.0 到 1.0）或者 reverse（比如从 1.0 到 0.0）。</li>
+<li>最终，如果动画到达其区间的结束点（比如 1.0），则动画会变成 completed 状态。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_001.png" alt="图1"></p>
+<h3 id="1-2-AnimationController"><a href="#1-2-AnimationController" class="headerlink" title="1.2. AnimationController"></a>1.2. AnimationController</h3><p>Animation是一个抽象类，并不能用来直接创建对象实现动画的使用。</p>
+<p>AnimationController是Animation的一个子类，实现动画通常我们需要创建AnimationController对象。</p>
+<ul>
+<li>AnimationController会生成一系列的值，默认情况下值是0.0到1.0区间的值；</li>
+</ul>
+<p>除了上面的监听，获取动画的状态、值之外，AnimationController还提供了对动画的控制：</p>
+<ul>
+<li>forward：向前执行动画</li>
+<li>reverse：方向播放动画</li>
+<li>stop：停止动画</li>
+</ul>
+<p>AnimationController的源码：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_002.png" alt="图1"></p>
+<p>AnimationController有一个必传的参数vsync，它是什么呢？</p>
+<ul>
+<li>之前我讲过关于Flutter的渲染闭环，Flutter每次渲染一帧画面之前都需要等待一个vsync信号。</li>
+<li>这里也是为了监听vsync信号，当Flutter开发的应用程序不再接受同步信号时（比如锁屏或退到后台），那么继续执行动画会消耗性能。</li>
+<li>这个时候我们设置了Ticker，就不会再出发动画了。</li>
+<li>开发中比较常见的是将SingleTickerProviderStateMixin混入到State的定义中。</li>
+</ul>
+<h3 id="1-3-CurvedAnimation"><a href="#1-3-CurvedAnimation" class="headerlink" title="1.3. CurvedAnimation"></a>1.3. CurvedAnimation</h3><p>CurvedAnimation也是Animation的一个实现类，它的目的是为了给AnimationController增加动画曲线：</p>
+<ul>
+<li>CurvedAnimation可以将AnimationController和Curve结合起来，生成一个新的Animation对象</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_003.png" alt="图1"></p>
+<p>Curve类型的对象的有一些常量Curves（和Color类型有一些Colors是一样的），可以供我们直接使用：</p>
+<ul>
+<li>对应值的效果，可以直接查看官网（有对应的gif效果，一目了然）</li>
+<li><a href="https://api.flutter.dev/flutter/animation/Curves-class.html" target="_blank" rel="noopener">https://api.flutter.dev/flutter/animation/Curves-class.html</a></li>
+</ul>
+<p>官方也给出了自己定义Curse的一个示例：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_004.png" alt="图1"></p>
+<h3 id="1-4-Tween"><a href="#1-4-Tween" class="headerlink" title="1.4. Tween"></a>1.4. Tween</h3><p>默认情况下，AnimationController动画生成的值所在区间是0.0到1.0</p>
+<ul>
+<li>如果希望使用这个以外的值，或者其他的数据类型，就需要使用Tween</li>
+</ul>
+<p>Tween的源码：</p>
+<ul>
+<li>源码非常简单，传入两个值即可，可以定义一个范围。</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_005.png" alt="图1"></p>
+<p>Tween也有一些子类，比如ColorTween、BorderTween，可以针对动画或者边框来设置动画的值。</p>
+<p><strong>Tween.animate</strong></p>
+<p>要使用Tween对象，需要调用Tween的animate()方法，传入一个Animation对象。</p>
+<h1 id="二-动画案例练习"><a href="#二-动画案例练习" class="headerlink" title="二. 动画案例练习"></a>二. 动画案例练习</h1><h3 id="2-1-动画的基本使用"><a href="#2-1-动画的基本使用" class="headerlink" title="2.1. 动画的基本使用"></a>2.1. 动画的基本使用</h3><ul>
+<li>点击案例后执行一个心跳动画，可以反复执行</li>
+<li>再次点击可以暂停和重新开始动画</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_006.png" alt="图1"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">class HYHomePage extends StatelessWidget &#123;</span><br><span class="line">  final GlobalKey&lt;_AnimationDemo01State&gt; demo01Key &#x3D; GlobalKey();</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(&quot;动画测试&quot;),</span><br><span class="line">      ),</span><br><span class="line">      body: AnimationDemo01(key: demo01Key),</span><br><span class="line">      floatingActionButton: FloatingActionButton(</span><br><span class="line">        child: Icon(Icons.play_circle_filled),</span><br><span class="line">        onPressed: () &#123;</span><br><span class="line">          if (!demo01Key.currentState.controller.isAnimating) &#123;</span><br><span class="line">            demo01Key.currentState.controller.forward();</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            demo01Key.currentState.controller.stop();</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;          if(_controller.isAnimating)&#123;</span><br><span class="line">&#x2F;&#x2F;            _controller.stop();</span><br><span class="line">&#x2F;&#x2F;          &#125;else if(_controller.status &#x3D;&#x3D; AnimationStatus.forward)&#123;</span><br><span class="line">&#x2F;&#x2F;            _controller.forward();</span><br><span class="line">&#x2F;&#x2F;          &#125;else if(_controller.status &#x3D;&#x3D; AnimationStatus.reverse)&#123;</span><br><span class="line">&#x2F;&#x2F;            _controller.reverse();</span><br><span class="line">&#x2F;&#x2F;          &#125;else&#123;</span><br><span class="line">&#x2F;&#x2F;            _controller.forward();</span><br><span class="line">&#x2F;&#x2F;          &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class AnimationDemo01 extends StatefulWidget &#123;</span><br><span class="line">  AnimationDemo01(&#123;Key key&#125;): super(key: key);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  _AnimationDemo01State createState() &#x3D;&gt; _AnimationDemo01State();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _AnimationDemo01State extends State&lt;AnimationDemo01&gt; with SingleTickerProviderStateMixin &#123;</span><br><span class="line">  AnimationController controller;</span><br><span class="line">  Animation&lt;double&gt; animation;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 1.创建AnimationController</span><br><span class="line">    controller &#x3D; AnimationController(duration: Duration(seconds: 1), vsync: this);</span><br><span class="line">    &#x2F;&#x2F; 2.动画添加Curve效果</span><br><span class="line">    animation &#x3D; CurvedAnimation(parent: controller, curve: Curves.elasticInOut, reverseCurve: Curves.easeOut);</span><br><span class="line">    &#x2F;&#x2F; 3.监听动画</span><br><span class="line">    animation.addListener(() &#123;</span><br><span class="line">      setState(() &#123;&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    &#x2F;&#x2F; 4.控制动画的翻转</span><br><span class="line">    animation.addStatusListener((status) &#123;</span><br><span class="line">      if (status &#x3D;&#x3D; AnimationStatus.completed) &#123;</span><br><span class="line">        controller.reverse();</span><br><span class="line">      &#125; else if (status &#x3D;&#x3D; AnimationStatus.dismissed) &#123;</span><br><span class="line">        controller.forward();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    &#x2F;&#x2F; 5.设置值的范围</span><br><span class="line">    animation &#x3D; Tween(begin: 50.0, end: 120.0).animate(controller);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Center(</span><br><span class="line">      child: Icon(Icons.favorite, color: Colors.red, size: animation.value,),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void dispose() &#123;</span><br><span class="line">    controller.dispose();</span><br><span class="line">    super.dispose();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-AnimatedWidget"><a href="#2-2-AnimatedWidget" class="headerlink" title="2.2. AnimatedWidget"></a>2.2. AnimatedWidget</h3><p>在上面的代码中，我们必须监听动画值的改变，并且改变后需要调用setState，这会带来两个问题：</p>
+<ul>
+<li>1.执行动画必须包含这部分代码，代码比较冗余</li>
+<li>2.调用setState意味着整个State类中的build方法就会被重新build</li>
+</ul>
+<p>如何可以优化上面的操作呢？AnimatedWidget</p>
+<p>创建一个Widget继承自AnimatedWidget：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_007.png" alt="图1"></p>
+<p>修改_AnimationDemo01State中的代码：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_008.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_009.png" alt="图1"></p>
+<h3 id="2-3-AnimatedBuilder"><a href="#2-3-AnimatedBuilder" class="headerlink" title="2.3. AnimatedBuilder"></a>2.3. AnimatedBuilder</h3><p>Animated是不是最佳的解决方案呢？</p>
+<ul>
+<li>1.我们每次都要新建一个类来继承自AnimatedWidget</li>
+<li>2.如果我们的动画Widget有子Widget，那么意味着它的子Widget也会重新build</li>
+</ul>
+<p>如何可以优化上面的操作呢？AnimatedBuilder</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_010.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_011.png" alt="图1"></p>
+<h1 id="三-其它动画补充"><a href="#三-其它动画补充" class="headerlink" title="三. 其它动画补充"></a>三. 其它动画补充</h1><h3 id="3-1-交织动画"><a href="#3-1-交织动画" class="headerlink" title="3.1. 交织动画"></a>3.1. 交织动画</h3><p>案例说明：</p>
+<ul>
+<li>点击floatingActionButton执行动画</li>
+<li>动画集合了透明度变化、大小变化、颜色变化、旋转动画等；</li>
+<li>我们这里是通过多个Tween生成了多个Animation对象；</li>
+</ul>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_012.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_013.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_014.png" alt="图1"></p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_015.png" alt="图1"></p>
+<p>当然，我们可以使用Builder来对代码进行优化</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_016.png" alt="图1"></p>
+<h3 id="3-2-Hero动画"><a href="#3-2-Hero动画" class="headerlink" title="3.2. Hero动画"></a>3.2. Hero动画</h3><p>移动端开发会经常遇到类似这样的需求：</p>
+<ul>
+<li>点击一个头像，显示头像的大图，并且从原来图像的Rect到大图的Rect</li>
+<li>点击一个商品的图片，可以展示商品的大图，并且从原来图像的Rect到大图的Rect</li>
+</ul>
+<p>这种跨页面共享的动画被称之为享元动画（Shared Element Transition）</p>
+<p>在Flutter中，有一个专门的Widget可以来实现这种动画效果：Hero</p>
+<p>实现Hero动画，需要如下步骤：</p>
+<ul>
+<li>1.在第一个Page1中，定义一个起始的Hero Widget，被称之为source hero，并且绑定一个tag；</li>
+<li>2.在第二个Page2中，定义一个终点的Hero Widget，被称之为 destination hero，并且绑定相同的tag；</li>
+<li>3.可以通过Navigator来实现第一个页面Page1到第二个页面Page2的跳转过程；</li>
+</ul>
+<p>Flutter会设置Tween来界定Hero从起点到终端的大小和位置，并且在图层上执行动画效果。</p>
+<p>首页Page代码：</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_017.png" alt="图1"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">import &#39;dart:math&#39;;</span><br><span class="line"></span><br><span class="line">import &#39;package:flutter&#x2F;material.dart&#39;;</span><br><span class="line">import &#39;package:testflutter001&#x2F;animation&#x2F;image_detail.dart&#39;;</span><br><span class="line"></span><br><span class="line">void main() &#x3D;&gt; runApp(MyApp());</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">  &#x2F;&#x2F; This widget is the root of your application.</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return MaterialApp(</span><br><span class="line">      title: &#39;Flutter Demo&#39;,</span><br><span class="line">      theme: ThemeData(</span><br><span class="line">          primarySwatch: Colors.blue, splashColor: Colors.transparent),</span><br><span class="line">      home: HYHomePage(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class HYHomePage extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(&quot;Hero动画&quot;),</span><br><span class="line">      ),</span><br><span class="line">      body: HYHomeContent(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class HYHomeContent extends StatelessWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return GridView(</span><br><span class="line">      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(</span><br><span class="line">        crossAxisCount: 2,</span><br><span class="line">        crossAxisSpacing: 8,</span><br><span class="line">        mainAxisSpacing: 8,</span><br><span class="line">        childAspectRatio: 2</span><br><span class="line">      ),</span><br><span class="line">      children: List.generate(20, (index) &#123;</span><br><span class="line">        String imageURL &#x3D; &quot;https:&#x2F;&#x2F;picsum.photos&#x2F;id&#x2F;$index&#x2F;400&#x2F;200&quot;;</span><br><span class="line">        return GestureDetector(</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            Navigator.of(context).push(PageRouteBuilder(</span><br><span class="line">              pageBuilder: (ctx, animation, animation2) &#123;</span><br><span class="line">                return FadeTransition(</span><br><span class="line">                  opacity: animation,</span><br><span class="line">                  child: HYImageDetail(imageURL),</span><br><span class="line">                );</span><br><span class="line">              &#125;</span><br><span class="line">            ));</span><br><span class="line">          &#125;,</span><br><span class="line">          child: Hero(</span><br><span class="line">            tag: imageURL,</span><br><span class="line">            child: Image.network(imageURL)</span><br><span class="line">          ),</span><br><span class="line">        );</span><br><span class="line">      &#125;),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>图片展示Page</p>
+<p><img src="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/20-Flutter%E5%8A%A8%E7%94%BB/20_018.png" alt="图1"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import &#39;package:flutter&#x2F;material.dart&#39;;</span><br><span class="line"></span><br><span class="line">class HYImageDetail extends StatelessWidget &#123;</span><br><span class="line">  final String imageURL;</span><br><span class="line"></span><br><span class="line">  HYImageDetail(this.imageURL);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      backgroundColor: Colors.black,</span><br><span class="line">      body: Center(</span><br><span class="line">        child: GestureDetector(</span><br><span class="line">          onTap: () &#123;</span><br><span class="line">            Navigator.of(context).pop();</span><br><span class="line">          &#125;,</span><br><span class="line">          child: Hero(</span><br><span class="line">            tag: imageURL,</span><br><span class="line">            child: Image.network(</span><br><span class="line">              this.imageURL,</span><br><span class="line">              width: double.infinity,</span><br><span class="line">              fit: BoxFit.cover,</span><br><span class="line">            ),</span><br><span class="line">          )),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            </div>
+        
+        <footer class="article-footer">
+            <div style="display: inline-block;">
+                
+            </div>
+            <div class="meta" style="float: right;">
+            
+                <div class="article-meta-button">
+                    <a href='https://gitee.com/wencaizhang/wiki/commits/master/source/_posts/flutter/flutter框架一/20-Flutter动画.md' target="_blank" rel="noopener"> History </a>
+                </div>
+                <div class="article-meta-button">
+                    <a href='https://gitee.com/wencaizhang/wiki/raw/master/source/_posts/flutter/flutter框架一/20-Flutter动画.md' target="_blank" rel="noopener"> Source </a>
+                </div>
+                <div class="article-meta-button">
+                    <a href='https://gitee.com/wencaizhang/wiki/edit/master/source/_posts/flutter/flutter框架一/20-Flutter动画.md' target="_blank" rel="noopener"> Edit </a>
+                </div>
+            
+            </div>
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/21-Flutter%E4%B8%BB%E9%A2%98%E9%A3%8E%E6%A0%BC/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    21-Flutter主题风格
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2020/09/24/flutter/flutter%E6%A1%86%E6%9E%B6%E4%B8%80/19-Flutter%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">19-Flutter路由导航</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            庞占立 &copy; 2020 
+            <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten" target="_blank" rel="noopener">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

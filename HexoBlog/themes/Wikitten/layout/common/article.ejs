@@ -8,25 +8,15 @@
                 <% if (post.layout != 'page') { %>
                     <div class="article-meta">
                         <%- partial('post/category') %>
-                        <%- partial('post/tag') %>
-                        <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
-                        <% if (theme.plugins.busuanzi_count) { %>
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        <% } %>
-                        <% if (theme.history_control.enable) { 
-                            let repertory_address = `${theme.history_control.server_link}/${theme.history_control.user}/${theme.history_control.repertory}`;
-                            let file_path = `${theme.history_control.branch}/source/${post.source}`;%>
-                            <div class="article-meta-button">
-                                <a href='<%= `${repertory_address}/raw/${file_path}` %>'> Source </a>
+                        <div style="display: flex; float: right;">
+                            <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
+                            <div style="margin-left: 10px;">
+                                <% if (theme.plugins.busuanzi_count) { %>
+                                    <i class="fa fa-bar-chart"></i>
+                                    <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>
+                                <% } %>
                             </div>
-                            <div class="article-meta-button">
-                                <a href='<%= `${repertory_address}/edit/${file_path}` %>'> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a href='<%= `${repertory_address}/commits/${file_path}` %>'> History </a>
-                            </div>
-                        <% } %>
+                        </div>
                     </div>
                 <% } %>
                 <%- partial('post/title', { class_name: 'article-title' }) %>
@@ -62,12 +52,30 @@
             <%- post.content %>
             </div>
         <% } else { %>
-            </div>   
+            </div>
             <div class="article-more-link">
                 <a href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
             </div>
         <% } %>
         <footer class="article-footer">
+            <div style="display: inline-block;">
+                <%- partial('post/tag') %>
+            </div>
+            <div class="meta" style="float: right;">
+            <% if (theme.history_control.enable) {
+                let repertory_address = `${theme.history_control.server_link}/${theme.history_control.user}/${theme.history_control.repertory}`;
+                let file_path = `${theme.history_control.branch}/source/${post.source}`;%>
+                <div class="article-meta-button">
+                    <a href='<%= `${repertory_address}/commits/${file_path}` %>'> History </a>
+                </div>
+                <div class="article-meta-button">
+                    <a href='<%= `${repertory_address}/raw/${file_path}` %>'> Source </a>
+                </div>
+                <div class="article-meta-button">
+                    <a href='<%= `${repertory_address}/edit/${file_path}` %>'> Edit </a>
+                </div>
+            <% } %>
+            </div>
         </footer>
     </div>
 </article>
@@ -84,5 +92,5 @@
 <!-- baidu url auto push script -->
 <script type="text/javascript">
     !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-</script>     
+</script>
 <% } %>
